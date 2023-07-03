@@ -8,17 +8,40 @@
 </head>
 
 <body>
+
     <!-- Instead of putting our javascript code inside another file, we put them in the html file directly instead -->
     <script>
 
-        console.log("Hello, World!");
-
         const htmlBody = document.querySelector('body');
 
-        // TODO: Continue in @24:32
+        // Storing a function inside a variable
         const randomClickFunction = function () {
+            // Array of different colors
             const colors = ["#002942", "0Ca7DB", "red", "blue", "green", "yellow", "orange", "purple"]
+            // Generating a random number for choosing a random color
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            // Storing random color in randomColor variable
+            const randomColor = colors[randomIndex];
+            // Changing the background of our page
+            htmlBody.style.backgroundColor = randomColor;
+            // Printing a message to confirm that we changed the color
+            console.log("The user clicked and set the color to " + randomColor);
         }
+
+        // When the user clicks on the page, it changes to a random color
+        htmlBody.onclick = randomClickFunction;
+
+        // Creating a button to be added to our budy
+        const button = document.createElement('button');
+        button.innerText = 'Change Background Color!'; // text that the button will contain
+
+        // What happnes when we click on our button
+        button.addEventListener('click', () => {
+            randomClickFunction;
+        })
+
+        // Adding our button to our body
+        document.body.appendChild(button);
 
     </script>
 
