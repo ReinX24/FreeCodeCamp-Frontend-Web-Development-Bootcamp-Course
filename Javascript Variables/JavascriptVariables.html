@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Variables</title>
 </head>
+
 <body>
-    
+
     <script>
 
         const myArray = [10, 20, 30, 40];
 
         myArray.push(50); // adds 50 to our myArray
+        myArray.reverse(); // reverses the order of items
+        console.log(myArray);
+        // console.log('hello, world');
+
+        // Creating an printing a variable
+        const firstVariable = 20;
+        // console.log(firstVariable);
+
+        // Single line comment
+
+        /*
+        Multi line comment
+        */
+
+        // String variable
+        const yourFirstVariable = "Learning to code gives you superpowers";
+
+        // Integer variable
+        const yourSecondVariable = 10;
+
+        // Object variable
+        const yourThirdVariable = { firstProperty: 'hello world' };
+
+        console.log(yourFirstVariable);
+
+        const newVariable = 'hello world'; // declaring and assigning a variable
+
+        let anotherVariable; // declaring a variable
+        anotherVariable = 20; // assigning a value to our variable
+
+        // Differences of const, let, and var
+        const variable1 = 10;
+
+        let variable2 = 10;
+
+        var variable3 = 10;
+
+        // Do not use var, considered as legacy code
+        var myVariable = 10;
+        var myVariable = 20; // replaces it with 20 without any warnings
+        // console.log(myVariable);
+
+        // const means we can only assign a value to a variable once
+        const myVariableConst = 10;
+        // const myVariableConst = 20; // will throw an error
+        // myVariableConst++; // will throw an error
+        // console.log(myVariableConst);
+
+        let counterNum = 0;
+        counterNum += 1; // value can be reassigned
+        counterNum++;
+        console.log(counterNum);
+        // TODO: resume at 1:12:47
 
     </script>
 
 </body>
+
 </html>
