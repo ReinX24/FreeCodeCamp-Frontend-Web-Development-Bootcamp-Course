@@ -15,7 +15,7 @@
 
         myArray.push(50); // adds 50 to our myArray
         myArray.reverse(); // reverses the order of items
-        console.log(myArray);
+        // console.log(myArray);
         // console.log('hello, world');
 
         // Creating an printing a variable
@@ -49,7 +49,7 @@
         // Differences of const, let, and var
         const variable1 = 10;
 
-        let variable2 = 10;
+        let variable2 = 20;
 
         var variable3 = 10;
 
@@ -67,7 +67,7 @@
         let counterNum = 0;
         counterNum += 1; // value can be reassigned
         counterNum++;
-        console.log(counterNum);
+        // console.log(counterNum);
 
         /*
         Use let if you are planning to change the value of a variable and use const when you want a constant variable that cannot be changed. 
@@ -84,7 +84,33 @@
         // keyword, variable name, and value (after =)
         const FIRST_VARIABLE = 'Javascript gives you superpowers';
 
-        // TODO: continue at 1:23:01
+        const oneVariable = 20; const secondVariable = 30; // this is valid because we have a semicolon at the end of our first variable
+
+        // Two variables could be combined into one variable
+        const variable4 = variable1 + variable2;
+        // console.log(variable4);
+
+        // Concatenating Strings
+        const greetingMessage = "Hello, my name is ";
+        const greetingName = "Rein";
+        const combinedGreetingAndName = greetingMessage + greetingName;
+        // console.log(combinedGreetingAndName);
+
+        const intVariable = 10; // number / integer
+        const stringVariable = "String"; // String
+        const booleanVariable = false; // boolean type
+
+        // console.log(typeof intVariable); // shows number
+        // console.log(typeof stringVariable); // string
+        // console.log(typeof booleanVariable); // boolean
+
+        const number1 = '10';
+        const number2 = 20;
+        console.log(number1 + number2); // prints "1020"
+
+        // Converting our string variable into a number using Number();
+        console.log(Number(number1) + number2); // prints 30
+        // TODO: resume @1:30:41
 
     </script>
 
