@@ -12,6 +12,7 @@
 
     <script>
 
+        // Challenge #1
         // 1. Create a boolean variable called `myBoolean` and set it to `true`
         const myBoolean = true;
 
@@ -26,6 +27,71 @@
 
         // 5. Re-assign `secondNumber` and set it equal to 80
         secondNumber = 80;
+
+        // 6. Create an array called `myArray` and put `myBoolean` at index 0, and `myString` at index 1
+        const myArray = [myBoolean, myString];
+
+        // 7. Create an object called `myObject` and assign `myArray` to a property called `firstProperty`, 
+        // and the sum of `firstNumber` and `secondNumber` to a property called `sumProperty` (hint: we 
+        // didn't cover how to do this here)
+        const myObject = {
+            firstProperty: myArray,
+            sumProperty: firstNumber + secondNumber
+        };
+
+        // 8. Print `myObject` to the console
+        console.log(myObject);
+
+        // 9. Print the `sumProperty` of `myObject` to the console
+        console.log(myObject.sumProperty);
+
+        // 10. Print the value at index 1 of `firstProperty`
+        console.log(myObject.firstProperty[1]);
+
+        // Challenge #2
+        /*
+        There are three things wrong with this code.
+        Fint them and explain why they are wrong.
+        */
+
+        // const some Number = 20; // this is wrong because there is a space within the variable name which throws an error
+        // someNumber = 50 // this is not allowed because someNumber is a constant, assuming it was declared correctly, there also isnt a semi colon at the end
+
+        // Challenge #3
+        /*
+        What does the value `resultVariable` equal? What data type is it?
+
+        We haven't covered everything here in detail yet, but
+        research this for a bit and see what you can find.
+        */
+
+        const variable1 = 20;
+        const variable2 = '40';
+
+        const resultVariable = variable1 + variable2; // "2040"
+        console.log(resultVariable);
+        // NOTE: when you add a String and a number together, they automatically result into a String
+
+        // Challenge #4 
+        /* 
+        Why is this code invalid? Edit this until it is valid.
+        */
+
+        const objectVariable = {
+            property1: 'i am property 1', // in the original these were semi-colons, the proper way of instantiating this is using a comma
+            property2: 'i am property 2',
+            property3: [20, 30, 40] // no comma needed for the last property
+        };
+
+        console.log(objectVariable.property3[2]); // prints 40
+
+        // Challenge #5
+        /* 
+        Why does this code not work? Edit until it works.
+        */
+
+        const myNumArray = [20, 30, 50];
+        // console.log(myNumArray[3]); // will not work because there is no element for index 3, returns undefined
 
     </script>
 
