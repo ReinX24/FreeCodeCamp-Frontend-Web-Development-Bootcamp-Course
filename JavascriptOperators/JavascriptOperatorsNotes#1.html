@@ -10,7 +10,129 @@
 <body>
 
     <script>
-        // TODO: resume at 1:47:46
+
+        const powerExampleOne = 8 ** 2; // 8 to the power of 2 = 64
+        // console.log(powerExampleOne);
+
+        const powerExampleTwo = 2 ** 5;
+        // console.log(powerExampleTwo); // 32
+
+        // Increment operator++
+        let startingNumber = 0;
+        startingNumber++; // increments number to 1, does not work with const
+        // console.log(startingNumber);
+        startingNumber++;
+        // console.log(startingNumber);
+
+        // Decrement operator--
+        startingNumber--; // decrements by 1, now 1
+        // console.log(startingNumber);
+        startingNumber--; // decrements to 0
+        // console.log(startingNumber);
+
+        // Assignment operators
+
+        // =
+        const myVariable = 20;
+
+        // +=
+        let myNumber = 10;
+        myNumber += 5; // adds 5 to myNumber
+        // console.log(myNumber); // prints 15
+
+        // -=
+        myNumber -= 5; // subtracts 5
+        // console.log(myNumber); // prints 10
+
+        // *=
+        myNumber *= 5; // multiplies by 5
+        // console.log(myNumber); // 10 * 5 = 50
+
+        // /=
+        myNumber /= 5; // divides by 5, 50 / 5 = 10
+        // console.log(myNumber); // prints 10
+
+        /*
+            Arithmetic Operators:
+            + - * / ** % ++ --
+
+            Assignment Operators:
+            = += -= *= /=        
+        */
+
+        /*
+            Comparison Operators:
+            == === != !== > < >= <=
+        */
+
+        const trueBoolOne = 20 > 18;
+        // console.log(trueBoolOne); // prints true
+
+        const trueBoolTwo = 20 === 20; // strict equals
+        // console.log(trueBoolTwo); // prints true
+
+        const numberValue = 20;
+        const stringValue = '20';
+
+        // console.log(typeof numberValue); // number
+        // console.log(typeof stringValue); // string
+
+        // console.log(stringValue == numberValue); // prints true
+        // the reason for this is because javascript converts the string into a number when doing the == comparison
+
+        // console.log(stringValue === numberValue); // prints false
+        // in this case, the numberValue is not converted into a string which is why it returns false
+
+        // console.log(Number(stringValue) === numberValue); // prints true
+
+        // console.log(numberValue != stringValue); // prints false
+
+        // console.log(numberValue !== stringValue); // prints true
+
+        // === and !== cares about types and does not convert string to a number
+
+        // console.log('hello world' == 'hello world'); // prints true
+
+        // console.log(true == true); // prints true
+
+        const myObj = {
+            property1: 'some value',
+            property2: 20
+        };
+
+        const myArray = [1, 2, 3, 4, 5];
+        const anotherArray = [1, 2, 3, 4, 5];
+
+        // console.log(myArray === myArray); // prints true because they are the same variable
+        // console.log(myArray === anotherArray); // prints false because they are different array variables
+
+        // console.log(myObj === myObj); // prints true
+
+        const anotherObj = {
+            property1: 'some value',
+            property2: 20
+        };
+
+        // console.log(myObj === anotherObj); // prints false because they are different variables
+
+        // console.log(myArray == anotherArray); // prints false too
+        // console.log(myObj == anotherObj); // prints false
+
+        // Basically, using == or === on different objects and arrays will return false regardless if their values are the same 
+
+        const ternaryResult = 20 === 20 ?  'values match' : 'values do not match';
+        // console.log(ternaryResult);
+
+        let resultVariable;
+
+        if (20 === 20) {
+            resultVariable = 'values match';
+        } else {
+            resultVariable = 'values do not match';
+        }
+
+        // console.log(resultVariable);
+
     </script>
 
 </body>
