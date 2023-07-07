@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Operators Challenge #2</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+            Do the following two blocks of code result in the same answer?
+            If not, which one would you recommend using and why?
+        */
+
+        // ==== SNIPPET 1 ====
+        const firstNumber = 20;
+        const secondNumber = '20';
+
+        const myResult = firstNumber == secondNumber; // stores true
+        // ==== END SNIPPET 1 ====
+
+        // ==== SNIPPET 2 ====
+        const firstNumberSnippet2 = 20;
+        const secondNumberSnippet2 = '20';
+
+        const myResultSnippet2 = firstNumberSnippet2 === secondNumberSnippet2; // stores false
+        // ==== END SNIPPET 2 ====
+
+        console.log(myResult); // prints true
+        console.log(myResultSnippet2); // prints false
+
+        /*
+            I would probably recommend using the second one because for me, just because they
+            have the same value when the string is converted to a number does not mean that
+            they are automatically equal to each other without any explicit conversion in the
+            code.
+
+            Answer: apparently there is no recommended method, both are valid. The real solution
+            is to avoid comparing numbers and strings.
+        */
+
+    </script>
+
+</body>
+
+</html>

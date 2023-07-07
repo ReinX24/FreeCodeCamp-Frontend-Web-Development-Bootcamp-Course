@@ -120,7 +120,7 @@
 
         // Basically, using == or === on different objects and arrays will return false regardless if their values are the same 
 
-        const ternaryResult = 20 === 20 ?  'values match' : 'values do not match';
+        const ternaryResult = 20 === 20 ? 'values match' : 'values do not match';
         // console.log(ternaryResult);
 
         let resultVariable;
@@ -132,6 +132,43 @@
         }
 
         // console.log(resultVariable);
+
+        /*
+            Logical Operators:
+            && || !        
+        */
+
+        // console.log(20 === 20 && 10 === 10); // prints true because both side evaluate to true
+        // console.log(20 === 20 && 10 === 12); // prints false because right side returns false
+        // console.log(20 === 20 || 10 === 12); // prints true because left side is true, only needs 1 expression to be true
+        // console.log(20 === 10 || 10 === 12); // prints false because both expressions are false
+
+        // console.log(!(20 === 20)); // reverses boolean, prints false
+        // console.log(!(20 != 20)); // prints true
+        // console.log(!(20 !== 20)); // prints true
+
+        const isUserLoggedIn = true;
+        const doesUserHavePermission = false;
+        const canUserPerformAction = isUserLoggedIn && doesUserHavePermission;
+
+        // console.log(canUserPerformAction); // prints false
+
+        const myResult = !(((40 / 20) === 2 && true) || ('yes' === 'no'));
+        // console.log(myResult); // prints false because left side of the or operator returns true and the not (!) operator reverses that boolean value
+
+        const step1 = 40 / 20;
+        const step2 = step1 === 2;
+        const step3 = step2 && true;
+        const step4 = 'yes' === 'no';
+        const step5 = step3 || step4;
+        const step6 = !step5; // stores false
+        // console.log(step6);
+
+        const resultFunc = (() => { // this is a function
+            return 20; // returns a value of 20
+        })(); // when the variable is called, execute function immediately
+
+        console.log(resultFunc); // prints 20
 
     </script>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Operators Challenge #3</title>
+</head>
+
+<body>
+
+    <script>
+
+    /*
+        What does `expression5` evaluate to? How could you write
+        this in a single line of code (for exercise purposes only;
+        you would never want to combine all this in one line)?
+    */
+
+    const expression1 = 100 % 50; // 0
+    const expression2 = 100 / 50; // 2 
+    const expression3 = expression1 < expression2; // true
+    const expression4 = expression3 && 300 + 5 === 305; // true
+    const expression5 = !expression4; // false
+
+    console.log(expression5); // prints false
+
+    const ternaryResult = !(((100 % 50) < (10 / 50)) && 300 + 5 == 305); // stores false
+    
+    console.log(ternaryResult); // prints false
+
+    </script>
+
+</body>
+
+</html>
