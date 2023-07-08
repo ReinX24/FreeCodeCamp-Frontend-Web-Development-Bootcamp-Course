@@ -141,14 +141,101 @@
 
         // Using parameters
         // function myFunction(param1, param2) {
-            // console.log(param1);
-            // console.log(param2);
+        // console.log(param1);
+        // console.log(param2);
         // }
 
         // myFunction(); // just prints undefined
         // myFunction(20, 'some string'); // prints 20 and 'some string'
 
-            
+        // function myFunction() {
+        //     console.log('something');
+        // }
+
+        // const anotherFunction = function () { // this is an anonymous function
+        //     console.log('another thing');
+        // }
+
+        // Invoking both function
+        // myFunction();
+        // anotherFunction();
+
+        // const arrowFunction = () => {
+        //     console.log('I am an arrow function');
+        // }
+
+        // arrowFunction();
+
+        // const myFunction = () => {
+        //     console.log('something');
+        // }
+        // const myResult = myFunction();
+        // console.log(myResult); // prints undefined
+
+        // Creating a function that returns a value
+        // const returnFunction = () => {
+        //     const a = 20;
+        //     return a < 30;
+        // }
+
+        // const myResult = returnFunction();
+
+        // console.log(myResult);
+
+        // const myFunction = () => {
+        //     let myNumber = 20;
+        //     return myNumber;
+        //     myNumber = 50; // shows a warning of this section not being reachable
+        // }
+
+        // console.log(myFunction());
+
+        // const myNumber = 20;
+
+        // let myFunction = () => {
+        //     if (myNumber < 50) {
+        //         return 'returned the function early';
+        //     }
+        //     return 40; // returns if the condition above evaluates to false
+        // }
+
+        // console.log(myFunction());
+
+        // function myFunction() {
+        //     return 20;
+        // }
+
+        // console.log(myFunction()); // prints 20
+
+        // const aliasVariable = myFunction; // variable is now equal to myFunction
+
+        // console.log(aliasVariable()); // prints 20
+
+        // const myObj = {
+        //     prop1: 50,
+        //     prop2: myFunction // prop2 points to myFunction
+        // }
+
+        // console.log(myObj.prop2()); // prints 20
+
+        // const myString = 'rain';
+        // console.log(myString);
+
+        // const newName = myString.replace('a', 'e'); // replace a with an e
+        // console.log(newName);
+
+        // const upperString = myString.toUpperCase();
+        // console.log(upperString);
+
+        // let anotherString = 'hello world';
+        // anotherString = anotherString.toUpperCase().split(" "); // makes string uppercase and turns words into 2 array elements
+        // console.log(anotherString.indexOf('WORLD'));
+
+        let myString = 'hello world';
+        const step1 = myString.toUpperCase();
+        const step2 = step1.split(' ');
+        const step3 = step2.indexOf('WORLD');
+        console.log(step3); // prints 1
 
     </script>
 
