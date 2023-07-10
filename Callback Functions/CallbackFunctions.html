@@ -11,15 +11,79 @@
 
     <script>
 
-        function myCallback(someNumber) {
-            return someNumber * 2;
-        }
+        // function myCallback(someNumber) {
+        //     return someNumber * 2;
+        // }
 
-        function mainFunction(randomNumber, shouldCall, callback) {
+        // function mainFunction(randomNumber, shouldCall, callback) {
 
-            
+        //     let result = randomNumber;
 
-        }
+        //     if (shouldCall) {
+        //         result = callback(randomNumber); // calls method in callback parameter variable (myCallback)
+        //     }
+
+        //     return result;
+
+        // }
+
+        // let functionResult = mainFunction(20, true, myCallback);
+        // // Callback functions are basically functions calling another function
+
+        // console.log(functionResult); // prints 40
+
+        // // Another way of writing the functions above
+
+        // function mainFunction(randomNumber, shouldCall, callback) {
+
+        //     let result = randomNumber;
+
+        //     if (shouldCall) {
+        //         result = callback(randomNumber);
+        //     }
+
+        //     return result;
+
+        // }
+
+        // functionResult = mainFunction(20, true, num => num * 2); // creating an arrow function within our parameters
+
+        // console.log(functionResult); // prints 40
+
+        // // Another way of creating our mainFunction
+        // functionResult = mainFunction(20, true, function (num) { // creating a function within a parameter
+        //     return num * 2;
+        // });
+
+        // console.log(functionResult); // prints 40
+
+        // map function
+        // const array1 = [1, 4, 9, 16];
+
+        // Using the map function to multiply each element to 2
+        // const map1 = array1.map(x => x * 2); // each element in our array goes through this arrow function
+
+        // console.log(array1);
+        // console.log(map1);
+
+        // const myArray = [2, 4, 6, 8];
+
+        // function customMapOperationCallback(itemFromArray) {
+        //     return itemFromArray * 2;
+        // }
+
+        // const newArray = myArray.map(customMapOperationCallback); // function without our map function
+
+        // console.log(newArray);
+
+        // if the function is already made, no need to pass in parameters
+        // if the function is made inside the parameters, a parametervariable name is needed
+
+        let strArray = ['hello', 'world', 'my', 'name', 'is', 'Rein'];
+
+        strArray = strArray.map((eachItemFromArray) => eachItemFromArray[0]); // replaces array elements with their first characters
+
+        console.log(strArray); // prints each of the first letter of strArray
 
     </script>
 
