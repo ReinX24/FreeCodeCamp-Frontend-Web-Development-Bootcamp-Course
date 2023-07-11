@@ -11,7 +11,87 @@
 
     <script>
 
-        // const emailValidatorRegex;
+        // const emailValidatorRegex = new RegExp('^.+@.+\..+$');
+        // ^ beginning, . all characters 
+        //+@ checks if there is an @ symbol 
+        // +\. looking for a period
+        // +$ end of the string
+
+        // const userInput = 'invalidemail@g';
+
+        // const isValid = emailValidatorRegex.test(userInput);
+
+        // console.log(isValid); // prints false
+
+        // Identifies, Quantifiers
+
+        // IDENTIFIERS
+        // const myRegex = new RegExp('g'); // regex that checks if the letter g is in the string
+
+        const string1 = 'my favorite food is steak';
+        const string2 = 'my favorite thing to do is code';
+
+        // console.log(myRegex.test(string1)); // prints false
+        // console.log(myRegex.test(string2)); // prints true because there is 'g' in the string
+
+        // const myRegex2 = new RegExp('favorite'); // entire word
+
+        // console.log(myRegex2.test(string1)); // prints true
+        // console.log(myRegex2.test(string2)); // also prints true
+
+        // const myRegex = new RegExp('FavoritE');
+
+        // console.log(myRegex.test(string1)); // false
+        // console.log(myRegex.test(string2)); // false, regex is case sensitive
+
+        // console.log(/g/.test(string2)); // prints true since string2 contains 'g'
+
+        // console.log(/[A-Z]/.test(string1)); // checking if there are any uppercase letters, false
+        // console.log(/[a-z]/.test(string1)); // if there are any lowervase letters, true
+        // console.log(/[0-9]/.test(string1)); // any numbers from 0 to 9, false
+        // console.log(/[A-Za-z0-9 ]/.test(string1)); // checks if any of the letters are uppercase or lowercase, if from 0 to 9, and if there is also a space (prints true)
+
+        // console.log(/./.test(string1)); // . means every characters, true
+        // console.log(/\d/.test(string1)); // checks if it contains a number, false
+        // console.log(/\s/.test(string1)); // checks if there are any spaces, true
+        // console.log(/\w/.test(string1)); // checks if there are any letters or numbers, true
+
+        // console.log(/^f/.test(string1)); // checks if the first character is an f, false
+        // console.log(/^m/.test(string1)); // checks if the first character is an m, true
+
+        // console.log(/f$/.test(string1)); // checks if the last character is an f, false
+        // console.log(/k$/.test(string1)); // checks if the last character is a k, true
+
+        // console.log(/(code | steak)/.test(string1)); // checks if there is either 'code' or 'steak' in the string, true
+
+        // QUANTIFIERS
+        // console.log(/[a-z]/.exec(string1)); // returns the first instance of a lowercase letter in the string, prints m in an array
+        // console.log(/[a-z]*/.exec(string1)); // any lowercase letter 0 or more times, returns 'my' since m is the first lowercase letter and y is the only remaining character before a space
+        // console.log(/[a-z]+/.exec(string1)); // matches 1 or more after the first instance, prints my
+        // console.log(/[a-z]?/.exec(string1)); // zero or one repetition, prints m
+        // console.log(/[a-z ]/.exec(string1)); // lowercase and checks entire string, prints first 'm' since it is the first instance
+
+        // console.log(/[a-z ]+/.exec(string1)); // checks entire string because of space after z, + makes it print the entire screen
+
+        // Matching a certain amount
+        // console.log(/[a-z ]{5}/.exec(string1)); // prints first 5 characters including spaces
+        // console.log(/[a-z ]{2,6}/.exec(string1)); // prints my fav since v is the upper bounds of the string
+
+        // Flags
+        const myRegex = /[a-z]+/g; // checks all lowercase letters in a string until broken off by a space
+        // console.log(myRegex.exec(string1)); // prints 'my'
+
+        const myString = 'hello world, 2021  @ more of a string';
+        const strRegex = /^[a-z ]+,[0-9 ]+@[a-z ]+$/;
+
+        // + means it matches one or more times
+        // ^ means the start of the string and $ means the end of the string
+
+        console.log(strRegex.exec(myString)); // prints entire myString
+
+        const strRegexSimple = /.+/; // . means any character, + means all of the string
+
+        console.log(strRegexSimple.exec(myString)); // prints entire myString too
 
     </script>
 
