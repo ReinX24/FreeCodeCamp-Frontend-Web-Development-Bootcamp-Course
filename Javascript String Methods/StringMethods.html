@@ -14,11 +14,63 @@
         // replaceAll, toUpperCase, substring, trim, match
 
         // replaceAll
-        const myString = 'My Dog jumped on the bed. My dog is a bad Dog';
+        // const myString = 'My Dog jumped on the bed. My dog is a bad Dog';
 
-        const newString = myString.replaceAll('Dog', 'Cat'); // replacing all occurences of a match
+        // const newString = myString.replaceAll('Dog', 'Cat'); // replacing all occurences of 'Dog'
 
-        console.log(newString);
+        // console.log(newString); // does not replace 'dog' because d is not capitalized
+
+        // const correctString = myString.replaceAll(/[Dd]{1}og/g, 'Cat'); // regex for uppercase or lowercase of 'dog', we need g at the end since we are using the replaceAll method
+
+        // console.log(correctString);
+
+        // toUpperCase
+        // const myString = 'some string';
+        // console.log(myString.toUpperCase());
+
+        // substring
+        // const myString = 'some string';
+        // console.log(myString.substring(2)); // all characters starting at m, prints 'me string'
+        // console.log(myString.substring(5)); // prints 'string'
+        // console.log(myString.substring(5, 7)); // prints 'st', last character is excluded
+
+        // const newString = myString[0].toUpperCase() + myString.substring(1, myString.length);
+        // console.log(newString); // prints 'Some string'
+
+        // trim
+        // const externalData = [
+        //     {
+        //         title: 'How to code   ',
+        //         author: '  Zach'
+        //     },
+        //     {
+        //         title: 'What is Vim?',
+        //         author: '  Zach'
+        //     },
+        //     {
+        //         title: '   How do loops work in Javascript?   ',
+        //         author: '  Zach'
+        //     }
+        // ];
+
+        // for (let i = 0; i < externalData.length; i++) {
+        //     externalData[i].title = externalData[i].title.trim();
+        //     externalData[i].author = externalData[i].author.trim();
+        // }
+
+        // console.log(externalData); // no whitespaces at starts and ends
+
+        // match method
+        // const myRegex = /[a-z]+/; // checks for all lowercase letters
+        // const myString = 'awoahfhawefhaweuifhlwuiefhawil123151241fswefwefwe';
+
+        // console.log(myRegex.exec(myString)); // prints all lowercase letters until it reaches numbers, after that it stops
+        // console.log(myString.match(myRegex)); // using match method
+
+        // const allLowerCaseRegex = /[a-z]+/g;
+        // console.log(myString.match(allLowerCaseRegex)); // prints all lowercase letters, they are separated into 2 elements within an array due to the number between them
+
+        
 
     </script>
 

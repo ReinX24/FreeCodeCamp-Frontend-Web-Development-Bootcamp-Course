@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+
+    <script>
+
+        // let myArray = [1, 2, 3, 5, 6];
+
+        // myArray.pop(); // removes the last element (6)
+        // myArray.pop(); // removes the last element again (5)
+        // myArray.push(4, 5, 6); // adds 4, 5, 6
+        // myArray.unshift(0); //adds a 0 at the start
+
+        // console.log(myArray); // 0, 1, 2, 3, 4, 5, 6
+
+        // splitm method
+        // Removing 0, 1, and 2
+        // const copyArr = myArray.slice(); // copies the entire array
+
+        // Creating an array that contains elements starting from 3
+        // const anotherCopy = copyArr.slice(3); // starts at index 3 which contains the number 3
+        // console.log(anotherCopy); // 3, 4, 5, 6
+
+        // splice
+        // const numArr = [1, 2, 3, 'oops', 4, 5, 6];
+
+        // Removing 'oops'
+        // numArr.splice(3, 1, 3.5); // start index, elements to be removed, element that will replace removed elements
+
+        // console.log(numArr);
+
+        // When it comes to arrays, we can change it immediately rather than changing it then reassigning its new version to itself
+
+        // indexOf and findIndex
+
+        // Using the indexOf method
+        // const numArr = [1, 2, 3, 3.5, 4, 5, 6];
+        // console.log(numArr.indexOf(3.5)); // prints 3, the index of 3.5
+        // console.log(numArr[numArr.indexOf(3.5)]); // prints 3.5
+
+        // Using the findIndex method
+        // const moreComplexArr = [
+        //     {
+        //         firstName: 'Bob',
+        //         lastName: 'Smith'
+        //     },
+        //     {
+        //         firstName: 'Alice',
+        //         lastName: 'Smith'
+        //     },
+        //     {
+        //         firstName: 'Jon',
+        //         lastName: 'Smith'
+        //     },
+        //     {
+        //         firstName: 'Jon',
+        //         lastName: 'Doe'
+        //     }
+        // ];
+
+        // console.log(moreComplexArr.findIndex((arrItem) => { return arrItem.lastName != 'Smith' })); // returns the first instance of lastName not being 'Smith', prints 3
+
+        // map method
+
+        const blogPostsFromDatabase = [
+            {
+                title: 'How to use the map() function',
+                category: 'uncategorized'
+            },
+            {
+                title: 'What is Javascript?',
+                category: 'uncategorized'
+            },
+            {
+                title: 'Why are you crazy enough to learn to code?',
+                category: 'uncategorized'
+            }
+        ];
+
+        blogPostsFromDatabase.map((eachObject) => {
+            eachObject.category = 'Web Development';
+            return eachObject; // we need to return
+        }); // using a callback function and map function to change category of objects
+
+    </script>
+
+</body>
+
+</html>
