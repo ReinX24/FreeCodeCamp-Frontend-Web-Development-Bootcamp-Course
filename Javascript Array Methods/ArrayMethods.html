@@ -69,25 +69,142 @@
 
         // map method
 
-        const blogPostsFromDatabase = [
-            {
-                title: 'How to use the map() function',
-                category: 'uncategorized'
-            },
-            {
-                title: 'What is Javascript?',
-                category: 'uncategorized'
-            },
-            {
-                title: 'Why are you crazy enough to learn to code?',
-                category: 'uncategorized'
-            }
-        ];
+        // const blogPostsFromDatabase = [
+        //     {
+        //         title: 'How to use the map() function',
+        //         category: 'uncategorized'
+        //     },
+        //     {
+        //         title: 'What is Javascript?',
+        //         category: 'uncategorized'
+        //     },
+        //     {
+        //         title: 'Why are you crazy enough to learn to code?',
+        //         category: 'uncategorized'
+        //     }
+        // ];
 
-        blogPostsFromDatabase.map((eachObject) => {
-            eachObject.category = 'Web Development';
-            return eachObject; // we need to return
-        }); // using a callback function and map function to change category of objects
+        // blogPostsFromDatabase.map((eachObject) => {
+        //     eachObject.category = 'Web Development';
+        //     return eachObject; // we need to return
+        // }); // using a callback function and map function to change category of objects
+
+        // console.log(blogPostsFromDatabase);
+
+        // const numArr = [1, 2, 3];
+
+        // for (let i = 0; i < numArr.length; i++) {
+        //     console.log(numArr[i]); // prints each element
+        // }
+
+        // Using forEach method
+        // numArr.forEach(arrItem => {
+        // console.log(arrItem);
+        // });
+
+        // Using forEach method parameters
+        // numArr.forEach((arrItem, itemIndex) => {
+        // console.log(arrItem);
+        // console.log(itemIndex);
+        // });
+
+        // const myColors = ['blue', 'red', 'purple', 'orange', 'green'];
+
+        // Using a standard for loop to find if a certain element exists within the array
+        // let orangeExists = false;
+        // for(let i = 0; i < myColors.length; i++) {
+        //     if (myColors[i] == 'orange') {
+        //         orangeExists = true;
+        //     }
+        // }
+        // console.log(orangeExists);
+
+        // Using the forEach method
+        // myColors.forEach(arrItem => {
+        // if (arrItem == 'orange') {
+        // orangeExists = true;
+        // }
+        // });
+        // console.log(orangeExists);
+
+        // Using includes method
+        // console.log(myColors.includes('orange')); // prints true
+        // console.log(myColors.indexOf('orange') !== -1); // prints true, -1 means it does not exist
+
+        // filter method
+        // const allOrders = [
+        //     {
+        //         productName: 'Tea pot',
+        //         isDigital: false,
+        //         isCancelled: false,
+        //         isOpen: false
+        //     },
+        //     {
+        //         productName: 'Blue Gildan Mens Hoodie',
+        //         isDigital: false,
+        //         isCancelled: true,
+        //         isOpen: false
+        //     },
+        //     {
+        //         productName: 'Code Complete Kindle Book',
+        //         isDigital: true,
+        //         isCancelled: true,
+        //         isOpen: false
+        //     },
+        //     {
+        //         productName: 'Atomic Habits Kindle Book',
+        //         isDigital: true,
+        //         isCancelled: false,
+        //         isOpen: false
+        //     }
+        // ];
+
+        // const digitalOrders = allOrders.filter(arrItem => {
+        //     return arrItem.isDigital; // returns orders with true values in isDigital
+        //     // stores isDigital objects inside digital orders
+        // });
+
+        // // console.log(digitalOrders);
+
+        // const digitalCancelledOrders = allOrders.filter(arrItem => {
+        //     return arrItem.isDigital && arrItem.isCancelled; // returns orders that are digital and are cancelled
+        // });
+
+        // console.log(digitalCancelledOrders);
+
+        // const numArr = [10, 20, 30, 25, 14];
+        // let numSum = 0;
+
+        // // for (let i = 0; i < numArr.length; i++) {
+        // //     numSum += numArr[i];
+        // // }
+
+        // numArr.map(eachNum => {
+        //     numSum += eachNum;
+        // });
+
+        // // console.log(numSum); // prints 99
+
+        // function reducerCallback(numSum, arrItem) {
+        //     return numSum += arrItem;
+        // }
+
+        // const myResult = numArr.reduce(reducerCallback, 0);
+        // // callback function, variable that will hold our results
+
+        // console.log(myResult); // prints 99
+
+        // const myAverage = numArr.reduce((numSum, eachItem) => numSum += eachItem, 0) / numArr.length;
+
+        // console.log(myAverage);
+
+        const object1 = { prop1: 'some value' };
+        const object2 = { prop2: 'some value' };
+
+        // console.log(object1 == object2); // prints false
+        // console.log(object1 === object2); // prints false
+
+        
 
     </script>
 
