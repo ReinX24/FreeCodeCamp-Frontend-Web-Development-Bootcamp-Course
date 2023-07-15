@@ -1,0 +1,18 @@
+.some-class {
+    color: red;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.red-color {
+    color: red;
+}
+
+.div-1,
+.div-2 {
+    border: 1px solid black;
+    margin: 20px;
+}
+
