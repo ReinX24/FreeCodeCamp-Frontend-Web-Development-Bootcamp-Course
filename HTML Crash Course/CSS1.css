@@ -16,3 +16,10 @@
     margin: 20px;
 }
 
+.some-style {
+    border: 6px solid black;
+}
+
+.some-class-value {
+    color: green;
+}
