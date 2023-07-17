@@ -1,0 +1,36 @@
+body {
+    background-color: #111426;
+    color: #fff;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.main-body {
+    padding: 30px;
+    margin: 20px;
+    border: 1px solid white;
+    background-color: #1B2440;
+    box-shadow: 1px 0px 2px 1px #fff;
+}
+
+.add-item-button,
+.delete-item-button {
+    background-color: #111426;
+    color: #fff;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 8px;
+}
+
+#list-text {
+    background-color: #111426;
+    color: #fff;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 8px;
+}
+
+li {
+    /* list-style-type: none; removes bullets from list items */
+    padding: 8px;
+}
