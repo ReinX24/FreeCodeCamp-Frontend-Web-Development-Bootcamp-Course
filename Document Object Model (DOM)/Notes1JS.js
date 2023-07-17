@@ -38,7 +38,7 @@ function addParagraph() {
 }
 */
 
-// btn.addEventListener('click', addParagraph); // registering an event to our button
+// btn.addEventListener('click', addParagraph); // registfering an event to our button
 // btn.onclick = addParagraph; // another way of registering a click event
 
 const myList = document.querySelector('ul');

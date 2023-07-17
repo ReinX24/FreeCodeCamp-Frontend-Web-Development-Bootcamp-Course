@@ -1,0 +1,22 @@
+body {
+    background-color: #111426;
+    color: #fff;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.main-body {
+    padding: 30px;
+    margin: 20px;
+    border: 1px solid white;
+    background-color: #1B2440;
+    box-shadow: 1px 0px 2px 1px #fff;
+}
+
+.random-number-button {
+    background-color: #111426;
+    color: #fff;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 8px;
+}
