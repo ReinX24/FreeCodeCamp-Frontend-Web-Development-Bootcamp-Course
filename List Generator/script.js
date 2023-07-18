@@ -6,16 +6,20 @@ const addButton = document.querySelector('.add-item-button');
 const itemList = document.querySelector('ul');
 
 function addItem() {
-    const itemToAdd = inputText.value;
-    const itemElementCheckBox = document.createElement('input');
-    itemElementCheckBox.type = 'checkbox';
+    if (inputText.value.length !== 0) {
+        const itemToAdd = inputText.value;
+        const itemElementCheckBox = document.createElement('input');
+        itemElementCheckBox.type = 'checkbox';
 
-    const itemElement = document.createElement('li');
-    // itemElement.innerHTML = "<li></li>";
-    itemElement.textContent = itemToAdd;
+        const itemElement = document.createElement('li');
+        // itemElement.innerHTML = "<li></li>";
+        itemElement.textContent = itemToAdd;
 
-    // itemList.appendChild(itemElementCheckBox);
-    itemList.appendChild(itemElement);
+        // itemList.appendChild(itemElementCheckBox);
+        itemList.appendChild(itemElement);
+    } else {
+        alert('Enter item content!');
+    }
 }
 
 addButton.onclick = addItem;
@@ -32,3 +36,12 @@ function removeItem() {
 }
 
 removeButton.onclick = removeItem;
+
+// Inserting a paragraph element above an existing paragraph element
+/*
+const firstPElement = document.querySelectorAll('p').item(0); // first p instance
+const parentPElement = document.querySelector('.main-body');
+const insertP = document.createElement('p');
+insertP.textContent = 'Added text above an existing paragraph element';
+parentPElement.insertBefore(insertP, firstPElement);
+*/
