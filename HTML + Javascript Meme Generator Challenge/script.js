@@ -3,30 +3,15 @@
 * TODO: Implement a function that clears all the content
 * prior to generating new random content
 */
-
-let memeGenerated = false;
-let jokeGenerated = false;
-let quoteGenerated = false;
 let riddleGenerated = false;
 let riddleAnswerShown = false;
 
 function clearAll() {
     // Check if any text or images has already been generated, remove their contents if true
-    if (memeGenerated) {
-        const memeDiv = document.querySelector('#meme-div');
-        memeDiv.removeChild(memeDiv.lastChild);
-    }
-
-    if (jokeGenerated) {
-        const jokeDiv = document.querySelector('#joke-div');
-        jokeDiv.removeChild(jokeDiv.lastChild);
-    }
-
-    if (quoteGenerated) {
-        const quoteDiv = document.querySelector('#quote-div');
-        quoteDiv.removeChild(quoteDiv.lastChild);
-        quoteDiv.removeChild(quoteDiv.lastChild);
-    }
+    document.querySelector('#meme-div').innerHTML = '';
+    document.querySelector('#joke-div').innerHTML = '';
+    document.querySelector('#quote-div').innerHTML = '';
+    document.querySelector('#meme-div').innerHTML = '';
 
     if (riddleGenerated) {
         const riddleDiv = document.querySelector('#riddle-div');
@@ -35,18 +20,10 @@ function clearAll() {
     }
 
     // Reset boolean values
-    memeGenerated = false;
-    jokeGenerated = false;
-    quoteGenerated = false;
     riddleGenerated = false;
     riddleAnswerShown = false;
 }
 
-/**
-* DONE: 
-* - Show a random Meme in the correct location
-* - Never show more than 1 meme at a time
-*/
 function showMeme() {
     // Clear all elements before doing anything
     clearAll();
@@ -57,17 +34,9 @@ function showMeme() {
     newImg.alt = 'programmer meme';
     newImg.src = randomMemeUrl;
     // Inserting image element in our meme-div
-    const memeDiv = document.querySelector('#meme-div');
-    memeDiv.appendChild(newImg);
-    // Checking if a meme has already generated
-    memeGenerated = true;
+    document.querySelector('#meme-div').appendChild(newImg);
 }
 
-/**
-* DONE: 
-* - Show a random joke in the correct location
-* - Never show more than 1 joke at a time
-*/
 function showJoke() {
     // Clears all elements first
     clearAll();
@@ -77,17 +46,9 @@ function showJoke() {
     const newJoke = document.createElement('p');
     newJoke.textContent = randomJokeText;
     // Add p element with text to our joke-div
-    const jokeDiv = document.querySelector('#joke-div');
-    jokeDiv.appendChild(newJoke);
-    // Set jokeGenerated to true
-    jokeGenerated = true;
+    document.querySelector('#joke-div').appendChild(newJoke);
 }
 
-/**
-* DONE: 
-* - Show a random quote in the correct location
-* - Never show more than 1 quote at a time
-*/
 function showQuote() {
     // Clear all elements first
     clearAll();
@@ -102,8 +63,6 @@ function showQuote() {
     const quoteDiv = document.querySelector('#quote-div');
     quoteDiv.appendChild(newQuote);
     quoteDiv.appendChild(quoteAuthor);
-    // Set quoteGenerated to true
-    quoteGenerated = true;
 }
 
 /**
