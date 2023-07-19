@@ -3,25 +3,13 @@
 * TODO: Implement a function that clears all the content
 * prior to generating new random content
 */
-let riddleGenerated = false;
-let riddleAnswerShown = false;
 
 function clearAll() {
     // Check if any text or images has already been generated, remove their contents if true
     document.querySelector('#meme-div').innerHTML = '';
     document.querySelector('#joke-div').innerHTML = '';
     document.querySelector('#quote-div').innerHTML = '';
-    document.querySelector('#meme-div').innerHTML = '';
-
-    if (riddleGenerated) {
-        const riddleDiv = document.querySelector('#riddle-div');
-        riddleDiv.removeChild(riddleDiv.lastChild);
-        riddleDiv.removeChild(riddleDiv.lastChild);
-    }
-
-    // Reset boolean values
-    riddleGenerated = false;
-    riddleAnswerShown = false;
+    document.querySelector('#riddle-div').innerHTML = '';
 }
 
 function showMeme() {
@@ -75,44 +63,35 @@ function showRiddle() {
     clearAll();
     // Value should be in format: { question: '', answer: '' }
     const randomRiddle = getRandomData('riddles');
+    const { question, answer } = randomRiddle;
     // Create p elements to hold riddle and answer for riddle
     const newRiddle = document.createElement('p');
-    newRiddle.textContent = randomRiddle.question;
     const riddleAnswer = document.createElement('p');
-    riddleAnswer.textContent = randomRiddle.answer;
+
+    newRiddle.textContent = question;
+
+    riddleAnswer.textContent = 'The answer is: ' + answer;
+    riddleAnswer.setAttribute('id', 'riddle-answer');
     riddleAnswer.hidden = true;
-    riddleAnswer.id = 'riddle-answer';
+
     // Adding our p elements to our riddle-div
     const riddleDiv = document.querySelector('#riddle-div');
     riddleDiv.appendChild(newRiddle);
     riddleDiv.appendChild(riddleAnswer);
-    // Set riddleGenerated to true
-    riddleGenerated = true;
 }
 
-/**
-* TODO: Unhide the riddle's answer
-* - If there is no riddle shown, alert the user that there is no riddle
-* - If there is a riddle shown and an answer shown, alert the user
-*   that the answer is already revealed
-* - If there is a riddle shown but no answer, unhide the answer!
-*/
 function revealAnswers() {
+    const riddleDiv = document.querySelector('#riddle-div');
+    const hasRiddle = riddleDiv.querySelector('p');
+    const hasAnswer = document.querySelector('#riddle-answer');
 
-    if (riddleGenerated == false) { // if there is no riddle generated
-        alert('No riddle shown!');
+    if (hasRiddle && hasAnswer.hidden) {
+        hasAnswer.hidden = false;
+    } else if (hasRiddle && !hasAnswer.hidden) {
+        alert('The answer is already revealed');
+    } else {
+        alert('There is no riddle to reveal the answer to!');
     }
-
-    if (riddleGenerated && riddleAnswerShown) { // if the riddle and the answer are already shown
-        alert('Answer already revealed');
-    }
-
-    if (riddleGenerated) { // only the riddle is shown
-        document.querySelector('#riddle-answer').hidden = false;
-        riddleAnswerShown = true;
-    }
-
-
 }
 
 /**
