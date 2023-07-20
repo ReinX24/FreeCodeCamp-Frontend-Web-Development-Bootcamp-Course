@@ -1,9 +1,4 @@
 
-/**
-* TODO: Implement a function that clears all the content
-* prior to generating new random content
-*/
-
 function clearAll() {
     // Check if any text or images has already been generated, remove their contents if true
     document.querySelector('#meme-div').innerHTML = '';
@@ -53,12 +48,6 @@ function showQuote() {
     quoteDiv.appendChild(quoteAuthor);
 }
 
-/**
-* TODO: 
-* - Show a random riddle in the correct location
-* - Never show more than 1 riddle at a time
-* - Always hide the riddle's answer initially
-*/
 function showRiddle() {
     clearAll();
     // Value should be in format: { question: '', answer: '' }
@@ -87,9 +76,9 @@ function revealAnswers() {
 
     if (hasRiddle && hasAnswer.hidden) {
         hasAnswer.hidden = false;
-    } else if (hasRiddle && !hasAnswer.hidden) {
+    } else if (hasRiddle && !hasAnswer.hidden) { // if the answer is already revealed
         alert('The answer is already revealed');
-    } else {
+    } else { // if there is no riddle generated yet
         alert('There is no riddle to reveal the answer to!');
     }
 }
