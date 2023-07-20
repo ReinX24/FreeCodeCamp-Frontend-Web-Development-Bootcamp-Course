@@ -13,8 +13,16 @@ function clearAll() {
 
 function randomAgent() {
     // TODO: finish randomAgent fucntion
-    const newRandomAgent = getRandomData('agent');
-    console.log(newRandomAgent);
+    clearAll();
+    const newRandomAgent = getRandomData('agents');
+    const randomAgentName = document.createElement('p');
+    const randomAgentImg = document.createElement('img');
+    randomAgentName.textContent = newRandomAgent.agentName;
+    randomAgentImg.src = newRandomAgent.agentPhotoLink;
+
+    const randomAgentDiv = document.querySelector('.agent-content');
+    randomAgentDiv.appendChild(randomAgentName);
+    randomAgentDiv.appendChild(randomAgentImg);
 }
 
 function randomMap() {
@@ -35,14 +43,25 @@ randomGunButton.onclick = randomGun;
 randomTriviaButton.onclick = randomTrivia;
 
 function getRandomData(type) {
-    return dataTypes[type][chooseRandomData(dataTypes[type].length)];
+    return data[type][rn(data[type].length)];
 }
 
-const dataTypes = { agent, map, gun, trivia };
+const agents = [
+    { agentName: 'Astra', agentPhotoLink: 'AgentPhotos/astraPhoto.png' },
+    { agentName: 'Breach', agentPhotoLink: 'AgentPhotos/breachPhoto.png' }
+];
+const maps = [];
+const guns = [];
+const trivia = [];
 
-function chooseRandomData(typeChoicesLength) {
-    return Math.floor(Math.random * typeChoicesLength);
+// Just a little helper function
+function rn(len) {
+    return Math.floor(Math.random() * len);
 }
 
-// TODO: for testing purposes, replace with photos in the future
-const agent = ['Brimstone', 'Fade', 'Killjoy'];
+const data = {
+    agents,
+    maps,
+    guns,
+    trivia
+};
