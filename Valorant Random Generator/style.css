@@ -1,6 +1,6 @@
 body {
-    background-color: #008080;
-    color: white;
+    background-color: #BD3944;
+    color: #FFFBF5;
     font-family: monospace;
 }
 
@@ -10,10 +10,11 @@ main {
 }
 
 img {
-    border: 1px solid white;
-    border-radius: 5px;
-    max-width: 350px;
-    width: 50%;
+    border: 1px solid#FFFBF5;
+    border-radius: 10px;
+    max-width: 450px;
+    width: 100%;
+    background-color: #53212B;
 }
 
 p {
@@ -21,19 +22,20 @@ p {
 }
 
 .creator-footer {
+    /* TODO: figure out how to make this centered at the bottom */
     position: absolute;
     right: 20px;
     bottom: 20px;
     font-size: 0.8rem;
-    background-color: #ff3d33;
+    background-color: #53212B;
     padding: 10px;
     border-radius: 5px;
-    color: #eaeff2;
+    color: #FFFBF5;
     box-shadow: 1px 2px 5px 1px rgba(255, 255, 255, 0.2);
 }
 
 a {
-    color: #eaeff2;
+    color: #FFFBF5;
 }
 
 a:hover {
@@ -56,7 +58,7 @@ a:hover {
     width: 30%;
     padding-left: 30px;
     padding-right: 30px;
-    border-left: 1px dotted #eaeff2;
+    border-left: 1px dotted #FFFBF5;
     height: 85vh;
 }
 
@@ -66,15 +68,16 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 35px;
-    border: 1px solid #eaeff2;
+    min-height: 7%;
+    border: 1px solid #FFFBF5;
     background: transparent;
-    color: #eaeff2;
-    border-radius: 5px;
+    color: #FFFBF5;
+    border-radius: 10px;
 }
 
 button:hover {
     cursor: pointer;
-    background-color: #ff3d33;
+    background-color: #53212B;
 }
 
 /* overriding button attributes */
@@ -86,6 +89,7 @@ button:hover {
 
 /* overriding button hover attributes */
 .trivia-answer:hover {
-    color: #eaeff2;
+    color: #FFFBF5;
     background-color: transparent;
+    opacity: 0.8;
 }
