@@ -69,16 +69,23 @@ function randomTrivia() {
     randomTriviaQuestion.textContent = newRandomTrivia.triviaQuestion;
     randomTriviaAnswer.textContent = newRandomTrivia.triviaAnswer;
     randomTriviaAnswer.hidden = true; // to be hidden for now
+    randomTriviaAnswer.id = 'answer-text';
 
     const randomTriviaDiv = document.querySelector('.trivia-content');
     randomTriviaDiv.appendChild(randomTriviaQuestion);
     randomTriviaDiv.appendChild(randomTriviaAnswer);
 }
 
+function showTriviaAnswer() {
+    const triviaDiv = document.querySelector('.trivia-content');
+    triviaDiv.querySelector('#answer-text').hidden = false;
+}
+
 randomAgentButton.onclick = randomAgent;
 randomMapButton.onclick = randomMap;
 randomGunButton.onclick = randomGun;
 randomTriviaButton.onclick = randomTrivia;
+triviaAnswerButton.onclick = showTriviaAnswer;
 
 function getRandomData(type) {
     return data[type][rn(data[type].length)];
