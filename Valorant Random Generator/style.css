@@ -21,17 +21,22 @@ p {
     color: #eaeff2;
 }
 
+/* aligning the contents inside our footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
 .creator-footer {
-    /* TODO: figure out how to make this centered at the bottom */
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
     font-size: 0.8rem;
     background-color: #53212B;
     padding: 10px;
     border-radius: 5px;
     color: #FFFBF5;
-    box-shadow: 1px 2px 5px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 1px 2px 5px 1px rgba(255, 251, 251, 0.2);
 }
 
 a {
