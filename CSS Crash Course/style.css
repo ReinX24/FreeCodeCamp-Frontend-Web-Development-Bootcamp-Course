@@ -1,0 +1,23 @@
+/* Using tags */
+/* p {
+    color:red;
+} */
+
+/* Using classes */
+/* .para-elem {
+    color: green;
+} */
+
+/* Using ids */
+/* #para-id {
+    color: blue;
+} */
+
+/* li {
+    color: green;
+} */
+
+/* Selecting HTML elements using combinators */
+.main-containter li {
+    color: green;
+}
