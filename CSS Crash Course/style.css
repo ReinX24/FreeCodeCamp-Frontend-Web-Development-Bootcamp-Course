@@ -18,6 +18,206 @@
 } */
 
 /* Selecting HTML elements using combinators */
-.main-containter li {
+/* For all descendants, which means all tags within that tag */
+/* .main-container li {
+    color: green;
+} */
+
+/* Selecting all child elements of an HTML tag with an id */
+/* For all children, which means all tags directly under a tag */
+/* #main > p {
+    color: green;
+} */
+
+/* Only selects the first sibling of an element */
+/* This makes the text color of the first paragraph element after our ul element blue */
+/* ul+p {
+    color: blue;
+} */
+
+/* Selects all the siblings of an element, looks for a ul element and selects all p elements after that tag */
+/* ul~p {
+    color: green;
+} */
+
+/* Selecting tags with the same class */
+/* .blue-text-color {
+    color: blue;
+} */
+
+/* Selecting an element with its tag and class name */
+/* Only selects p tags instead of all classes with the same name */
+/* p[class="regular-text"] {
+    color: blue;
+} */
+
+/* .box-1 {
+    border: 1px solid green;
+    padding: 20px;
+    color: green;
+} */
+
+/* .box-2 {
+    border: 1px solid blue;
+    padding: 20px;
+    color: blue;
+} */
+
+/* Selecting 2 classes at once */
+/* .box-1,
+.box-2 {
+    width: 200px;
+    height: 200px;
+} */
+
+/* Selecting 2 elements by using an identical class name */
+/* .box {
+    width: 200px;
+    height: 200px;
+} */
+
+/* Using pseudo classes to select elements */
+/* button {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 20px;
+} */
+
+/* Applies if the user is hovering over a button element */
+/* button:hover {
+    cursor: pointer;
+    opacity: 80%;
+} */
+
+/* First color */
+/* p {
+    color: red;
+} */
+
+/* Overrides first color which is red, replaces it with blue */
+/* .main-text {
+    color: blue;
+} */
+
+/* Overrides the second color which is blue, replaces it with green */
+/* #first-paragraph {
+    color: green;
+} */
+
+/* The one that is written last will be the one that will take effect */
+/* li {
     color: green;
 }
+
+li {
+    color: blue;
+} */
+
+/* The more specific the selector, the more it will be prioritized */
+/* Overrides all selectors below because it uses the id, which is the most specific way of selecting an element */
+/* #list-item-1 {
+    color: orange;
+} */
+
+/* .list-item {
+    color: blue;
+} */
+
+/* This will not apply since the one above is more specific */
+/* li {
+    color: red;
+} */
+
+/* 
+    Specificity Chart
+    tag - least specific
+    class - more specific
+    id - most specifit
+*/
+
+/* The more specific the selector, the more it will be prioritized amongst others */
+/* ol #list-item-1 {
+    color: orange;
+} */
+
+/* #list-item-1 {
+    color: blue;
+} */
+
+/* 
+    ID selectors - 1
+    Class selectors - 0
+    Tag selectors - 1
+    
+    Specifity value: 101
+*/
+/* ol #list-item-1 {
+    color: orange;
+} */
+
+/* 
+    ID selectors - 1
+    Class selectors - 0
+    Tag selectors - 0
+    
+    Specifity value: 100
+*/
+/* #list-item-1 {
+    color: blue;
+} */
+
+/* Calculating "Specifity" Value */
+
+/* 
+    Number of ID selectors - 0
+    Number of class selectors - 2
+    Number of tag selectors - 0
+    Total "Specifity" - 020
+*/
+/* .my-container .my-text {
+    color: red;
+} */
+
+/* 
+    Number of ID selectors - 1
+    Number of class selectors - 0
+    Number of tag selectors - 1
+    Total "Specifity" - 101
+*/
+/* div #text-id {
+    color: green;
+} */
+
+/* 
+    Number of ID selectors - 2
+    Number of class selectors - 0
+    Number of tag selectors - 0
+    Total "Specifity" - 200
+*/
+/* #container-id #text-id {
+    color: orange;
+} */
+
+/* Will not take in effect, inline CSS overrides all selectors in a CSS file */
+/* p { */
+/* color: orange; */
+/* Overriding all other CSS effects using the !important keyword */
+/* color: orange !important;
+    padding: 50px !important; */
+/* Note: as much as possible, do not use the !important keyword */
+/* }  */
+
+/* Centering text inside a div */
+/* div {
+    background-color: navy;
+    color: white;
+    width: 200px;
+    height: 200px;
+
+    line-height: 200px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border: 5px solid green;
+    border-radius: 5px;
+} */
