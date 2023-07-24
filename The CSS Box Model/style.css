@@ -1,0 +1,25 @@
+/* 
+    padding - border space within the box
+    margin - border space outside the box
+*/
+/* div {
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid black;
+    width: 400px;
+    height: 100px;
+    box-sizing: border-box;
+} */
+
+/* 
+    box-sizing; border-box;
+        - this makes it so that the width and height is the exact size of the box,
+        regardless of the dimensions of our margins and paddings.
+*/
+
+/* Elements will have display set to block by default, which stacks elements
+on top of each other */
+p {
+    border: 1px solid red;
+    width: 25%;
+}
