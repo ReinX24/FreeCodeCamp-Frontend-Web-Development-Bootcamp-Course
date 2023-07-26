@@ -20,6 +20,39 @@
 /* Elements will have display set to block by default, which stacks elements
 on top of each other */
 p {
-    border: 1px solid red;
+    outline: 3px solid red;
     width: 25%;
+}
+
+a {
+    /* outline: 3px solid purple; */
+    /* This is an inline element, which means we cannot resize it normally as block elements */
+    /* height: 500px; */
+    /* margin-top: 200px; */
+    /* margin-bottom: 200px; */
+    /* Padding does take effect but it does not affect the layout of the text */
+    /* padding-top: 500px; */
+    /* padding-bottom: 200px; */
+    /* You can use font-size to change the size of the font, not recommended */
+    /* font-size: 200%; */
+}
+
+.btn {
+
+    background: lightblue;
+    color: black;
+    /* This link / button element is considered to be an inline element,
+    because of this, it does not apply margins but it does apply padding */
+    /* margin-top: 100px; */
+    padding: 25px 75px;
+    /* To make these margins work, we will change the display to 
+    inline-block, inline block will apply width and height changes */
+    /* height, width */
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: darkblue;
+    color: white;
 }

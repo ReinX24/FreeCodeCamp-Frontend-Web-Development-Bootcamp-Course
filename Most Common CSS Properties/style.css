@@ -1,0 +1,135 @@
+/* ul {
+    position: fixed;
+} */
+
+/* Making our navbar have no spaces around it */
+h4 {
+    margin: 0;
+    line-height: 60px;
+    /* makes text in navbar centered */
+    padding-left: 10px;
+}
+
+/* body { */
+/* margin: 0; */
+/* } */
+
+nav {
+    background-color: navy;
+    height: 60px;
+    color: white;
+    /* makes the navbar stay at the top */
+    position: fixed;
+    /* takes up the entire width of the visible screen */
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* so that boxes that are relative in position will appear under */
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin: 20px;
+}
+
+.boxes {
+    /* so that out content does not overlap with the navbar */
+    margin-top: 80px;
+}
+
+.rel-position {
+    /* this box now goes on top of our navbar when we scroll down */
+    position: relative;
+    top: 10px;
+    width: 500px;
+    font-size: 24px;
+}
+
+/* html { */
+/* font-size: 16px; */
+/* } */
+
+.abs-position {
+    /* in order for absolute to work properly, it needs its parents or 
+    grandparent component to be relative, if not, it will use the window
+    as reference for its positioning */
+    position: absolute;
+    /* using percentages to set sizes (recommended) */
+    width: 80%;
+    height: 20px;
+    background-color: orange;
+    /* 20 px from the top */
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* using em and rem units to set font sizes (recommended) */
+    /* 1rem: 100% of the size of the root element (in this case html) */
+    /* font-size: 1.2rem; */
+    /* 1em: 100% of the size of the parent element (in this case .rel-position) */
+    font-size: 1em;
+}
+
+/* setting font family, 'Specific family', fallback font */
+/* 16px is the standard value for font in a webpage */
+/* when using font-weight, you can only use imported fonts */
+/* body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+} */
+
+/* .thick-font {
+    font-weight: 900;
+} */
+
+/* .original {
+    font-weight: 400;
+} */
+
+/* line height dictates the height of each line of text */
+/* p {
+    line-height: 2rem;
+    color: black;
+} */
+
+/* #overlay {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(235, 52, 137, 0.5);
+} */
+
+body {
+    background-color: green;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+p,
+h1 {
+    margin: 0;
+}
+
+h1 {
+    padding-top: 50px;
+}
+
+.main-content {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://burst.shopifycdn.com/photos/perfect-yellow-flower.jpg?width=1200&format=pjpg&exif=1&iptc=1');
+    /* makes sure the entire photo covers the component */
+    background-size: cover;
+    /* photo does not repeat if the screen is too large */
+    background-repeat: no-repeat;
+    /* start at the right side */
+    background-position: right;
+}
+
+div {
+    width: 200px;
+}
