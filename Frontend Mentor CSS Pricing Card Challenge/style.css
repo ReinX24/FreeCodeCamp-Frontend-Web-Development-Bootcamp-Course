@@ -1,0 +1,76 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    background-color: hsl(204, 43%, 93%);
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    border: 1px solid red;
+    padding: 10%;
+}
+
+.top-box {
+    border: 1px solid red;
+    padding: 3%;
+    background-color: white;
+}
+
+.join-header {
+    color: hsl(179, 62%, 43%);
+}
+
+.day-header {
+    color: hsl(71, 73%, 54%);
+}
+
+.access-paragraph {
+    color: hsl(218, 22%, 67%);
+}
+
+.bottom-box {
+    display: flex;
+}
+
+.subscription-box {
+    border: 1px solid red;
+    flex: 50%;
+    padding: 3%;
+    background-color: hsl(179, 62%, 43%);
+}
+
+.subscription-header {
+    color: white;
+}
+
+.price-paragraph {
+    color: white;
+}
+
+.price-text {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.full-access-paragraph {
+    color: white;
+}
+
+.sign-up {
+    width: 90%;
+    height: 20%;
+}
+
+.why-box {
+    border: 1px solid red;
+    flex: 50%;
+}
