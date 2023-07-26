@@ -1,0 +1,26 @@
+.main-container {
+    display: flex;
+}
+
+
+.green-box {
+    border: 2px solid green;
+    color: green;
+}
+
+.blue-box {
+    border: 2px solid blue;
+    color: blue;
+}
+
+/* instead of setting each attribute individually, we instead
+set their attributes together at the same time */
+.green-box,
+.blue-box {
+    /* instead of using width, we use flex then a percentage, 
+    takes up 50% of the parent div */
+    flex: 50%;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+}

@@ -102,21 +102,22 @@ nav {
     background-color: rgba(235, 52, 137, 0.5);
 } */
 
+/* 
 body {
     background-color: green;
     margin: 0;
     color: white;
     text-align: center;
-}
+} */
 
-p,
+/* p,
 h1 {
     margin: 0;
-}
+} */
 
-h1 {
+/* h1 {
     padding-top: 50px;
-}
+} */
 
 .main-content {
     width: 100vw;
@@ -130,6 +131,20 @@ h1 {
     background-position: right;
 }
 
+/* margin: top right bottom left */
 div {
     width: 200px;
+    height: 200px;
+    background-color: green;
+    /* margin: 20px 5px 10px 20px; */
+    /* extended version of margin: */
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border: 5px solid black;
+    /* extended version of border: */
+    /* border-width: 5px;
+    border-color: black;
+    border-style: solid; */
 }
