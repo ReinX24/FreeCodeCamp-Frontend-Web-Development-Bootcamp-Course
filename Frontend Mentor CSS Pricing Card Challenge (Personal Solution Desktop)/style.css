@@ -1,0 +1,108 @@
+.attribution {
+    font-size: 100%;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    background-color: hsl(204, 43%, 93%);
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main-container {
+    margin: 9% 30% 2% 30%;
+}
+
+.top-box {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 4% 12% 4% 6%;
+    background-color: white;
+}
+
+.top-box h2 {
+    color: hsl(179, 62%, 43%);
+    line-height: 170%;
+}
+
+.day-paragraph {
+    color: hsl(71, 73%, 54%);
+    font-size: 110%;
+    font-weight: 900;
+}
+
+.access-paragraph {
+    color: hsl(218, 22%, 67%);
+    line-height: 200%;
+}
+
+.bottom-box {
+    display: flex;
+}
+
+.subscription-box {
+    flex: 50%;
+    padding: 5%;
+    background-color: hsl(179, 62%, 43%);
+    border-bottom-left-radius: 10px;
+}
+
+.subscription-header {
+    color: white;
+}
+
+.price-access-paragraph {
+    display: flex;
+    align-items: center;
+}
+
+.price-text {
+    color: white;
+    font-weight: 900;
+    font-size: 32px;
+    padding-right: 3%;
+}
+
+.price-paragraph {
+    color: white;
+    opacity: 70%;
+}
+
+.full-access-paragraph {
+    color: white;
+    padding-bottom: 5%;
+    font-size: 105%;
+}
+
+.sign-up {
+    width: 90%;
+    height: 20%;
+    background-color: hsl(71, 73%, 54%);
+    color: white;
+    font-size: 105%;
+    font-weight: 900;
+    border-radius: 10px;
+    border: 1px solid hsl(71, 73%, 54%);
+}
+
+.why-box {
+    flex: 50%;
+    color: white;
+    padding: 5%;
+    background-color: hsl(179, 62%, 43%, 75%);
+    border-bottom-right-radius: 10px;
+}
+
+.why-box p {
+    padding-right: 25%;
+    line-height: 180%;
+    opacity: 70%;
+    font-size: 90%;
+}
