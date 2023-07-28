@@ -1,0 +1,71 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* 
+    Setting box-sizing to border-box so that the elements will behave properly
+    box-sizing will include the padding, border, etc in calculating the box's
+    width and height. This means that instead of padding, borders, etc. adding
+    to the box's total width and height, it will not instead go inwards the box,
+    which does not add any width or height to the box.
+ */
+html {
+    box-sizing: border-box;
+}
+
+/* 
+    Selecting all elements and making them have their box-sizing set to border-box 
+*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Headers and paragraphs have margins by default, to fix this we will set these to 0 */
+h2,
+h4,
+p {
+    margin: 0;
+}
+
+#card {
+    width: 600px;
+    height: 350px;
+    border: 3px solid red;
+}
+
+#top-section {
+    width: 100%;
+    height: 40%;
+    border: 2px solid green;
+}
+
+#bottom-section {
+    width: 100%;
+    height: 60%;
+    border: 2px solid blue;
+}
+
+/* Making these inline-block means they could sit beside each other */
+#bottom-left-section {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    border: 2px solid orange;
+    vertical-align: top; 
+}
+
+#bottom-right-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
+    vertical-align: top;
+}
