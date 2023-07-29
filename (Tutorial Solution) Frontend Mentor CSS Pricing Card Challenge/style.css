@@ -7,6 +7,9 @@
  */
 html {
     box-sizing: border-box;
+    font-family: 'Karla';
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* 
@@ -34,7 +37,7 @@ p {
  breaking out the parent element, this makes all corners all rounded */
 #card {
     width: 600px;
-    height: 350px;
+    height: 400px;
     box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
     border-radius: 5px;
     overflow: hidden;
@@ -76,8 +79,31 @@ p {
     padding: 20px;
 }
 
+#bottom-left-section h4 {
+    margin-bottom: 25px;
+}
+
+#bottom-left-section p {
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+}
+
 button {
     color: white;
+    background-color: #c0df34;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Changing cursor to a pointer */
+/* Making button larger when the user hovers over it using transform and scale */
+button:hover {
+    cursor: pointer;
+    background-color: #A9C42D;
+    transform: scale(1.02);
 }
 
 #bottom-right-section {
@@ -88,4 +114,35 @@ button {
     vertical-align: top;
     background-color: #2EBFBD;
     padding: 20px;
+}
+
+/* Removing bullet points from price card */
+#bottom-right-section ul {
+    padding: 0;
+    list-style: none;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* 1.4 rem means 140% of the root font size, which is 16 px */
+#price {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+#price-frequency {
+    position: relative;
+    top: -3px;
+    font-size: .8rem;
+    opacity: 0.7;
+    margin-left: 5px;
+}
+
+#price-frequency,
+#price {
+    display: inline-block;
+}
+
+#price-container {
+    margin-bottom: 10px;
 }
