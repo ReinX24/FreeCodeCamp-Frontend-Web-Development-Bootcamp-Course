@@ -1,6 +1,16 @@
+.author-footer {
+    margin-top: 25%;
+    background-color: white;
+    color: #2ab2af;
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}
+
 .attribution {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
+    line-height: 200%;
 }
 
 .attribution a {
@@ -149,6 +159,10 @@ button:hover {
 
 @media all and (max-width: 900px) {
 
+    .author-footer {
+        margin-top: 10%;
+    }
+
     body {
         height: 120vh;
     }
@@ -161,7 +175,7 @@ button:hover {
     .top-box {
         height: 35%;
         padding: 5%;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
     .top-box p {
@@ -190,5 +204,6 @@ button:hover {
 
     .bottom-right-section ul {
         line-height: 180%;
+        font-size: 0.85rem;
     }
 }
