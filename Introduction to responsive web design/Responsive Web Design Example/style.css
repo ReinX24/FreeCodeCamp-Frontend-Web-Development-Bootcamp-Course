@@ -1,0 +1,41 @@
+body {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Takes 100 percent of the viewport */
+img {
+    width: 100%;
+}
+
+/* On screen sizes >= 756px, apply these CSS rules */
+/* CSS rules go here */
+/* @media only screen and (min-width: 400px) and (max-width: 600px) {
+
+    h1 {
+        color: red;
+    }
+
+    img {}
+} */
+
+/* 576px */
+/* If the screen width is greater than 576, apply CSS rules */
+@media (min-width: 576px) {
+    img {
+        width: 49%;
+    }
+}
+
+/* 922px */
+@media (min-width: 992px) {
+    img {
+        width: 24%;
+    }
+}
+
