@@ -36,8 +36,8 @@ p {
 /* Making overflow hidden will override any elements within hidden from
  breaking out the parent element, this makes all corners all rounded */
 #card {
-    width: 600px;
-    height: 400px;
+    /* width: 600px;
+    height: 400px; */
     box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
     border-radius: 5px;
     overflow: hidden;
@@ -72,7 +72,7 @@ p {
 /* Making these inline-block means they could sit beside each other */
 #bottom-left-section {
     display: inline-block;
-    width: 50%;
+    width: 100%;
     height: 100%;
     vertical-align: top;
     background-color: #2ab2af;
@@ -109,7 +109,7 @@ button:hover {
 #bottom-right-section {
     display: inline-block;
     vertical-align: top;
-    width: 50%;
+    width: 100%;
     height: 100%;
     vertical-align: top;
     background-color: #2EBFBD;
@@ -145,4 +145,22 @@ button:hover {
 
 #price-container {
     margin-bottom: 10px;
+}
+
+/* @media (max-width: 650px) {
+    #bottom-left-section, #bottom-right-section, #card {
+        width: 100%;
+        height: auto;
+    }
+} */
+
+@media (min-width: 576px) {
+    #card {
+        width: 600px;
+        height: 400px;
+    }
+
+    #bottom-left-section, #bottom-right-section {
+        width: 50%;
+    }
 }

@@ -1,0 +1,90 @@
+/* In this project, we will have a more mobile 
+oriented approach to building our website */
+body {
+    box-sizing: border-box;
+    padding: 1%;
+    font-family: 'Karla', sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.card {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}
+
+.top-box {
+    background-color: white;
+    padding: 5%;
+}
+
+.top-box h2 {
+    color: #8B2A8C;
+}
+
+.top-box h3 {
+    color: #972E99;
+}
+
+.bottom-left-box {
+    background-color: #0FBF9F;
+    padding: 5%;
+    color: white;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    font-size: 48px;
+    font-weight: 700;
+    margin-right: 2%;
+}
+
+.price-frequency {
+    opacity: 0.8;
+}
+
+.free-message {
+    font-weight: 700;
+}
+
+button {
+    margin-top: 5%;
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color: #8B2A8C;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #972E99;
+    transform: scale(1.02);
+}
+
+.bottom-right-box {
+    background-color: #10CCAA;
+    padding: 5%;
+}
+
+.bottom-right-box h2 {
+    color: white;
+}
+
+/* For desktop version */
+@media (min-width: 576px) {
+    
+}
