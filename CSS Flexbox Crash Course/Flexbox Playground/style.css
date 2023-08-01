@@ -1,0 +1,104 @@
+/* .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-content: normal;
+    align-items: normal;
+    flex-wrap: nowrap;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: 5px;
+    flex: 0 1 auto;
+}
+
+.item-3 {
+    display: flex;
+} */
+
+/* Only direct child elements are affected by flex */
+/* .sub-item {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    margin: 1px;
+} */
+
+.fi {
+    background-color: #008080;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+
+    width: 48px;
+    height: 48px;
+}
+
+/* When wrap is enabled, use align content instead of align items */
+.flex-container {
+    width: 400px;
+    height: 200px;
+    border: 4px solid #212226;
+    display: flex;
+}
+
+/* To align items indiviually, use align self */
+/* When we set an item to have a flex-grow of 1, it will take up the remaining space */
+/* 1 3 1 1 = 6 units - 200px empty space / 6 units = 33.33px will be added per unit, 99.99 for item 2 */
+/* 13 units - 250px overflow / 13 units = 19.23px will be added per unit */
+/* 50 - 19.23px = 30.77px */
+/* 400 / 13 = 30.77 */
+/* Setting flex-shrink to 0 will not change its width and height */
+/* flex-basis overrides with and takes x% of the container width */
+/* Flipping element placement using order attribute */
+/* Shorthand flex: 1 1 auto (grow, shrink, basis) */
+.flex-item-1 {
+    flex-basis: 25%;
+    order: 2;
+}
+
+.flex-item-2 {
+    flex-basis: 25%;
+    order: 1;
+}
+
+.flex-item-3 {
+    flex-basis: 25%;
+    order: 3;
+}
+
+.flex-item-4 {
+    flex-basis: 25%;
+    order: 4;
+}
+
+/* .flex-item-1 p {
+    font-size: 3rem;
+} */
+
+@media (min-width: 600px) {
+
+    .flex-item-4 {
+        order: 1;
+    }
+
+    .flex-item-3 {
+        order: 2;
+    }
+
+    .flex-item-2 {
+        order: 3;
+    }
+
+    .flex-item-4 {
+        order: 1;
+    }
+
+}

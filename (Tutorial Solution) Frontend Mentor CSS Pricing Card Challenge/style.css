@@ -67,6 +67,7 @@ p {
     width: 100%;
     height: 55%;
     color: white;
+    display: flex;
 }
 
 /* Making these inline-block means they could sit beside each other */
@@ -156,7 +157,7 @@ button:hover {
 
 @media (min-width: 576px) {
     #card {
-        width: 600px;
+        width: 550px;
         height: 400px;
     }
 
