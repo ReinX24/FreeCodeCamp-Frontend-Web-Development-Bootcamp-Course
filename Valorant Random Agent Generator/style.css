@@ -1,10 +1,15 @@
+/* Mobile first approach */
+html {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Karla', sans-serif;
 }
 
 *,
@@ -21,6 +26,12 @@ body {
     top: 0;
     position: fixed;
     width: 100%;
+    height: 10vh;
+}
+
+.icon {
+    max-width: 70%;
+    height: auto;
 }
 
 .nav-bar-header {
@@ -37,22 +48,80 @@ body {
 }
 
 main {
+    padding-top: 8vh;
     background-color: #20374D;
-    height: 95vh;
+    height: 96vh;
     display: flex;
+    flex-direction: column;
 }
 
 .agent-box {
     flex-basis: 50%;
-    border: 1px solid red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 5% 0% 5%;
+}
+
+.agent-photo {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 
 .button-box {
-    border: 1px solid red;
     flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div.button-box > * {
+    font-weight: 700;
+    width: 50%;
+    height: 14%;
+    color: white;
+    background-color: #BF364F;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+div.button-box > *:hover {
+    cursor: pointer;
+    background-color: #F24968;
+    transform: scale(1.02);
 }
 
 footer {
-    background-color: #3DD9AD;
-    height: 5vh;
+    background-color: #2B997A;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    color: white;
+}
+
+footer a {
+    color: #20374D;
+}
+
+/* For desktop version */
+@media (min-width: 576px) {
+
+    main {
+        flex-direction: row;
+    }
+
+    .agent-box {
+        align-items: start;
+    }
+    div.button-box > * {
+        height: 10%;
+    }
+
 }

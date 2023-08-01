@@ -7,34 +7,38 @@
     <title>Random Agent Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-
+<nav>
+    <div class="nav-bar">
+        <button class="icon-button">
+            <img src="images/valorantIcon.png" alt="valorant icon" class="icon">
+        </button>
+        <h4 class="nav-bar-header">RANDOM AGENT GENERATOR</h4>
+    </div>
+</nav>
 <body>
-    <nav>
-        <div class="nav-bar">
-            <button class="icon-button">
-                <img src="images/valorantIcon.png" alt="" class="icon">
-            </button>
-            <h1 class="nav-bar-header">
-                VALORANT RANDOM AGENT GENERATOR
-            </h1>
-        </div>
-    </nav>
-    <main>
 
+    <main>
         <div class="agent-box">
-            AGENTS
+            <p class="agent-name">Agent Name Here</p>
+            <img src="https://placehold.co/500/png" alt="agent photo" class="agent-photo">
+            <p class="agent-role">Agent Role Here</p>
         </div>
         <div class="button-box">
-            <button class="random-agent-button"></button>
+            <button class="random-agent-button">Random Agent</button>
+            <button class="random-duelist-button">Random Duelist</button>
+            <button class="random-controller-button">Random Controller</button>
+            <button class="random-initiator-button">Random Initiator</button>
+            <button class="random-sentinel-button">Random Sentinel</button>
         </div>
 
     </main>
     <footer>
-
+        <!-- TODO: change this to go to the website's repository -->
+        <p>Valorant Random Agent Generator by <a href="https://github.com/ReinX24">ReinX24</a></p>
     </footer>
     <script src="script.js"></script>
 </body>
