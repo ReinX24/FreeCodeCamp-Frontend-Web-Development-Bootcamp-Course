@@ -62,13 +62,17 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 3% 5% 0% 5%;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .agent-photo {
     border-radius: 10px;
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
     width: auto;
+    border: 2px solid white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
 
 .button-box {
@@ -120,8 +124,10 @@ footer a {
     .agent-box {
         align-items: start;
     }
+
     div.button-box > * {
         height: 10%;
+        font-size: 1.2rem;
     }
 
 }
