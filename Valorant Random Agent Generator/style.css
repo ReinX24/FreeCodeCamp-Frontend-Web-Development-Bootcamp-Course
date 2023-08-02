@@ -117,12 +117,18 @@ footer a {
 /* For desktop version */
 @media (min-width: 576px) {
 
+    .nav-bar {
+        padding-left: 20%;
+    }
+
     main {
         flex-direction: row;
+        padding-left: 20%;
+        padding-right: 20%;
     }
 
     .agent-box {
-        align-items: start;
+        align-items: center;
     }
 
     div.button-box > * {
