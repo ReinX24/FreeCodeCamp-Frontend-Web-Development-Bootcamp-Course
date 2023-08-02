@@ -1,8 +1,41 @@
+const iconButton = document.querySelector('.icon-button');
+const rulesButton = document.querySelector('.rules-button');
 const randomAgentButton = document.querySelector('.random-agent-button');
 const randomDuelistButton = document.querySelector('.random-duelist-button');
 const randomControllerButton = document.querySelector('.random-controller-button');
 const randomInitiatorButton = document.querySelector('.random-initiator-button');
 const randomSentinelButton = document.querySelector('.random-sentinel-button');
+
+function refreshPage() {
+    location.reload();
+}
+
+function showRules() {
+    const rulesContent = document.querySelector('.agent-box');
+    const rulesHeader = document.createElement('h4');
+    const rulesList = document.createElement('ol');
+    const ruleOne = document.createElement('li');
+    const ruleTwo = document.createElement('li');
+    const ruleThree = document.createElement('li');
+    const ruleFour = document.createElement('li');
+
+    rulesContent.innerHTML = '';
+    rulesContent.style.lineHeight = '1.8rem';
+    rulesHeader.textContent = 'Rules (Optional)';
+
+    ruleOne.textContent = 'Roll only once, no re-rolls.';
+    ruleTwo.textContent = 'You are allowed to re-roll if you main the agent and want to try another agent.';
+    ruleThree.textContent = 'Let your teammates know you are using an agent randomizer.';
+    ruleFour.textContent = 'Never surrender!';
+
+    rulesList.appendChild(ruleOne);
+    rulesList.appendChild(ruleTwo);
+    rulesList.appendChild(ruleThree);
+    rulesList.appendChild(ruleFour);
+
+    rulesContent.append(rulesHeader);
+    rulesContent.append(rulesList);
+}
 
 function randomAgent() {
     const roleArr = ['duelists', 'controllers', 'initiators', 'sentinels'];
@@ -33,26 +66,31 @@ function randomSentinel() {
 
 function changePageContent(agentInfo) {
 
-    document.querySelector('.agent-box').innerHTML = '';
+    const agentContent = document.querySelector('.agent-box').innerHTML = '';
 
-    const agentName = document.createElement('p');
+    const agentName = document.createElement('h2');
     const agentRole = document.createElement('p');
     const agentPhoto = document.createElement('img');
-    agentPhoto.classList.add('agent-photo');
+    const agentDescription = document.createElement('p');
 
-    // const agentName = document.querySelector('.agent-name');
-    // const agentRole = document.querySelector('.agent-role');
-    // const agentPhoto = document.querySelector('.agent-photo');
+    agentPhoto.classList.add('agent-photo');
+    agentDescription.classList.add('agent-description');
 
     agentName.textContent = agentInfo.AgentName;
     agentRole.textContent = agentInfo.AgentRole;
     agentPhoto.setAttribute('src', agentInfo.AgentPhoto);
     agentPhoto.style.backgroundColor = agentInfo.AgentColor;
+    // TODO: add agent description, will only show in the desktop version, will be hidden in the mobile version
+    agentDescription.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
 
     document.querySelector('.agent-box').append(agentName);
     document.querySelector('.agent-box').append(agentPhoto);
     document.querySelector('.agent-box').append(agentRole);
+    document.querySelector('.agent-box').append(agentDescription);
 }
+
+iconButton.onclick = refreshPage;
+rulesButton.onclick = showRules;
 randomAgentButton.onclick = randomAgent;
 randomDuelistButton.onclick = randomDuelist;
 randomControllerButton.onclick = randomController;
@@ -64,7 +102,7 @@ function getRandomAgent(agentRole) {
     return duelistAgents[Math.floor(Math.random() * duelistAgents.length)];
 }
 
-// TODO: finish creating arrays for each agent
+// TODO: add descriptions for each agent
 const duelists = [
     {
         AgentName: 'Phoenix',

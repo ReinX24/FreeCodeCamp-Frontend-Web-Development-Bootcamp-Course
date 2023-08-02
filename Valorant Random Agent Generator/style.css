@@ -48,7 +48,7 @@ body {
 }
 
 main {
-    padding-top: 8vh;
+    padding-top: 10vh;
     background-color: #20374D;
     height: 96vh;
     display: flex;
@@ -56,14 +56,16 @@ main {
 }
 
 .agent-box {
+    margin: 7%;
     flex-basis: 50%;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 3% 5% 0% 5%;
-    font-weight: 700;
-    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #254059;
+    line-height: 1.3rem;
 }
 
 .agent-photo {
@@ -73,6 +75,25 @@ main {
     width: auto;
     border: 2px solid white;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.agent-description {
+    display: none;
+}
+
+.rules-button {
+    border: none;
+    color: #27F2B9;
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.rules-button:hover {
+    cursor: pointer;
+    color: #E6E6E6;
+    transform: scale(1.1);
 }
 
 .button-box {
@@ -128,7 +149,15 @@ footer a {
     }
 
     .agent-box {
-        align-items: center;
+        align-items: start;
+    }
+
+    .rules-button {
+        align-self: center;
+    }
+
+    .agent-description {
+        display: contents;
     }
 
     div.button-box > * {
