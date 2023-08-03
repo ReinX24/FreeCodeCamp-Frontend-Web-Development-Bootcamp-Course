@@ -74,7 +74,7 @@ main {
     height: auto;
     width: auto;
     border: 2px solid white;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .agent-description {
@@ -104,7 +104,7 @@ main {
     align-items: center;
 }
 
-div.button-box > * {
+div.button-box>* {
     font-weight: 700;
     width: 50%;
     height: 14%;
@@ -112,10 +112,10 @@ div.button-box > * {
     background-color: #BF364F;
     border: none;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-div.button-box > *:hover {
+div.button-box>*:hover {
     cursor: pointer;
     background-color: #F24968;
     transform: scale(1.02);
@@ -160,8 +160,9 @@ footer a {
         display: contents;
     }
 
-    div.button-box > * {
+    div.button-box>* {
         height: 10%;
+        width: 90%;
         font-size: 1.2rem;
     }
 
