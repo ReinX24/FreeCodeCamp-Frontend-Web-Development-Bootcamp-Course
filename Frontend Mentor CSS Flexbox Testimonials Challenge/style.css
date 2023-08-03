@@ -4,12 +4,10 @@
     padding: 0;
 }
 
-*, *:after, *:before {
-    box-sizing: inherit;
-}
-
 body {
     background-color: #ecf2f8;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
 }
 
 /* Top and bottom, left and right */
@@ -20,6 +18,7 @@ body {
 .grid-item {
     margin-bottom: 20px;
     padding: 20px;
+    border-radius: 10px;
 }
 
 #testimonial-1 {
@@ -45,32 +44,63 @@ body {
     background-color: #ffffff;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* To make the photo circular, make it 50% */
+.header img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.graduate-name {
+    font-weight: 600;
+}
+
+.verified-text {
+    opacity: 50%;
+}
+
+.graduate-testimony {
+    margin-top: 5%;
+    opacity: 70%;
+}
+
 @media (min-width: 576px) {
 
-    #testimonial-grid-container {
+    #testimonial-grid-container,
+    #left-container,
+    #top-sub-container,
+    #bottom-sub-container {
         display: flex;
-        max-width: 900px;
+    }
+
+    #testimonial-grid-container {
+        max-width: 70%;
+        max-height: 80%;
         margin: 0 auto;
         justify-content: space-between;
     }
 
     #left-container {
-        display: flex;
         flex-direction: column;
-        flex-basis: 70%;
+        flex-basis: 80%;
+    }
+
+    /* Choose all grid-item divs in left-container */
+    #left-container .grid-item {
+        margin-right: 15px;
     }
 
     #testimonial-5 {
-        flex-basis: 30%;
+        flex-basis: 20%;
     }
 
-    #top-sub-container {
-        display: flex;
-        flex-basis: 50%;
-    }
-
+    #top-sub-container,
     #bottom-sub-container {
-        display: flex;
         flex-basis: 50%;
     }
 
