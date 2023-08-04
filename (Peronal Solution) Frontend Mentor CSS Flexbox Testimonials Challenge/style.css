@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: #ecf2f8;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-header img {
+    border-radius: 50%;
+    max-width: 12%;
+}
+
+.header-text {
+    margin-left: 5%;
+}
+
+.header-text .graduate-name {
+    opacity: 100%;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.header-text .verified-text {
+    opacity: 70%;
+    margin-top: 0;
+}
+
+.main-testimony {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sub-testimony {
+    opacity: 70%;
+}
+
+.main-testimony, .sub-testimony {
+    line-height: 150%;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 5%;
+}
+
+#main-container > * {
+    padding: 7%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.35);
+    margin-bottom: 5%;
+}
+
+#testimonial-1 {
+    background-color: #7541c8;
+    color: #ffffff;
+}
+
+#testimonial-1 img {
+    border: 2px solid #A775F1;
+}
+
+#testimonial-2 {
+    background-color: #48556a;
+    color: white;
+}
+
+#testimonial-2 img {
+    border: 2px solid #ffffff;
+}
+
+#testimonial-3 {
+    background-color: #ffffff;
+    color: #48556a;
+}
+
+#testimonial-3 img {
+    border: 2px solid #ffffff;
+}
+
+#testimonial-4 {
+    background-color: #19212e;
+    color: #ffffff;
+}
+
+#testimonial-4 img {
+    border: 2px solid #7541c8;
+}
+
+#testimonial-5 {
+    background-color: #ffffff;
+    color: #48556a;
+}
+
+#testimonial-5 {
+    border: 2px solid white;
+}

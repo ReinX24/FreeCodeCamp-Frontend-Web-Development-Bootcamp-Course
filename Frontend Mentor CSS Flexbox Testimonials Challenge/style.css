@@ -8,6 +8,7 @@ body {
     background-color: #ecf2f8;
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 13px;
+    font-weight: 500;
 }
 
 /* Top and bottom, left and right */
@@ -19,11 +20,21 @@ body {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+/* Posistion needs to be relative so that we can move the background image */
+/* z-index 0 means it is the base of the div, we need to set the position
+to relative for the z-index to apply */
 #testimonial-1 {
     background-color: #7541c8;
     color: #ffffff;
+    position: relative;
+    z-index: 0;
+}
+
+#testimonial-1 .header img {
+    border: 3px solid #8A4CED;
 }
 
 #testimonial-2 {
@@ -31,8 +42,16 @@ body {
     color: #ffffff;
 }
 
+#testimonial-2 .header img {
+    border: 3px solid #ffffff;
+}
+
 #testimonial-3 {
     background-color: #ffffff;
+}
+
+#testimonial-3 .header img {
+    border: 3px solid #ffffff;
 }
 
 #testimonial-4 {
@@ -40,14 +59,37 @@ body {
     color: #ffffff;
 }
 
+#testimonial-4 .header img {
+    border: 3px solid #7541c8;
+}
+
 #testimonial-5 {
     background-color: #ffffff;
 }
 
+#testimonial-5 .header img {
+    border: 3px solid #ffffff;
+}
+
+#testimonial-3, #testimonial-5 {
+    color: #48556a;
+}
+
+/* Text in quote will be above the card */
+#quote {
+    position: absolute;
+    right: 15%;
+    top: 0;
+    z-index: 1;
+}
+
+/* The header text will be above the card and background photo */
 .header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 3;
+    position: relative;
 }
 
 /* To make the photo circular, make it 50% */
@@ -79,7 +121,8 @@ body {
     }
 
     #testimonial-grid-container {
-        max-width: 70%;
+        max-width: 1440px;
+        width: 65%;
         max-height: 80%;
         margin: 0 auto;
         justify-content: space-between;
