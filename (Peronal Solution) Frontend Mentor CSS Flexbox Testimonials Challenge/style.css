@@ -16,7 +16,7 @@ html {
 
 .testimonial-header img {
     border-radius: 50%;
-    max-width: 12%;
+    min-width: 12%;
 }
 
 .header-text {
@@ -110,17 +110,49 @@ html {
 @media (min-width: 576px) {
 
     #main-container {
+        margin: 10% auto;
         flex-direction: row;
-        justify-content: center;
-        max-width: 80%;
+        max-width: 70%;
+    }
+
+    #main-container .testimonials { 
+        margin-bottom: 0;
+        padding: 3% 5%;
+    }
+
+    #main-container .sub-testimony {
+        font-size: 1.15rem;
+    }
+
+    #left-section {
+        flex-basis: 70%;
     }
 
     #top-section {
         display: flex;
+        justify-content: space-between;
+    }
+
+    #testimonial-1 {
+        flex-basis: 68%;
+    }
+
+    #testimonial-2 {
+        flex-basis: 30%;
     }
 
     #bottom-section {
         display: flex;
+    }
+
+    #right-section {
+        border: 1px solid red;
+        flex-basis: 30%;
+        padding: 0% 4%;
+    }
+
+    #testimonial-5 .main-testimony{
+        font-size: 1.8rem;
     }
 
 }
