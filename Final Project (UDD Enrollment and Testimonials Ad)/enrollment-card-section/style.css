@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+/* 
+    Colors to be used
+    dark blue: #000468
+    dark blue shade (lighter) : #000475
+    light blue: #00acec
+    white: #f8f9fb
+    light grey: #eaebf0
+    black: #1e1f24
+
+*/
+
+#main-container {
+    display: flex;
+    border: 1px solid red;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#container-1-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#container-1-header .underline-text{
+    margin-bottom: -0.6rem;
+}
+
+#container-1 {
+    background-color: #f8f9fb;
+    padding: 5% 5%;
+}
+
+#container-1-body {
+    color: #000468;
+    line-height: 200%;
+}
+
+#container-1 h1, #container-1 p {
+    color: #1e1f24;
+}
+
+#container-1 p {
+    line-height: 150%;
+}
+
+#container-1 h2 {
+    margin-top: 1rem;
+}
+
+#container-2 {
+    background-color: #000468;
+    color: #f8f9fb;
+}
+
+#container-3 {
+    background-color: #000475;
+    color: #f8f9fb;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+@media (min-width: 576px) {
+    
+    main {
+        border: 10px solid blue;
+    }
+
+}
