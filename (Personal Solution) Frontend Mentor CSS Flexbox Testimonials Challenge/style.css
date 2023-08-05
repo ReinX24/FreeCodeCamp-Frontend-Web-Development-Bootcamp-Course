@@ -18,9 +18,8 @@ html {
     border-radius: 50%;
 }
 
-/* TODO: make this into rem */
 .header-text {
-    margin-left: 5%;
+    margin-left: 1rem;
 }
 
 .header-text .graduate-name {
@@ -43,7 +42,8 @@ html {
     opacity: 70%;
 }
 
-.main-testimony, .sub-testimony {
+.main-testimony,
+.sub-testimony {
     line-height: 150%;
 }
 
@@ -109,18 +109,22 @@ html {
 @media (min-width: 576px) {
 
     #main-container {
-        margin: 5% auto;
+        margin: 7% auto;
         flex-direction: row;
         max-width: 70%;
         justify-content: space-between;
     }
 
-    #main-container .testimonials { 
+    #main-container .testimonials {
         margin-bottom: 0;
     }
 
+    #main-container .main-testimony {
+        font-size: 1.3rem;
+    }
+
     #main-container .sub-testimony {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     #left-section {
@@ -131,45 +135,42 @@ html {
     }
 
     #left-section .testimonials {
-        padding: 1% 3.5% 1% 3.5%;
+        padding: 1.5% 3.5% 1.5% 3.5%;
     }
 
     #top-section {
         display: flex;
         justify-content: space-between;
-        flex-basis: 46%;
+        flex-basis: 48%;
     }
 
     #bottom-section {
         display: flex;
         justify-content: space-between;
-        flex-basis: 46%;
+        flex-basis: 48%;
     }
 
-    #testimonial-1, #testimonial-4 {
+    #testimonial-1,
+    #testimonial-4 {
         flex-basis: 66%;
     }
 
-    #testimonial-2, #testimonial-3 {
+    #testimonial-2,
+    #testimonial-3 {
         flex-basis: 30%;
     }
+
     #right-section {
         flex-basis: 25%;
         padding: 0% 2%;
     }
 
-    .main-testimony{
-        font-size: 1.5rem;
+    .testimonial-header {
+        margin-bottom: -1.5rem;
     }
 
     .testimonial-header img {
-        width: 3rem;
-    }
-
-    /* TODO: make this into rem */
-    #testimonial-1 .header-text,
-    #testimonial-4 .header-text {
-        margin-left: 3%;
+        width: 2.8rem;
     }
 
 }
