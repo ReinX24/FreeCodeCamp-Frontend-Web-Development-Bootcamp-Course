@@ -2,17 +2,15 @@
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-}
-
-h1, h2, p {
-    margin: 0;
 }
 
 /* 
@@ -23,7 +21,6 @@ h1, h2, p {
     white: #f8f9fb
     light grey: #eaebf0
     black: #1e1f24
-
 */
 
 #main-container {
@@ -37,43 +34,109 @@ h1, h2, p {
 #container-1-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
-#container-1-header .underline-text{
-    margin-bottom: -0.6rem;
+#logo-photo {
+    margin-right: 1rem;
+}
+
+#container-1-header p {
+    margin: 0;
+}
+
+#container-1-header .underline-text {
+    margin-bottom: -0.2rem;
 }
 
 #container-1 {
     background-color: #f8f9fb;
-    padding: 5% 5%;
+    padding: 5%;
 }
 
-#container-1-body {
+#container-1 h2, #container-1 h1 {
     color: #000468;
-    line-height: 200%;
-}
-
-#container-1 h1, #container-1 p {
-    color: #1e1f24;
 }
 
 #container-1 p {
-    line-height: 150%;
+    color: #1e1f24;
+}
+
+#container-1-body p{
+    font-style: italic;
+}
+
+#container-1 h1 {
+    margin-bottom: 0.5rem;
 }
 
 #container-1 h2 {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 #container-2 {
     background-color: #000468;
     color: #f8f9fb;
+    padding: 5%;
+}
+
+#container-2 h2 {
+    margin-bottom: 0.5rem;
+}
+
+#container-2 a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+#container-2 button {
+    margin-top: 0.5rem;
+    width: 100%;
+    border: none;
+    padding: 3% 5%;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #f8f9fb;
+    color: #1e1f24;
+}
+
+#container-2 button:hover {
+    background-color: #00acec;
+    transform: scale(1.02);
+}
+
+#semester-text {
+    font-size: 2rem;
+}
+
+#year-text {
+    margin-top: -2rem;
 }
 
 #container-3 {
     background-color: #000475;
     color: #f8f9fb;
+    padding: 5%;
+}
+
+#container-3 h2 {
+    margin-bottom: 0.5rem;
+}
+
+#testominal-footer {
+    font-style: bold;
+}
+
+#testimonial-footer a {
+    color: #f8f9fb;
+    font-weight: 700;
+    font-style: italic;
+}
+
+#testimonial-footer a:hover {
+    color: #00acec;
 }
 
 .underline-text {
@@ -81,9 +144,17 @@ h1, h2, p {
 }
 
 @media (min-width: 576px) {
-    
-    main {
-        border: 10px solid blue;
+
+    #main-container {
+        margin: 5% 30%;
+    }
+
+    #bottom-container {
+        display: flex;
+    }
+
+    #bottom-container > * {
+        flex-basis: 50%;
     }
 
 }
