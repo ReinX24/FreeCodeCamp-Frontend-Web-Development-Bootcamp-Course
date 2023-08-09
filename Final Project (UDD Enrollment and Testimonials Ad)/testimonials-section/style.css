@@ -1,0 +1,116 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+/* 
+    Colors to be used
+    dark blue: #000468
+    dark blue shade (lighter) : #000475
+    light blue: #00acec
+    white: #f8f9fb
+    light grey: #eaebf0
+    black: #1e1f24
+*/
+
+.testimonials {
+    border: 1px solid blue;
+    padding: 8%;
+    margin: 8% 4%;
+    border-radius: 10px;
+}
+
+.name-course-header p {
+    margin: 0;
+}
+
+.name-course-header p:first-child {
+    font-weight: 700;
+}
+
+.name-course-header p:last-child {
+    opacity: 50%;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-header img {
+    margin-right: 5%;
+    border-radius: 50%;
+}
+
+.main-testimony {
+    line-height: 1.5rem;
+}
+
+.sub-testimony {
+    line-height: 1.5rem;
+    opacity: 70%;
+}
+
+.full-testimony-link {
+    color: white;
+    font-style: italic;
+}
+
+#testimonial-1 {
+    background-color: #000468;
+    color: #f8f9fb;
+}
+
+#testimonial-2 {
+    background-color: #eaebf0;
+}
+
+#testimonial-3 {
+    background-color: #f8f9fb;
+}
+
+#testimonial-4 {
+    background-color: #1e1f24;
+    color: #f8f9fb;
+}
+
+#testimonial-5 {
+    background-color: #f8f9fb;
+}
+
+@media (min-width: 576px) {
+    
+    #main-container {
+        border: 5px solid purple;
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonials {
+        padding: 0;
+        margin: 0;
+    }
+
+    #top-container {
+        display: flex;
+    }
+
+    #bottom-container {
+        display: flex;
+    }
+
+    #testimonial-5 {
+        flex-basis: 50%;
+    }
+
+}

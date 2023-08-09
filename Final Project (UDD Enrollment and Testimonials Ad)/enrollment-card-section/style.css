@@ -1,4 +1,4 @@
-* {
+html {
     box-sizing: border-box;
 }
 
@@ -25,10 +25,11 @@ body {
 
 #main-container {
     display: flex;
-    border: 1px solid red;
     flex-direction: column;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    margin: 6% 3%;
 }
 
 #container-1-header {
@@ -38,6 +39,7 @@ body {
 
 #logo-photo {
     margin-right: 1rem;
+    max-width: 75px;
 }
 
 #container-1-header p {
@@ -46,6 +48,7 @@ body {
 
 #container-1-header .underline-text {
     margin-bottom: -0.2rem;
+    font-weight: 700;
 }
 
 #container-1 {
@@ -79,10 +82,6 @@ body {
     padding: 5%;
 }
 
-#container-2 h2 {
-    margin-bottom: 0.5rem;
-}
-
 #container-2 a {
     display: flex;
     justify-content: center;
@@ -100,6 +99,8 @@ body {
     font-weight: 700;
     background-color: #f8f9fb;
     color: #1e1f24;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 5%;
 }
 
 #container-2 button:hover {
@@ -155,6 +156,11 @@ body {
 
     #bottom-container > * {
         flex-basis: 50%;
+    }
+
+    #container-2 button {
+        margin-bottom: 0;
+        padding: 5%;
     }
 
 }
