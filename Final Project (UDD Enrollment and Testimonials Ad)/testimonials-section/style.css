@@ -24,10 +24,10 @@ body {
 */
 
 .testimonials {
-    border: 1px solid blue;
     padding: 8%;
     margin: 8% 4%;
     border-radius: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
 }
 
 .name-course-header p {
@@ -62,8 +62,46 @@ body {
 }
 
 .full-testimony-link {
-    color: white;
     font-style: italic;
+}
+
+#testimonial-1 .full-testimony-link,
+#testimonial-4 .full-testimony-link {
+    color: white;
+}
+
+#testimonial-2 .full-testimony-link,
+#testimonial-3 .full-testimony-link,
+#testimonial-5 .full-testimony-link {
+    color: black;
+}
+
+.full-testimony-link:hover {
+    opacity: 70%;
+}
+
+.testimonial-icons {
+    max-width: 70px;
+}
+
+#testimonial-1 .testimonial-icons {
+    border: 2px solid #f8f9fb;
+}
+
+#testimonial-2 .testimonial-icons {
+    border: 2px solid #000468;
+}
+
+#testimonial-3 .testimonial-icons {
+    border: 2px solid #000468;
+}
+
+#testimonial-4 .testimonial-icons {
+    border: 2px solid #f8f9fb;
+}
+
+#testimonial-5 .testimonial-icons {
+    border: 2px solid #000468;
 }
 
 #testimonial-1 {
@@ -89,28 +127,56 @@ body {
 }
 
 @media (min-width: 576px) {
-    
-    #main-container {
-        border: 5px solid purple;
+
+    #main-container{
+        margin: 3% 10%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        height: 830px;
     }
 
     .testimonials {
-        padding: 0;
+        padding: 3%;
         margin: 0;
+    }
+
+    #left-container {
+        display: flex;
+        flex-basis: 75%;
+        justify-content: space-between;
+        flex-direction: column;
     }
 
     #top-container {
         display: flex;
+        justify-content: space-between;
+        flex-basis: 48%;
+    }
+
+    #testimonial-1 {
+        flex-basis: 58%;
+    }
+
+    #testimonial-2 {
+        flex-basis: 38%;
     }
 
     #bottom-container {
         display: flex;
+        justify-content: space-between;
+        flex-basis: 48%;
+    }
+
+    #testimonial-3 {
+        flex-basis: 38%;
+    }
+
+    #testimonial-4 {
+        flex-basis: 58%;
     }
 
     #testimonial-5 {
-        flex-basis: 50%;
+        flex-basis: 21%;
     }
 
 }
