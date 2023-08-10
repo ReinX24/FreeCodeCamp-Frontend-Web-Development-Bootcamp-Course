@@ -1,11 +1,7 @@
-html {
-    box-sizing: border-box;
-}
-
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 body {
@@ -33,6 +29,11 @@ nav,
 
 }
 
+nav,
+.nav-links {
+    justify-content: space-between;
+}
+
 #main-container {
     flex-direction: column;
     border-radius: 10px;
@@ -42,7 +43,6 @@ nav,
 }
 
 nav {
-    justify-content: space-between;
     align-items: center;
     padding: 5%;
     background-color: #000468;
@@ -50,12 +50,11 @@ nav {
 }
 
 #header-photo {
-    flex-basis: 10%;
+    flex-basis: 20%;
 }
 
 .nav-links {
-    justify-content: space-between;
-    flex-basis: 90%;
+    flex-basis: 80%;
 }
 
 .nav-links a {
@@ -138,7 +137,6 @@ nav {
     color: #1e1f24;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     margin-bottom: 5%;
-    transition: all 0.3s ease 0s;
 }
 
 #container-2 button:hover {
@@ -177,6 +175,9 @@ nav {
 
 #testimonial-footer a:hover {
     color: #00acec;
+}
+
+#container-2 button:hover, #testimonial-footer a:hover {
     transition: all 0.3s ease 0s;
 }
 
