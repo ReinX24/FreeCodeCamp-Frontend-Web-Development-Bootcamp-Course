@@ -11,6 +11,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    margin: 0;
 }
 
 /* 
@@ -23,23 +24,59 @@ body {
     black: #1e1f24
 */
 
-#main-container {
+#main-container,
+nav,
+.nav-links,
+#container-1-header,
+#container-2 a {
     display: flex;
+
+}
+
+#main-container {
     flex-direction: column;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
-    margin: 6% 3%;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+    margin: 5%;
 }
 
+nav {
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background-color: #000468;
+    width: 100%;
+}
+
+#header-photo {
+    flex-basis: 10%;
+}
+
+.nav-links {
+    justify-content: space-between;
+    flex-basis: 90%;
+}
+
+.nav-links a {
+    color: #f8f9fb;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links a:hover {
+    color: #00acec;
+}
+
+
 #container-1-header {
-    display: flex;
     align-items: center;
 }
 
-#logo-photo {
+#logo-photo,
+#header-photo {
     margin-right: 1rem;
-    max-width: 75px;
+    max-width: 50px;
 }
 
 #container-1-header p {
@@ -56,7 +93,8 @@ body {
     padding: 5%;
 }
 
-#container-1 h2, #container-1 h1 {
+#container-1 h2,
+#container-1 h1 {
     color: #000468;
 }
 
@@ -64,7 +102,7 @@ body {
     color: #1e1f24;
 }
 
-#container-1-body p{
+#container-1-body p {
     font-style: italic;
 }
 
@@ -83,7 +121,6 @@ body {
 }
 
 #container-2 a {
-    display: flex;
     justify-content: center;
     width: 100%;
     text-decoration: none;
@@ -99,11 +136,13 @@ body {
     font-weight: 700;
     background-color: #f8f9fb;
     color: #1e1f24;
-    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     margin-bottom: 5%;
+    transition: all 0.3s ease 0s;
 }
 
 #container-2 button:hover {
+    cursor: pointer;
     background-color: #00acec;
     transform: scale(1.02);
 }
@@ -138,6 +177,7 @@ body {
 
 #testimonial-footer a:hover {
     color: #00acec;
+    transition: all 0.3s ease 0s;
 }
 
 .underline-text {
@@ -147,20 +187,39 @@ body {
 @media (min-width: 576px) {
 
     #main-container {
-        margin: 5% 30%;
+        margin: 2% 30%;
+    }
+
+    nav {
+        padding: 1%;
+    }
+
+    #header-photo {
+        margin-left: 5%;
+        flex-basis: 80%;
+    }
+
+    .nav-links {
+        margin-right: 5%;
+        flex-basis: 20%;
     }
 
     #bottom-container {
         display: flex;
     }
 
-    #bottom-container > * {
+    #bottom-container>* {
         flex-basis: 50%;
     }
 
     #container-2 button {
         margin-bottom: 0;
         padding: 5%;
+    }
+
+    #logo-photo,
+    #header-photo {
+        max-width: 75px;
     }
 
 }
