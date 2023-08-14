@@ -40,6 +40,7 @@ nav,
     overflow: hidden;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     margin: 5%;
+    margin-top: 30%;
 }
 
 nav {
@@ -47,6 +48,8 @@ nav {
     padding: 5%;
     background-color: #000468;
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 #header-photo {
@@ -177,7 +180,8 @@ nav {
     color: #00acec;
 }
 
-#container-2 button:hover, #testimonial-footer a:hover {
+#container-2 button:hover,
+#testimonial-footer a:hover {
     transition: all 0.3s ease 0s;
 }
 
@@ -188,7 +192,8 @@ nav {
 @media (min-width: 576px) {
 
     #main-container {
-        margin: 2% 30%;
+        margin: 0% 30%;
+        margin-top: 7.5%;
     }
 
     nav {

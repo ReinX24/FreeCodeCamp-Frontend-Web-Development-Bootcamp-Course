@@ -27,6 +27,14 @@ nav {
     padding: 5%;
     background-color: #000468;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#main-container {
+    margin-top: 30%;
+    z-index: 0;
 }
 
 #header-photo {
@@ -89,7 +97,7 @@ nav {
 .testimonial-header,
 .main-testimony {
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .main-testimony {
@@ -104,7 +112,6 @@ nav {
 #quote-icon {
     position: absolute;
     right: 1%;
-    z-index: 0;
     border-radius: 0;
     opacity: 50%;
 }
@@ -192,7 +199,8 @@ nav {
     }
 
     #main-container {
-        margin: 1% 10%;
+        margin: 0% 10%;
+        margin-top: 7.5%;
     }
 
     nav {
