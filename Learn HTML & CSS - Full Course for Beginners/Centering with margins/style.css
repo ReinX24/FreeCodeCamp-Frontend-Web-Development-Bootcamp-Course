@@ -1,0 +1,8 @@
+.mars-img {
+    /* block element takes up entire width of the page */
+    display: block;
+    width: 50%;
+    /* auto means take up all available space */
+    margin-left: auto;
+    margin-right: auto;
+}

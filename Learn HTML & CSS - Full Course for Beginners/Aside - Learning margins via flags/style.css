@@ -1,0 +1,20 @@
+body {
+    margin: 0px; /* space around an element */
+}
+
+.red {
+    background-color: red;
+    height: 100px;
+}
+
+.blue {
+    background-color: blue;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.green {
+    background-color: green;
+    height: 100px;
+}

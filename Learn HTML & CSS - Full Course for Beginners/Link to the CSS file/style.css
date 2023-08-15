@@ -1,0 +1,19 @@
+.main {
+    margin-top: 100px;
+}
+
+.logo-img {
+    display: block;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* block makes the element use the entire available width */
+.search-input {
+    display: block;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
