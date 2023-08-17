@@ -1,0 +1,11 @@
+.item-container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.item {
+    border: 1px solid #222222;
+    padding: 10px;
+    margin: 10px;
+}

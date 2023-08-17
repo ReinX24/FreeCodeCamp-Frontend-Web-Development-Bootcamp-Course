@@ -1,0 +1,9 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.pricing {
+    display: flex;
+    width: 430px;
+    justify-content: space-between;
+}
