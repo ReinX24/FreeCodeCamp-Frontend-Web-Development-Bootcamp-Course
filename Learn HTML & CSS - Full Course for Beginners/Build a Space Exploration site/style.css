@@ -1,0 +1,32 @@
+body {
+    color: white;
+    background-image: url("./images/universeBackground.jpg");
+    /* making image fit the width of the browser */
+    background-size: cover;
+    /* text-align apparently also centers buttons */
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    background-repeat: no-repeat;
+}
+
+.apply-btn {
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    /* inherits font-family from body */
+    font-family: inherit;
+}
+
+.apply-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+
+.underline-text {
+    border-bottom: 4px solid white;
+}
+
+#spacex-img {
+    border: 1px solid red;
+}

@@ -1,0 +1,20 @@
+/* Adding our custom font to our CSS */
+@font-face {
+    /* Setting source for our font */
+    src: url("Corleone.TTF");
+    /* Setting name for our font */
+    font-family: Corleone;
+}
+
+.corleone {
+    font-family: Corleone;
+}
+
+@font-face {
+    src: url("Craft\ Vintage.otf");
+    font-family: Craft;
+}
+
+.craft-vintage {
+    font-family: Craft;
+}

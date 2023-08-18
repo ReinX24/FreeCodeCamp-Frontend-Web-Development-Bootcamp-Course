@@ -1,0 +1,25 @@
+body {
+    background-color: whitesmoke;
+    color: whitesmoke;
+    font-family: 'Rammetto One', cursive;
+}
+
+.ad {
+    border: 5px solid #A3BC71;
+    background-color: #35654d;
+    text-align: center;
+    color: white;
+    font-family: inherit;
+    width: 70%;
+}
+
+.here-text {
+    border: 2px solid #A3BC71;
+    padding: 5px 10px;
+    background-color: #8F4737;
+}
+
+.here-text:hover {
+    font-size: 1.4rem;
+    transition: ease 0.3s all 0s;
+}
