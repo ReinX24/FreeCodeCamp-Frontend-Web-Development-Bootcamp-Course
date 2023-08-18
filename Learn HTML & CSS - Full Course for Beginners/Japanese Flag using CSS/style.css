@@ -1,0 +1,13 @@
+body {
+    border: 1px solid black;
+}
+
+.red-circle {
+    border: 1px solid red;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #BC002D;
+    /* top and bottom, left and right */
+    margin: 40px auto;
+}

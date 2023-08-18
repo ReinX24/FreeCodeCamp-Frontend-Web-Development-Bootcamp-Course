@@ -4,11 +4,13 @@
     display: flex;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
-    box-shadow: 4px 4px 4px 0px rgba(217,43,4,0.75);
+    box-shadow: 4px 4px 4px 0px rgba(217, 43, 4, 0.75);
     margin: 4%;
 }
+
 .card-container:hover {
     transform: scale(1.02);
+    /* all is the time it takes for it to finish the animation and ease is the buffer state before the start of the animation*/
     transition: all 0.3s ease 0s;
 }
 
@@ -38,7 +40,9 @@
     color: #222222;
 }
 
-h2, h3, p {
+h2,
+h3,
+p {
     margin: 4%;
 }
 
