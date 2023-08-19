@@ -1,0 +1,13 @@
+body {
+    letter-spacing: 4px;
+    background-color: #b7111b;
+    color: #fafbf4;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+
+h1 {
+    font-size: 6rem;
+    /* x axis, y axis, blur radius, color */
+    text-shadow: 5px -5px 5px black;
+}

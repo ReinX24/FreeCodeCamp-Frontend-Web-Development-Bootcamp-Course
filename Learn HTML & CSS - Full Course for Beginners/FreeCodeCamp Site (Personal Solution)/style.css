@@ -1,0 +1,71 @@
+/* 
+TODO: have a photo for a logo at the top
+TODO: have an animated background
+TODO: underline a part of the title text or header
+TODO: add text shadow for title
+TODO: add two buttons under title text
+TODO: add terms and conditions after the main section
+*/
+
+#site-container {
+    margin: 4%;
+    font-family: 'IBM Plex Mono', monospace;
+    border-radius: 25px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 4px 4px 4px #222222;
+    color: #222222;
+}
+
+#site-container:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease 0s;
+}
+
+#main-container {
+    /* border: 1px solid red; */
+    background-image: url("./images/programmingBackground.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4% 0 8% 0;
+}
+
+#logo {
+    width: 16%;
+}
+
+#title {
+    color: white;
+    background-color: #222222;
+}
+
+.btn {
+    padding: 4% 8%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    font-weight: 700;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease 0s;
+}
+
+#footer-text {
+    color: inherit;
+    text-decoration-color: #222222;
+}
+
+#footer-text:hover {
+    color: grey;
+    text-decoration-color: grey;
+}
+
+/* 375 pix for now for our min width for mobile version */
+@media (min-width: 376px) {
+    body {
+        border: 5px solid red;
+    }
+}

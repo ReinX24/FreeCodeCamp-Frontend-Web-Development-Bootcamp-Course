@@ -1,25 +1,43 @@
 body {
-    color: white;
-    background-image: url("./images/universeBackground.jpg");
+    color: #82a5ca;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 4%;
+}
+
+.hero-container {
+    background-image: url("./images/galaxyBackground.gif");
     /* making image fit the width of the browser */
     background-size: cover;
     /* text-align apparently also centers buttons */
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
     background-repeat: no-repeat;
+    padding: 10px 0 40px 0;
 }
 
-.apply-btn {
+.main-container {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.main-container:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease 0s;
+}
+
+.btn {
     background-color: white;
     border: none;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     /* inherits font-family from body */
     font-family: inherit;
+    color: inherit;
+    font-weight: 800;
 }
 
-.apply-btn:hover {
-    transform: scale(1.1);
+.btn:hover {
+    transform: scale(1.05);
     transition: all 0.3s ease 0s;
 }
 
@@ -28,5 +46,9 @@ body {
 }
 
 #spacex-img {
-    border: 1px solid red;
+    width: 200px;
+}
+
+#title {
+    text-shadow: 0px 0px 4px black;
 }
