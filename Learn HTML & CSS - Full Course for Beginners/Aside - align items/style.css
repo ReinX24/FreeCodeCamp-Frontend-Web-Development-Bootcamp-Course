@@ -1,0 +1,26 @@
+.container {
+    border: 8px solid #016a26;
+    height: 360px;
+    display: flex;
+    /* justify contents changes the position on the current flex direction */
+    /* start, center, end, space around, space evenly, space between */
+    /* Default value: start */
+    justify-content: start;
+    /* align items changes the positions of the y axis in row flex direction */
+    /* start, center, end */
+    /* Default value: stretch */
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    padding: 10px;
+    font-size: 50px;
+    border: 2px solid black;
+    /* top color, bottom color */
+    background: linear-gradient(#14463d, #016a26);
+    color: #ffffff;
+}

@@ -1,10 +1,10 @@
 /* 
-TODO: have a photo for a logo at the top
-TODO: have an animated background
-TODO: underline a part of the title text or header
-TODO: add text shadow for title
-TODO: add two buttons under title text
-TODO: add terms and conditions after the main section
+DONE: have a photo for a logo at the top
+DONE: have an animated background
+DONE: underline a part of the title text or header
+DONE: add text shadow for title
+DONE: add two buttons under title text
+DONE: add terms and conditions after the main section
 */
 
 #site-container {
@@ -24,7 +24,7 @@ TODO: add terms and conditions after the main section
 
 #main-container {
     /* border: 1px solid red; */
-    background-image: url("./images/programmingBackground.gif");
+    background-image: url("./images/campBackground.gif");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 4% 0 8% 0;
@@ -32,11 +32,21 @@ TODO: add terms and conditions after the main section
 
 #logo {
     width: 16%;
+    border: 4px solid #222222;
+    padding: 1%;
+    border-radius: 50%;
+    background-color: white;
 }
 
 #title {
     color: white;
     background-color: #222222;
+    padding: 4% 0;
+    text-shadow: 1px 1px 4px whitesmoke;
+}
+
+.underline {
+    border-bottom: 4px solid white;
 }
 
 .btn {
@@ -46,10 +56,11 @@ TODO: add terms and conditions after the main section
     font-size: 1rem;
     background-color: white;
     font-weight: 700;
+    box-shadow: 1px 1px 4px;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
     transition: all 0.3s ease 0s;
 }
 
@@ -65,7 +76,13 @@ TODO: add terms and conditions after the main section
 
 /* 375 pix for now for our min width for mobile version */
 @media (min-width: 376px) {
-    body {
-        border: 5px solid red;
+
+    #site-container {
+        margin: 4% 20%;
     }
+
+    .btn {
+        padding: 1% 4%;
+    }
+
 }
