@@ -10,7 +10,7 @@
     - Add text shadow
     - Add 5 GIFts
     - GIFts must show a photo when hovered over
-    - Add a footer
+    - Add a footer that links to the tutorial of this folder
     - Make background gradient
 */
 
@@ -22,20 +22,83 @@
     padding: 0;
 }
 
-body {
-    font-family: 'Courier New', Courier, monospace;
+body,
+.header,
+.greet-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(#D92579, #02735E);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 1px 1px 4px #00010D;
 }
 
 .header {
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 2rem;
+}
+
+.header h2,
+.header h3 {
+    background-color: #00010D;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 
 #profile-photo {
     width: 200px;
+    border-radius: 50%;
+    border: 4px solid #00010D;
+    margin: 1rem;
+}
+
+.greet-container {
+    margin: 1rem;
+}
+
+.greet-container h2,
+.greet-container h3 {
+    margin: 0.5rem;
+}
+
+.gif-container {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border: 4px solid white;
+    border-radius: 8px;
+    background-image: url("./images/giftWrapper.png");
+    transition: all 0.5s ease 0s;
+    box-shadow: 1px 1px 4px #BFD1D9;
+}
+
+#happy-gif-container:hover {
+    background-image: url("./images/minionsHappy.gif");
+}
+
+#react-gif-container:hover {
+    background-image: url("./images/minionsWow.gif");
+}
+
+#word-gif-container:hover {
+    background-image: url("./images/womanGenius.gif");
+}
+
+#cool-gif-container:hover {
+    background-image: url("./images/minionCool.gif");
+}
+
+#friend-gif-container {
+    height: 200px;
+}
+
+#friend-gif-container:hover {
+    background-image: url("./images/manCheers.gif");
 }
