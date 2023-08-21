@@ -1,0 +1,41 @@
+/* Colors to be used
+    pink: #D92579
+    black: #00010D
+    grey: #BFD1D9
+    green: #02735E
+    dark green: #012619
+*/
+
+/* TODO:
+    - Add text shadow
+    - Add 5 GIFts
+    - GIFts must show a photo when hovered over
+    - Add a footer
+    - Make background gradient
+*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-photo {
+    width: 200px;
+}
