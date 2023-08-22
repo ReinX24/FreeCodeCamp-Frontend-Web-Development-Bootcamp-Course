@@ -1,0 +1,151 @@
+/* Colors to be used:
+    black: #222222
+    grey: #B6B4BF
+    grayish green: #465959
+    dark green: #244028
+    light green: #36593B
+    lighter green: #497350
+    white: #FFFFFF
+
+*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(#465959, #497350);
+    background-repeat: no-repeat;
+}
+
+main {
+    border: 8px solid #FFFFFF;
+    margin: 8% 0;
+    width: 90%;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.header {
+    background-image: url("./images/dagupanCity.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+    text-align: center;
+    text-shadow: 0px 0px 4px #B6B4BF;
+}
+
+.header h3,
+.header p {
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.header h3 {
+    background-color: #244028;
+}
+
+.header p {
+    background-color: #36593B;
+    width: 80%;
+}
+
+.main-container {
+    text-align: center;
+    background-color: #B6B4BF;
+    color: #222222;
+    padding: 2rem;
+    height: 42rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 0px 4px #FFFFFF;
+}
+
+.attractions-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.attractions-container img,
+.attractions-container p {
+    margin: 0.5rem;
+}
+
+.attraction-img {
+    width: 6rem;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
+
+.attraction-img:hover {
+    transform: scale(2.5);
+    transition: ease 0.5s all 0s;
+    border-radius: 8px;
+}
+
+.attractions-container p {
+    font-size: 0.75rem;
+}
+
+.mayor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 4px #B6B4BF;
+    text-align: center;
+    background-color: #244028;
+    height: 20rem;
+}
+
+.mayor-card {
+    border: 2px solid #FFFFFF;
+    padding: 1rem;
+    background-color: #36593B;
+    border-radius: 8px;
+}
+
+.mayor-card h3,
+.mayor-card h4 {
+    margin: 0.5rem;
+}
+
+.mayor-card p,
+.mayor-card h4 {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.mayor-img {
+    width: 6rem;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
+
+.mayor-img:hover {
+    transform: scale(2.5);
+    transition: ease 0.5s all 0s;
+    border-radius: 8px;
+}
+
+@media (min-width: 576px) {
+    body {
+        border: 5px solid red;
+    }
+}

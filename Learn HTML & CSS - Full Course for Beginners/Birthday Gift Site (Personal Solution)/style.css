@@ -6,12 +6,12 @@
     dark green: #012619
 */
 
-/* TODO:
-    - Add text shadow
-    - Add 5 GIFts
-    - GIFts must show a photo when hovered over
-    - Add a footer that links to the tutorial of this folder
-    - Make background gradient
+/* DONE:
+    - Add text shadow DONE
+    - Add 5 GIFts DONE
+    - GIFts must show a photo when hovered over DONE
+    - Add a footer that links to the tutorial of this folder DONE
+    - Make background gradient DONE
 */
 
 *,
@@ -101,4 +101,28 @@ body {
 
 #friend-gif-container:hover {
     background-image: url("./images/manCheers.gif");
+}
+
+.footer {
+    width: 400px;
+    margin: 4rem;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: #BFD1D9;
+    transition: ease 0.3s all 0s;
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+
+    .gif-container {
+        width: 300px;
+        height: 300px;
+    }
+
 }
