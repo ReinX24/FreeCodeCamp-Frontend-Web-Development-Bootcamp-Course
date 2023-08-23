@@ -18,19 +18,21 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background: linear-gradient(#465959, #497350);
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
     border: 8px solid #FFFFFF;
-    margin: 8% 0;
     width: 90%;
     border-radius: 24px;
     overflow: hidden;
+    box-shadow: 2px 2px 4px #222222;
+    margin: 1rem;
 }
 
 .header {
@@ -40,9 +42,20 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 18rem;
     text-align: center;
     text-shadow: 0px 0px 4px #B6B4BF;
+    padding: 1rem 0;
+}
+
+.seal-img {
+    width: 6rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.seal-img:hover {
+    transform: scale(1.2);
+    transition: ease 0.5s all 0s;
 }
 
 .header h3,
@@ -50,24 +63,24 @@ main {
     color: #FFFFFF;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    margin: 1rem;
+    margin: 0.5rem;
+    box-shadow: 0px 0px 4px #B6B4BF;
 }
 
 .header h3 {
-    background-color: #244028;
+    background-color: #36593B;
 }
 
 .header p {
-    background-color: #36593B;
-    width: 80%;
+    background-color: #244028;
+    width: 16rem;
 }
 
 .main-container {
     text-align: center;
-    background-color: #B6B4BF;
+    background: linear-gradient(#FFFFFF, #B6B4BF);
     color: #222222;
     padding: 2rem;
-    height: 42rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,17 +101,16 @@ main {
 .attraction-img {
     width: 6rem;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #244028;
 }
 
 .attraction-img:hover {
-    transform: scale(2.5);
+    transform: scale(1.2);
     transition: ease 0.5s all 0s;
-    border-radius: 8px;
 }
 
 .attractions-container p {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 .mayor-container {
@@ -106,12 +118,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     color: #FFFFFF;
     text-shadow: 0px 0px 4px #B6B4BF;
     text-align: center;
     background-color: #244028;
-    height: 20rem;
 }
 
 .mayor-card {
@@ -139,13 +150,58 @@ main {
 }
 
 .mayor-img:hover {
-    transform: scale(2.5);
+    transform: scale(1.2);
     transition: ease 0.5s all 0s;
-    border-radius: 8px;
 }
 
 @media (min-width: 576px) {
+
     body {
-        border: 5px solid red;
+        height: 100vh;
     }
+
+    main {
+        width: 50rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .header h3,
+    .header p {
+        margin: 0.5rem;
+    }
+
+    .header p {
+        width: 16rem;
+    }
+
+    .main-container {
+        padding: 2rem;
+    }
+
+    .main-container h3 {
+        margin: 0.5rem;
+    }
+
+    .attractions-container {
+        flex-direction: row;
+    }
+
+    .mayor-container {
+        padding: 1rem;
+    }
+
+    .mayor-card {
+        display: flex;
+        align-items: center;
+    }
+
+    .mayor-info {
+        width: 16rem;
+    }
+
 }
