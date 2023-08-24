@@ -211,22 +211,6 @@ button:hover {
   margin-top: 2px;
 }
 
-/* The background of our modal */
-.modal {
-  /* display: flex; */
-  /* Fixed positioning means that it is relative to the entire document / viewport */
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* background-color: rgba(0, 0, 0, 0.6); */
-}
-
-.modal-contents {
-
-}
-
 /* Footer styles */
 footer {
   color: white;
@@ -240,4 +224,43 @@ footer p {
 
 footer a {
   color: var(--yellow);
+}
+
+/* The background of our modal */
+.modal {
+  display: flex;
+  /* Fixed positioning means that it is relative to the entire document / viewport */
+  /* This means that it will cover the entire screen */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* Makes the background darker */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contents {
+  transform: translateY(-80px);
+  height: 150px;
+  /* Making sure that the modal width only takes up 300px max */
+  width: 100%;
+  max-width: 300px;
+  background-color: #2a4544;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  /* Margin around the modal itself */
+  margin: 10px;
+}
+
+.modal-contents button {
+  padding: 10px;
+  background-color: var(--turquoise);
+  color: #2a4544;
+  border-radius: 3px;
 }
