@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicTacToe | Learning Version</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/3bfd3ce9e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="main-grid">
+        <div class="player-turn">
+          <i class="fa-solid fa-x yellow"></i>
+          <p>Player 1, you're up</p>
+        </div>
+        <div class="menu">
+          <button class="action-btn" data-id="action-btn">
+            Actions
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="menu-items hidden" data-id="menu-items">
+            <button class="menu-btn" data-id="reset-btn">Reset</button>
+            <button class="menu-btn" data-id="new-round-btn">New Round</button>
+          </div>
+        </div>
+
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <div class="player-one-score">
+          <p>Player 1</p>
+          <span>0 wins</span>
+        </div>
+        <div class="tie-score">
+          <p>Ties</p>
+          <span>0</span>
+        </div>
+        <div class="player-two-score">
+          <p>Player 2</p>
+          <span>0 wins</span>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
