@@ -60,7 +60,7 @@ body {
   background-color: var(--light-gray);
   border: 2px solid var(--gray);
   color: var(--dark-gray);
-  box-shadow: 8px 8px 8px #222222;
+  box-shadow: 4px 4px 8px #222222;
 }
 
 .menu i {
@@ -68,7 +68,7 @@ body {
 }
 
 .menu button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: ease 0.3s all 0s;
   text-decoration: underline;
 }
@@ -101,7 +101,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  box-shadow: 8px 8px 8px #222222;
+  box-shadow: 4px 4px 8px #222222;
 }
 
 .square:hover {
@@ -119,7 +119,7 @@ body {
   align-items: center;
   border-radius: 8px;
   color: var(--dark-gray);
-  box-shadow: 8px 8px 8px #222222;
+  box-shadow: 4px 4px 8px #222222;
 }
 
 .player-one-score {
@@ -137,7 +137,51 @@ body {
   background-color: var(--turquoise);
 }
 
-/* Utility classes */
+.modal {
+  /* Making sure our modal will pop at the center of the screen always */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contents {
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  box-shadow: 4px 4px 8px #222222;
+}
+
+.modal-contents button {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--dark-gray);
+  box-shadow: 4px 4px 8px #222222;
+}
+
+.modal-contents button:hover {
+  transform: scale(1.05);
+  transition: ease 0.3s all 0s;
+}
+
+/* For keeping certain elements hidden initially */
 .hidden {
   display: none !important;
+}
+
+/* For coloring X and O player moves */
+.yellow {
+  color: var(--yellow);
+}
+
+.turquoise {
+  color: var(--turquoise);
 }

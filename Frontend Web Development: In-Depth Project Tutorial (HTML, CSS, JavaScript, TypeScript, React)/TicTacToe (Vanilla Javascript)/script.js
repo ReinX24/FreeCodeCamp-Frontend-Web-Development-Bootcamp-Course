@@ -184,6 +184,7 @@ const App = {
 
         if (gameStatus.status === "complete") {
           if (gameStatus.gameWinner) {
+            alert(`Player ${gameStatus.gameWinner} wins!`);
           }
         }
 
