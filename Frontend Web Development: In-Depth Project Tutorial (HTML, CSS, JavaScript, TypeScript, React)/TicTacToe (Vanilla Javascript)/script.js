@@ -23,6 +23,10 @@ const App = {
     newRoundBtn: document.querySelector('[data-id="new-round-btn"]'),
     // Selects all elements that have a data-id of square
     squares: document.querySelectorAll('[data-id="square"]'),
+    modal: document.querySelector('[data-id="modal"]'),
+    modalText: document.querySelector('[data-id="modal-text"]'),
+    modalBtn: document.querySelector('[data-id="modal-btn"]'),
+    turn: document.querySelector('[data-id="turn"]'),
   },
 
   // This is an attribute that will keep track of the game states
@@ -34,15 +38,13 @@ const App = {
   getGameStatus(moves) {
     // .filter gets the objects with playerIds of 1 or 2 and .map returns an array
     // that only contains the squareId of the object
+    // The + is a unary operator that converts an object to a number
     const p1Moves = moves
       .filter((move) => move.playerId == 1)
       .map((move) => +move.squareId);
     const p2Moves = moves
       .filter((move) => move.playerId == 2)
-      .map((move) => move.playerId);
-
-    console.log(p1Moves);
-    console.log(p2Moves);
+      .map((move) => +move.squareId);
 
     // Checking if there is a winner or if it is a tie game
     const winningPatterns = [
@@ -106,6 +108,12 @@ const App = {
       console.log("Add a new round");
     });
 
+    App.$.modalBtn.addEventListener("click", () => {
+      App.state.moves = []; // removes all moves from last game
+      App.$.modal.classList.add("hidden"); // adding the hidden class back to our modal
+      App.$.squares.forEach((square) => square.replaceChildren()); // removes all moves from squares
+    });
+
     // Iterating through our squares attribute which contains all divs
     // that have the data-ids of "square"
     App.$.squares.forEach((square) => {
@@ -122,12 +130,12 @@ const App = {
         // }
 
         // Checks if we can do a move in the current square
-        const hasMove = (sqaureId) => {
+        const hasMove = (squareId) => {
           // Checks if a move has already been done on the square we clicked on
           // Each object in moves is stored in move and we get the squareId and compare it
           // to the squareId of the square that we clicked on
           const existingMove = App.state.moves.find(
-            (move) => move.squareId === sqaureId
+            (move) => move.squareId === squareId
           );
           // Returns whether there has been a move done to that square or not
           return existingMove !== undefined;
@@ -150,18 +158,27 @@ const App = {
           App.state.moves.length === 0
             ? 1
             : getOppositePlayer(lastMove.playerId);
-
+        const nextPlayer = getOppositePlayer(currentPlayer);
         // Adding an icon to add to our square after we click on it
-        const icon = document.createElement("i");
+        const squareIcon = document.createElement("i");
+        const turnIcon = document.createElement("i"); // we need a separate icon since using the same icon for the square and player turn causes issues
+        const turnLabel = document.createElement("p");
+        turnLabel.innerText = `Player ${nextPlayer}, you are up!`;
 
         // Checking which type of icon to add to the square
         if (currentPlayer == 1) {
           // In this case, player 1 will be the yellow x
-          icon.classList.add("fa-solid", "fa-x", "yellow"); // setting multiple classes
+          squareIcon.classList.add("fa-solid", "fa-x", "yellow"); // icon added to square
+          turnIcon.classList.add("fa-solid", "fa-o", "turquoise"); // for the next player
+          turnLabel.classList = "turquoise"; // next player up text
         } else {
           // Player 2 will te the turquoise o
-          icon.classList.add("fa-solid", "fa-o", "turquoise");
+          squareIcon.classList.add("fa-solid", "fa-o", "turquoise");
+          turnIcon.classList.add("fa-solid", "fa-x", "yellow");
+          turnLabel.classList = "yellow";
         }
+
+        App.$.turn.replaceChildren(turnIcon, turnLabel);
 
         // Records the last move and adds it to an array
         App.state.moves.push({
@@ -176,16 +193,21 @@ const App = {
         App.state.currentPlayer = currentPlayer === 1 ? 2 : 1;
 
         // Add the icon to the square that we clicked on
-        square.replaceChildren(icon);
+        square.replaceChildren(squareIcon);
 
         const gameStatus = App.getGameStatus(App.state.moves);
 
-        console.log(gameStatus);
+        // console.log(gameStatus);
 
         if (gameStatus.status === "complete") {
+          App.$.modal.classList.remove("hidden");
+          let modalMessage = "";
           if (gameStatus.gameWinner) {
-            alert(`Player ${gameStatus.gameWinner} wins!`);
+            modalMessage = `Player ${gameStatus.gameWinner} wins!`;
+          } else {
+            modalMessage = `Tie game!`;
           }
+          App.$.modalText.textContent = modalMessage;
         }
 
         // HTML elements that we will be applying to our squares
