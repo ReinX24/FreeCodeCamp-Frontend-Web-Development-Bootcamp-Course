@@ -13,7 +13,7 @@
   <body>
     <main>
       <div class="main-grid">
-        <div class="player-turn">
+        <div class="player-turn" data-id="turn">
           <i class="fa-solid fa-x yellow"></i>
           <p>Player 1, you're up</p>
         </div>
@@ -28,15 +28,15 @@
           </div>
         </div>
 
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
-        <div class="square" data-id="square"></div>
+        <div class="square" id="1" data-id="square"></div>
+        <div class="square" id="2" data-id="square"></div>
+        <div class="square" id="3" data-id="square"></div>
+        <div class="square" id="4" data-id="square"></div>
+        <div class="square" id="5" data-id="square"></div>
+        <div class="square" id="6" data-id="square"></div>
+        <div class="square" id="7" data-id="square"></div>
+        <div class="square" id="8" data-id="square"></div>
+        <div class="square" id="9" data-id="square"></div>
 
         <div class="player-one-score">
           <p>Player 1</p>
@@ -52,10 +52,10 @@
         </div>
       </div>
     </main>
-    <div class="modal hidden">
+    <div class="modal hidden" data-id="modal">
       <div class="modal-contents">
-        <p>Player 1 wins!</p>
-        <button>Play Again</button>
+        <p data-id="modal-text">Player 1 wins!</p>
+        <button data-id="modal-btn">Play Again</button>
       </div>
     </div>
     <script src="script.js"></script>

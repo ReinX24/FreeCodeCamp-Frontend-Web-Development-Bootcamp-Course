@@ -6,18 +6,22 @@ const App = {
     newRoundBtn: document.querySelector('[data-id="new-round-btn"]'),
     menuItems: document.querySelector('[data-id="menu-items"]'),
     squares: document.querySelectorAll('[data-id="square"]'),
+    turnLabel: document.querySelector('[data-id="turn"]'),
+    modalBox: document.querySelector('[data-id="modal"]'),
+    modalText: document.querySelector('[data-id="modal-text"]'),
+    modalBtn: document.querySelector('[data-id="modal-btn"]'),
   },
 
   state: {
     playerMoves: [],
   },
 
-  gameStatus(gameMoves) {
-    const p1Moves = gameMoves
-      .fiter((eachMove) => eachMove.playerId == 1)
+  getGameStatus(playerMoves) {
+    const p1Moves = playerMoves
+      .filter((eachMove) => eachMove.playerId == 1)
       .map((eachMove) => +eachMove.squareId);
 
-    const p2Moves = gameMoves
+    const p2Moves = playerMoves
       .filter((eachMove) => eachMove.playerId == 2)
       .map((eachMove) => +eachMove.squareId);
 
@@ -46,7 +50,7 @@ const App = {
       );
 
       if (p1Wins) gameWinner = 1;
-      if (p2Wins) gameMoves = 2;
+      if (p2Wins) playerMoves = 2;
     });
 
     // Returns an object attribute that tells whether the
@@ -57,7 +61,7 @@ const App = {
       // "in-progress"
       // Also return the gameWinner
       gameStatus:
-        gameMoves.length == 9 || gameWinner !== null
+        playerMoves.length == 9 || gameWinner !== null
           ? "complete"
           : "in-progress",
       gameWinner,
@@ -82,12 +86,73 @@ const App = {
       console.log("New round button clicked");
     });
 
+    App.$.modalBtn.addEventListener("click", () => {
+      App.state.playerMoves = [];
+      App.$.modalBox.classList.add("hidden");
+      App.$.squares.forEach((eachSquare) => {
+        eachSquare.replaceChildren();
+      });
+    });
+
     App.$.squares.forEach((square) => {
       square.addEventListener("click", () => {
-        console.log("square clicked!");
-        const moveIcon = document.createElement("i");
-        moveIcon.classList.add("fa-solid", "fa-x", "yellow");
-        square.replaceChildren(moveIcon);
+        // Checks if clicked square is already clicked by a player
+        const hasMove = (squareId) => {
+          const existingMove = App.state.playerMoves.find(
+            (eachMove) => eachMove.squareId === squareId
+          );
+          return existingMove !== undefined; // returns true if there is a match
+        };
+
+        // Uses the hasMove function to check if that square is already used
+        if (hasMove(+square.id)) {
+          return; // terminates this function
+        }
+
+        const lastPlayerMove = App.state.playerMoves.at(-1);
+        const getOppositePlayer = (playerId) => (playerId == 1 ? 2 : 1);
+        const currentPlayer =
+          App.state.playerMoves.length === 0
+            ? 1
+            : getOppositePlayer(lastPlayerMove.playerId);
+        const nextPlayer = getOppositePlayer(currentPlayer);
+
+        const squareIcon = document.createElement("i");
+        const turnIcon = document.createElement("i");
+        const turnLabel = document.createElement("p");
+        turnLabel.innerText = `Player ${nextPlayer}, you are up!`;
+
+        if (currentPlayer == 1) {
+          squareIcon.classList.add("fa-solid", "fa-x", "yellow");
+          turnIcon.classList.add("fa-solid", "fa-o", "turquoise");
+          turnLabel.classList = "turquoise";
+        } else {
+          squareIcon.classList.add("fa-solid", "fa-o", "turquoise");
+          turnIcon.classList.add("fa-solid", "fa-x", "yellow");
+          turnLabel.classList = "yellow";
+        }
+
+        App.$.turnLabel.replaceChildren(turnIcon, turnLabel);
+
+        App.state.playerMoves.push({
+          squareId: +square.id,
+          playerId: currentPlayer,
+        });
+
+        square.replaceChildren(squareIcon);
+
+        const currentGameStatus = App.getGameStatus(App.state.playerMoves);
+
+        if (currentGameStatus.gameStatus == "complete") {
+          App.$.modalBox.classList.remove("hidden");
+          let modalMessage = "";
+          if (currentGameStatus.gameWinner) {
+            modalMessage = `Player ${currentGameStatus.gameWinner} wins!`;
+          } else {
+            modalMessage = `Tie game!`;
+          }
+          App.$.modalText.textContent = modalMessage;
+        }
       });
     });
   },

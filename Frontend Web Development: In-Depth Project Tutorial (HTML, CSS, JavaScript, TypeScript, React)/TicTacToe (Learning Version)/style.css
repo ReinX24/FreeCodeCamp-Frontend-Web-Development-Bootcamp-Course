@@ -38,8 +38,36 @@ body {
   gap: 1rem;
 }
 
+.player-turn p {
+  animation: 0.6s ease-in-out turn-text-animation;
+}
+
+@keyframes turn-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
 .player-turn i {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  animation: 0.6s ease-in-out turn-icon-animation;
+}
+
+@keyframes turn-icon-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .main-grid {
