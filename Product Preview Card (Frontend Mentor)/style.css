@@ -1,0 +1,80 @@
+/* Custom properties */
+:root {
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --secondary-200: hsl(30, 38%, 92%);
+
+    --clr-neutral-900: hwb(212 11% 83%);
+    --clr-neutral-400: hsl(228, 12%, 48%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+/* CSS resets */
+/* Using box sizing on all of our elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Removing all default margins for elements */
+* {
+    margin: 0;
+}
+
+/* Allow percentage based heights in html and body */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Improving media defaults, images are now responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+    /* block means it takes up the entire width available */
+    display: block;
+    max-width: 100%;
+}
+
+/* Buttons and other elements are now changed when the font style is set */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* For avoiding text overflows, makes sures that text is within the screen */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
