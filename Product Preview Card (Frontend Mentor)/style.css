@@ -1,7 +1,7 @@
 /* Custom properties */
 :root {
     --clr-primary-400: hsl(158, 36%, 37%);
-    --secondary-200: hsl(30, 38%, 92%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
 
     --clr-neutral-900: hwb(212 11% 83%);
     --clr-neutral-400: hsl(228, 12%, 48%);
@@ -68,7 +68,54 @@ h6 {
     overflow-wrap: break-word;
 }
 
+body {
+    /* Using our custom variables for our font-family */
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-400);
+    font-size: 0.875rem;
+    background-color: var(--clr-secondary-200);
 
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+/* utilities */
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    /* makes sure the flex wraps when the screen is too small */
+    flex-wrap: wrap;
+}
+
+.product {
+    /* custom padding for this div's components */
+    --content-padding: 2rem;
+    --content-spacing: 1rem;
+
+    background-color: var(--clr-neutral-100);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.product-category {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-neutral-900);
+}
+
+/* the text below the photo */
+.product-content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
 
 .attribution {
     font-size: 11px;

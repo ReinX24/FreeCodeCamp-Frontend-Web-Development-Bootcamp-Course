@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TicTacToe | Learning Version</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/3bfd3ce9e5.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <main>
-      <div class="main-grid">
-        <div class="player-turn" data-id="turn">
-          <i class="fa-solid fa-x yellow"></i>
-          <p>Player 1, you're up</p>
-        </div>
-        <div class="menu">
-          <button class="action-btn" data-id="action-btn">
-            Actions
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="menu-items hidden" data-id="menu-items">
-            <button class="menu-btn" data-id="reset-btn">Reset</button>
-            <button class="menu-btn" data-id="new-round-btn">New Round</button>
-          </div>
-        </div>
 
-        <div class="square" id="1" data-id="square"></div>
-        <div class="square" id="2" data-id="square"></div>
-        <div class="square" id="3" data-id="square"></div>
-        <div class="square" id="4" data-id="square"></div>
-        <div class="square" id="5" data-id="square"></div>
-        <div class="square" id="6" data-id="square"></div>
-        <div class="square" id="7" data-id="square"></div>
-        <div class="square" id="8" data-id="square"></div>
-        <div class="square" id="9" data-id="square"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TicTacToe | Learning Version</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/3bfd3ce9e5.js" crossorigin="anonymous"></script>
+</head>
 
-        <div class="player-one-score">
-          <p>Player 1</p>
-          <span>0 wins</span>
-        </div>
-        <div class="tie-score">
-          <p>Ties</p>
-          <span>0</span>
-        </div>
-        <div class="player-two-score">
-          <p>Player 2</p>
-          <span>0 wins</span>
+<body>
+  <main>
+    <div class="main-grid">
+      <div class="player-turn" data-id="turn">
+        <i class="fa-solid fa-x yellow"></i>
+        <p>Player 1, you're up</p>
+      </div>
+      <div class="menu">
+        <button class="action-btn" data-id="action-btn">
+          Actions
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="menu-items hidden" data-id="menu-items">
+          <button class="menu-btn" data-id="reset-btn">Reset</button>
+          <button class="menu-btn" data-id="new-round-btn">New Round</button>
         </div>
       </div>
-    </main>
-    <div class="modal hidden" data-id="modal">
-      <div class="modal-contents">
-        <p data-id="modal-text">Player 1 wins!</p>
-        <button data-id="modal-btn">Play Again</button>
+
+      <div class="square" id="1" data-id="square"></div>
+      <div class="square" id="2" data-id="square"></div>
+      <div class="square" id="3" data-id="square"></div>
+      <div class="square" id="4" data-id="square"></div>
+      <div class="square" id="5" data-id="square"></div>
+      <div class="square" id="6" data-id="square"></div>
+      <div class="square" id="7" data-id="square"></div>
+      <div class="square" id="8" data-id="square"></div>
+      <div class="square" id="9" data-id="square"></div>
+
+      <div class="player-one-score">
+        <p>Player 1</p>
+        <span>0 wins</span>
+      </div>
+      <div class="tie-score">
+        <p>Ties</p>
+        <span>0</span>
+      </div>
+      <div class="player-two-score">
+        <p>Player 2</p>
+        <span>0 wins</span>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </main>
+  <div class="modal hidden" data-id="modal">
+    <div class="modal-contents">
+      <p data-id="modal-text">Player 1 wins!</p>
+      <button data-id="modal-btn">Play Again</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
