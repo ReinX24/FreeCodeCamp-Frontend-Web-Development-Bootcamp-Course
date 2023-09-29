@@ -1,6 +1,7 @@
 /* Custom properties */
 :root {
     --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-500: hsl(158, 36%, 20%);
     --clr-secondary-200: hsl(30, 38%, 92%);
 
     --clr-neutral-900: hwb(212 11% 83%);
@@ -112,9 +113,26 @@ body {
     --content-padding: 2rem;
     --content-spacing: 1rem;
 
+    display: grid;
     background-color: var(--clr-neutral-100);
     border-radius: 0.5rem;
     overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width: 600px) {
+
+    .product {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+.product-content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
 }
 
 .product-category {
@@ -138,11 +156,34 @@ body {
 /* styling the button at the bottom */
 .button {
     cursor: pointer;
-    /* top and bottom, left and right */
-    padding: .5em 1.5em;
-    border: 0;
     text-decoration: none;
     display: inline-flex;
+    gap: .75rem;
+    justify-content: center;
+    align-items: center;
+
+    /* top and bottom, left and right */
+    border: 0;
+    border-radius: 0.5rem;
+    padding: .75em 1.5em;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+/* selecting button hover and focus at the same time */
+.button:is(:hover, :focus) {
+    background-color: var(--clr-primary-500);
+}
+
+/* setting the icon for our button */
+/* ::before means that the icon is added before the content or in this case text */
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url('images/icon-cart.svg');
+    width: 15px;
+    height: 16px;
 }
 
 /* the text below the photo */
