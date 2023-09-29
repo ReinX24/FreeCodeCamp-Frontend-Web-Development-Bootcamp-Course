@@ -1,0 +1,190 @@
+/* CSS reset from: https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+:root {
+    --clr-light-green: hsl(158, 36%, 37%);
+    --clr-dark-green: hsl(158, 36%, 20%);
+    --clr-cream: hsl(30, 38%, 92%);
+
+    --clr-dark-blue: hsl(212, 21%, 14%);
+    --clr-grey: hsl(228, 12%, 48%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --ff-fraunces: 'Fraunces', serif;
+    --ff-montserrat: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+/* Allow percentage based heights in html and body */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* Adding styles to our font */
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-montserrat);
+    background-color: var(--clr-cream);
+    color: var(--clr-grey);
+    font-size: 0.875rem;
+
+    /* Centering our elements */
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.product-card {
+    --content-padding: 1.5rem;
+    --content-spacing: 1rem;
+
+    display: grid;
+    background-color: var(--clr-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width:600px) {
+    .product-card {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product-content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+.product-category {
+    font-size: 0.8125rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--clr-dark-blue);
+}
+
+.product-price {
+    font-size: 2rem;
+    font-family: var(--ff-fraunces);
+    color: var(--clr-light-green);
+}
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.75em 1.5em;
+    background-color: var(--clr-light-green);
+    color: var(--clr-white);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+.button:is(:hover, :focus) {
+    background-color: var(--clr-dark-green);
+}
+
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url(images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+}

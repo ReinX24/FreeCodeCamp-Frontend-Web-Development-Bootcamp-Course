@@ -186,13 +186,6 @@ body {
     height: 16px;
 }
 
-/* the text below the photo */
-.product-content {
-    display: grid;
-    gap: var(--content-spacing);
-    padding: var(--content-padding);
-}
-
 .attribution {
     font-size: 11px;
     text-align: center;
