@@ -61,6 +61,7 @@ h6 {
 
 :root {
     --clr-dark-cyan: hsl(158, 36%, 37%);
+    --clr-darker-cyan: hsl(158, 36%, 20%);
     --clr-cream: hsl(30, 38%, 92%);
     --clr-dark-blue: hsl(212, 21%, 14%);
     --clr-grayish-blue: hsl(228, 12%, 48%);
@@ -69,8 +70,9 @@ h6 {
     --fw-regular: 500;
     --fw-bold: 700;
 
-    --ft-montserrat: 'Monserrat', sans-serif;
-    --ft-frauances: 'Frauances', serif;
+    --ft-montserrat: 'Montserrat', sans-serif;
+    --ft-fraunces: 'Fraunces', serif;
+
 }
 
 h1,
@@ -103,7 +105,6 @@ body {
 }
 
 .product-card {
-
     --card-padding: 1.5rem;
     --card-spacing: 1rem;
 
@@ -111,9 +112,11 @@ body {
     background-color: var(--clr-white);
     border-radius: 0.5rem;
     overflow: hidden;
+    max-width: 600px;
 }
 
 .product-content {
+    display: grid;
     padding: var(--card-padding);
     gap: var(--card-spacing);
 }
@@ -124,7 +127,7 @@ body {
 }
 
 .product-title {
-    font-family: var(--ft-frauances);
+    font-family: var(--ft-fraunces);
     font-size: 2rem;
     font-weight: var(--fw-bold);
     color: var(--clr-dark-blue);
@@ -132,4 +135,39 @@ body {
 
 .discounted-price {
     font-size: 2rem;
+    font-family: var(--ft-fraunces);
+    color: var(--clr-dark-cyan);
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--clr-dark-cyan);
+    color: var(--clr-white);
+    font-family: var(--ft-montserrat);
+    font-weight: var(--fw-bold);
+}
+
+/* Adding icon to out button class */
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url(images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+}
+
+.button:is(:hover, :focus) {
+    background-color: var(--clr-darker-cyan);
+    transition: all 0.3s ease 0.15s;
+}
+
+@media (min-width: 600px) {
+
+    .product-card {
+        --card-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
