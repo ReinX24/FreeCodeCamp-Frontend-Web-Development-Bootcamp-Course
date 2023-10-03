@@ -1,0 +1,171 @@
+:root {
+    --clr-white: #ffffff;
+    --clr-light-grey: #f4f4f4;
+    --clr-dark-grey: #35424a;
+    --clr-orange: #e8491d;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+header {
+    padding: 2rem 12rem;
+    background-color: var(--clr-dark-grey);
+    color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5rem var(--clr-orange) solid;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header ul li a {
+    color: var(--clr-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+header ul li a:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--clr-light-grey);
+}
+
+.highlight,
+.current {
+    color: var(--clr-orange);
+}
+
+.button {
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+}
+
+.button:hover {
+    color: var(--clr-orange);
+    background-color: var(--clr-white);
+    font-weight: bold;
+}
+
+#showcase {
+    text-align: center;
+    background-image: url(../images/bannerWhite.jpeg);
+    padding: 8rem 12rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#showcase h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#showcase p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+#newsletter {
+    padding: 2rem 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-dark-grey);
+    color: var(--clr-white);
+}
+
+#newsletter input {
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+#boxes article {
+    display: flex;
+    padding: 2rem 12rem;
+}
+
+#boxes .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+#boxes .box h4 {
+    margin: 1rem;
+}
+
+#boxes .box p {
+    font-size: 0.8rem;
+}
+
+.box img {
+    display: flex;
+    width: 128px;
+    margin: 1rem;
+}
+
+footer {
+    padding: 2rem 12rem;
+    text-align: center;
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+}
