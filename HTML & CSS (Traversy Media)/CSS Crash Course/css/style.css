@@ -140,3 +140,88 @@ a:visited {
     background-color: red;
     color: #fff;
 }
+
+.block {
+    /* float means that the contents will all be on the same line */
+    float: left;
+    width: 33.3%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    /* border-box means that contain all margins and padding within width */
+    box-sizing: border-box;
+}
+
+.clr {
+    clear: both;
+}
+
+#main-block {
+    float: left;
+    width: 70%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.p-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #333;
+    margin-top: 2rem;
+    /* This element should be position relative so that we could position its child elements properly */
+    position: relative;
+    background-image: url(../images/mars.jpg);
+    background-position: 100px 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-size: cover; */
+}
+
+/* Using position absolute */
+/* The parent element of this element should have the position relative for this to stay within that element */
+.p-box h1 {
+    position: absolute;
+    top: 40px;
+    left: 200px;
+}
+
+.p-box h2 {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+}
+
+/* Using position fixed */
+/* Having its position fixed maeans that it stays on the page wherever you go */
+.fix-me {
+    position: fixed;
+    top: 400px;
+}
+
+/* Using pseudo classes */
+/* Selecting only the first li */
+.my-list li:first-child {
+    background-color: red;
+}
+
+.my-list li:last-child {
+    background-color: blue;
+}
+
+/* Selects the 5th item in the list */
+.my-list li:nth-child(5) {
+    background-color: yellow;
+}
+
+.my-list li:nth-child(even) {
+    background-color: grey;
+}

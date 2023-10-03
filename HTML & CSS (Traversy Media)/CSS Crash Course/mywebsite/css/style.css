@@ -1,0 +1,97 @@
+body {
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.6rem;
+    margin: 0;
+
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-header {
+    background-color: coral;
+    color: white;
+}
+
+#navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+#navbar ul {
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding-right: 1rem;
+}
+
+#navbar a:hover {
+    color: #808080;
+}
+
+#showcase {
+    background-image: url(../images/backgroundWall.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 250px;
+    background-size: cover;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#showcase h1 {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 3rem;
+}
+
+#main {
+    float: left;
+    width: 70%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #fff;
+}
+
+#main-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    #main {
+        width: 100%;
+        float: none;
+    }
+
+    #sidebar {
+        width: 100%;
+        float: none;
+    }
+}
