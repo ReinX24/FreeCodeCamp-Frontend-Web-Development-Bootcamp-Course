@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --clr-blue: #3474e6;
+    --clr-dark-blue: #0151cc;
+    --clr-light-blue: #a1c3ff;
+    --clr-white: #fff;
+    --clr-black: #333;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--clr-light-blue);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+}
+
+.navbar .container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container ul {
+    list-style: none;
+    color: var(--clr-white);
+    display: flex;
+}
+
+.navbar .container ul li {
+    margin-left: 20px;
+}
+
+.navbar .container ul li a {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar .container ul li a:hover {
+    color: var(--clr-light-blue);
+}
+
+.header {
+    background-color: var(--clr-dark-blue);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container .header-text {
+    color: var(--clr-white);
+}
+
+.header .container .header-text h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.header img {
+    max-width: 400px;
+}
+
+.boxes .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxes .container .box {
+    /* flex: 1 so that all elements will all grow and shrink at the same rate */
+    flex: 1;
+    color: var(--clr-white);
+    background-color: var(--clr-dark-blue);
+    margin: 20px 10px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.boxes .container .box h2 {
+    margin-bottom: 15px;
+}
+
+.boxes .container .box i {
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+
+    .header .container {
+        padding-top: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .boxes .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
