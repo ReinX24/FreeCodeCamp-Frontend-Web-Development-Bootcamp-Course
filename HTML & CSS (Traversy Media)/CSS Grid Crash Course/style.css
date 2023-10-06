@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 100px auto;
+    padding: 10px;
+
+    display: grid;
+    /* first column, second column, third column */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item {
+    background-color: steelblue;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid skyblue;
+}
