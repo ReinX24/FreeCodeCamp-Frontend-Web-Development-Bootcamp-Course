@@ -19,7 +19,10 @@ body {
 
     display: grid;
     /* first column, second column, third column */
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* making the grid elements wrap */
+    /* once of the elements are less than 200 pixels, wrep elements under */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     /* row gap, column gap */
     gap: 10px;
 
