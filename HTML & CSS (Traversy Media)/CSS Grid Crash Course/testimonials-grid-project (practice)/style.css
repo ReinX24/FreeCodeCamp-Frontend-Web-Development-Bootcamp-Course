@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;300;400;700&display=swap');
 
+:root {
+    --clr-moderate-violet: #7541c8;
+    --clr-light-violet: #A775F1;
+    --clr-dark-gray-blue: #48556a;
+    --clr-dark-black-blue: #19212e;
+    --clr-white: #ffffff;
+    --clr-light-gray: #cfcfcf;
+    --clr-light-gray-blue: #ecf2f8;
+}
+
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 body {
-    background-color: #edf2f8;
+    background-color: var(--clr-light-gray-blue);
     font-family: 'Barlow Semi Condensed', sans-serif;
     line-height: 1.7;
     font-size: 13px;
@@ -19,73 +34,78 @@ body {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .card {
     background-color: #fff;
     border-radius: 10px;
-    padding: 30px;
+    padding: 40px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     margin-bottom: 10px;
+    color: var(--clr-dark-gray-blue);
 }
 
 .card-header {
     display: flex;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header img {
+    border: 2px solid var(--clr-light-gray);
+    border-radius: 50%;
 }
 
 .card-header h3 {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .card-header p {
     opacity: 50%;
 }
 
-.card-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #996ed9;
-    margin-right: 10px;
-}
-
 .card-lead {
     font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.3;
     margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 .card-quote {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 1.1rem;
     opacity: 70%;
+    line-height: 1.4;
 }
 
 .card-bg-purple {
-    background-color: hsl(263, 55%, 52%);
-    color: #fff;
+    background-color: var(--clr-moderate-violet);
+    color: var(--clr-white);
     background-image: url(images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    /* 10px from the top and 100 px from the right */
-    background-position: top 10px right 100px;
+    background-position: top 0px right 100px;
+}
+
+.card-bg-purple img,
+.card-bg-black-blue img {
+    border: 2px solid var(--clr-light-violet);
 }
 
 .card-bg-gray-blue {
-    background-color: hsl(217, 19%, 35%);
-    color: #fff;
+    background-color: var(--clr-dark-gray-blue);
+    color: var(--clr-white);
+}
+
+.card-bg-gray-blue img {
+    border: 2px solid var(--clr-light-gray-blue);
 }
 
 .card-bg-black-blue {
-    background-color: hsl(219, 29%, 14%);
-    color: #fff;
+    background-color: var(--clr-dark-black-blue);
+    color: var(--clr-white);
 }
 
-/* Selects first card in .testimonials */
 .card:nth-of-type(1) {
     grid-column: 1 / 3;
 }
@@ -100,10 +120,13 @@ body {
     grid-row: 1 / 3;
 }
 
-@media (max-width: 768px) {
+footer {
+    text-align: center;
+}
+
+@media (max-width: 576px) {
     .testimonials {
         grid-template-columns: 1fr;
-        width: 100%;
     }
 
     .card:nth-of-type(1) {
@@ -119,8 +142,4 @@ body {
         grid-column: 1;
         grid-row: 5;
     }
-}
-
-footer {
-    text-align: center;
 }
