@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background-color: beige;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container,
+.item {
+    margin: 2rem auto;
+    width: 500px;
+    height: auto;
+    background-color: beige;
+    padding: 2rem;
+    border-radius: 8px;
+    list-style: none;
+}
+
+#my-form h1 {
+    margin-bottom: 1rem;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+input {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.button {
+    width: 100%;
+    background-color: #333;
+    color: white;
+
+}
+
+.button:hover {
+    background-color: #444;
+}

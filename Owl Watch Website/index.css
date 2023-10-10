@@ -88,6 +88,7 @@ header {
     list-style: none;
     display: flex;
     gap: 2rem;
+    padding: 0;
 }
 
 .nav a {
@@ -104,7 +105,7 @@ header {
 }
 
 .showcase {
-    padding: 4rem 0rem;
+    padding: 4rem 2rem;
     text-align: center;
     background-image: url(images/owlWatchShowcasePhoto.jpg);
     background-repeat: no-repeat;
@@ -116,7 +117,7 @@ header {
     background-color: var(--clr-russian-violet);
     color: var(--clr-antiflash-white);
     border-radius: 8px;
-    padding: 1rem 0;
+    padding: 1rem;
     max-width: 600px;
 }
 
@@ -129,7 +130,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem;
 }
 
 .test .container button {

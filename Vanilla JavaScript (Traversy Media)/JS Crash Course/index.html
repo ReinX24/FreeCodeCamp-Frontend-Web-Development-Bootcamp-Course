@@ -5,12 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Crash Course</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>JS Crash Course</h1>
+        <h1>JS For Beginners</h1>
     </header>
+
+    <section class="container">
+        <form id="my-form">
+            <h1>Add User</h1>
+            <div class="msg"></div>
+            <div class="text-input">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div class="text-input">
+                <label for="email">Email:</label>
+                <input type="email" id="name">
+            </div>
+            <input type="button" value="Submit" class="button">
+        </form>
+
+    </section>
+
+    <ul id="users"></ul>
+
+    <ul class="items">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+
     <script src="main.js"></script>
 </body>
 

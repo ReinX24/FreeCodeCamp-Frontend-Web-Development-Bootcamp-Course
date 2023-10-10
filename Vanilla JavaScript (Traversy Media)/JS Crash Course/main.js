@@ -238,29 +238,60 @@
 // console.log(personTwo.getFullName())
 
 // ES6 Classes
-class Person {
+// class Person {
 
-    constructor(firstName, lastName, dateOfBirth) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = new Date(dateOfBirth);
-    }
+//     constructor(firstName, lastName, dateOfBirth) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.dateOfBirth = new Date(dateOfBirth);
+//     }
 
-    getBirthYear() {
-        return this.dateOfBirth.getFullYear();
-    }
+//     getBirthYear() {
+//         return this.dateOfBirth.getFullYear();
+//     }
 
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`;
-    }
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`;
+//     }
 
-}
+// }
 
-const personOne = new Person('Rein', 'Solis', '08/24/2003');
-const personTwo = new Person('Rae', 'Sanchez', '10/15/2002');
+// const personOne = new Person('Rein', 'Solis', '08/24/2003');
+// const personTwo = new Person('Rae', 'Sanchez', '10/15/2002');
 
-console.log(personOne.getFullName())
-console.log(personTwo.getFullName())
+// console.log(personOne.getFullName())
+// console.log(personTwo.getFullName())
 
-console.log(personOne.getBirthYear())
-console.log(personTwo.getBirthYear())
+// console.log(personOne.getBirthYear())
+// console.log(personTwo.getBirthYear())
+
+// Single element selector
+// const form = document.getElementById('my-form');
+// console.log(document.querySelector('h1'))
+
+// Multiple element selector
+// console.log(document.querySelectorAll('.item'))
+// console.log(document.getElementsByClassName('item'))
+// console.log(document.getElementsByTagName('li'))
+
+// const items = document.querySelectorAll('.item');
+// items.forEach((eachItem) => {
+// console.log(eachItem)
+// })
+
+// const ul = document.querySelector('.items');
+// ul.remove(); // removes the entire element and its children
+// ul.lastElementChild.remove(); // removes the last child element in ul
+// ul.firstElementChild.remove(); // removes the first element in ul
+// ul.firstElementChild.textContent = 'Hello'; // replaces text in the first child element
+// ul.children[1].innerText = 'Rein'; // selecting an element at a certain index and replacing text
+// ul.lastElementChild.innerHTML = '<h2>Hello</h2>' // adding HTML to an element
+
+// const button = document.querySelector('.button');
+// button.style.background = 'red'; // selecting an attribute of an element
+
+const button = document.querySelector('.button');
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(e.target); // prints the element where the event listener is added
+});
