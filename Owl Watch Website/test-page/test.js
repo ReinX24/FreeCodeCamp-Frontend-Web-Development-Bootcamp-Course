@@ -1,16 +1,16 @@
 const submitFormButton = document.querySelector('#submit-button').addEventListener('click', evaluateForm);
+const scoreText = document.querySelector('.score');
+
 
 function evaluateForm() {
 
     let totalScore = 0;
 
-    totalScore += getQuestionAnswer(1);
-    totalScore += getQuestionAnswer(2);
-    totalScore += getQuestionAnswer(3);
-    totalScore += getQuestionAnswer(4);
+    for (let i = 1; i <= 20; i++) {
+        totalScore += getQuestionAnswer(i);
+    }
 
-    console.log(totalScore)
-
+    scoreText.innerHTML = `${totalScore}%`;
 }
 
 function getQuestionAnswer(questionNumber) {
