@@ -16,7 +16,7 @@ header {
     padding: 1rem;
 }
 
-.container,
+#my-form,
 .item {
     margin: 2rem auto;
     width: 500px;
@@ -52,4 +52,18 @@ input {
 
 .button:hover {
     background-color: #444;
+}
+
+.bg-dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.error {
+    background-color: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
 }

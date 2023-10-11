@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background-color: #1C9346ff;
+    color: #fff;
+}
+
+header .container {
+    max-width: 1100px;
+    padding: 2rem 0;
+    margin: 0 auto;
+}
+
+main .container {
+    max-width: 1100px;
+    padding: 2rem;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+}
+
+main .add-items {
+    margin-bottom: 1rem;
+}
+
+main .item-input {
+    padding: 0.5rem;
+    border: 1px solid #353943ff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+main .button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #353943ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+main .button:hover {
+    background-color: lightgray;
+    color: #353943ff;
+}
+
+main .items li {
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
