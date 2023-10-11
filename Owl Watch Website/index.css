@@ -122,8 +122,9 @@ header {
 }
 
 .test {
-    background-color: var(--clr-navy-blue);
+    background: linear-gradient(to right, var(--clr-navy-blue), var(--clr-rebecca-purple));
     color: var(--clr-antiflash-white);
+    border-bottom: 4px solid var(--clr-antiflash-white);
 }
 
 .test .container {
@@ -137,7 +138,7 @@ header {
     border: 2px solid var(--clr-antiflash-white);
     background-color: var(--clr-russian-violet);
     color: var(--clr-antiflash-white);
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 0.4rem 2.4rem;
     font-weight: 700;
     font-size: 1.2rem;
@@ -150,7 +151,8 @@ header {
 }
 
 .objectives {
-    background-color: var(--clr-antiflash-white);
+    color: var(--clr-antiflash-white);
+    background: linear-gradient(var(--clr-russian-violet), var(--clr-rebecca-purple));
     text-align: center;
 }
 

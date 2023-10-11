@@ -74,7 +74,7 @@
 // let submit = document.querySelector('input[type="button"]');
 // submit.value = 'SEND';
 
-// let item = document.querySelector('.list-item'); // selects the first element only
+// let item = document.querySelector('.list-iKtem'); // selects the first element only
 // item.style.color = '#ccc';
 
 // let lastItem = document.querySelector('.list-item:last-child');
