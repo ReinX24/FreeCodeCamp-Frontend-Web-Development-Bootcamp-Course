@@ -1,29 +1,3 @@
-const submitFormButton = document.querySelector('#submit-button').addEventListener('click', evaluateForm);
-const scoreText = document.querySelector('.score');
-
-
-function evaluateForm() {
-
-    let totalScore = 0;
-
-    for (let i = 1; i <= 20; i++) {
-        totalScore += getQuestionAnswer(i);
-    }
-
-    scoreText.innerHTML = `${totalScore}%`;
-}
-
-function getQuestionAnswer(questionNumber) {
-    const choiceOne = document.querySelector('#question-' + questionNumber + '-choice-1');
-    const choiceTwo = document.querySelector('#question-' + questionNumber + '-choice-2');
-    const choiceThree = document.querySelector('#question-' + questionNumber + '-choice-3');
-    const choiceFour = document.querySelector('#question-' + questionNumber + '-choice-4');
-    const choiceFive = document.querySelector('#question-' + questionNumber + '-choice-5');
-
-    const qAnswer = [choiceOne, choiceTwo, choiceThree, choiceFour, choiceFive].filter((eachChoice) => { return eachChoice.checked === true });
-    return Number(qAnswer[0].value);
-}
-
 function generateQuestionCard(questionNumber) {
     const questionForm = document.querySelector('form');
 
@@ -44,9 +18,12 @@ function generateQuestionCard(questionNumber) {
 
         const radioButton = document.createElement('input');
         radioButton.type = 'radio';
+        radioButton.checked = false;
         radioButton.name = `question-${questionNumber}-choice`;
+        radioButton.id = `question-${questionNumber}-choice-${i}`;
+        radioButton.value = i;
 
-        if (i == 1) {
+        if (radioButton.value == 1) {
             radioButton.checked = true;
         }
 
@@ -58,6 +35,42 @@ function generateQuestionCard(questionNumber) {
     questionForm.appendChild(questionCard);
 }
 
-generateQuestionCard(21);
-generateQuestionCard(22);
-generateQuestionCard(23);
+// Generating 20 questions
+for (let i = 1; i <= 20; i++) {
+    generateQuestionCard(i);
+}
+
+// Adding Submit button
+// <input type="button" value="Submit" id="submit-button">
+const submitButton = document.createElement('input');
+submitButton.type = 'button';
+submitButton.value = 'Submit';
+submitButton.id = 'submit-button';
+const questionForm = document.querySelector('form');
+questionForm.appendChild(submitButton);
+
+// Adding functions to our button
+const submitFormButton = document.querySelector('#submit-button').addEventListener('click', evaluateForm);
+
+
+function evaluateForm() {
+    let totalScore = 0;
+
+    for (let i = 1; i <= 20; i++) {
+        totalScore += getQuestionAnswer(i);
+    }
+
+    const score = document.createElement('p');
+    score.classList.add('score');
+    questionForm.appendChild(score);
+    score.innerHTML = `${totalScore}%`;
+}
+
+function getQuestionAnswer(questionNumber) {
+    let qAnswer = [];
+    for (let i = 1; i <= 5; i++) {
+        qAnswer.push(document.querySelector(`#question-${questionNumber}-choice-${i}`))
+    }
+    qAnswer = qAnswer.filter((eachChoice) => { return eachChoice.checked === true });
+    return Number(qAnswer[0].value);
+}

@@ -100,7 +100,7 @@ header {
 
 .nav a:hover {
     cursor: pointer;
-    color: var(--clr-rebecca-purple);
+    color: var(--clr-taupe-gray);
     transition: all 0.2s ease 0.1s;
 }
 
@@ -122,11 +122,12 @@ header {
     max-width: 600px;
 }
 
-
-form {
+main {
     background: linear-gradient(var(--clr-russian-violet), var(--clr-rebecca-purple));
     color: var(--clr-antiflash-white);
+}
 
+form {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -146,14 +147,21 @@ form {
     width: 500px;
 }
 
-.question-card {
+.question-card,
+.results-section .container {
     margin: 1rem;
     padding: 1rem;
     border: 1px solid var(--clr-antiflash-white);
     border-radius: 8px;
     background-color: var(--clr-russian-violet);
+    background: linear-gradient(var(--clr-russian-violet), var(--clr-navy-blue));
     width: 500px;
     height: 100px;
+    transition: ease 0.08s all 0.12s;
+}
+
+.results-section .container {
+    margin: 0 auto;
 }
 
 .question-card:hover {

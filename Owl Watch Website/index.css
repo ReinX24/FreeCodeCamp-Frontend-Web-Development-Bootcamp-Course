@@ -100,7 +100,7 @@ header {
 
 .nav a:hover {
     cursor: pointer;
-    color: var(--clr-rebecca-purple);
+    color: var(--clr-taupe-gray);
     transition: all 0.2s ease 0.1s;
 }
 
@@ -147,7 +147,7 @@ header {
 .test .container button:hover {
     transform: scale(1.1);
     transition: all 0.2s ease 0.1s;
-    background-color: var(--clr-rebecca-purple);
+    background-color: var(--clr-taupe-gray);
 }
 
 .objectives {
