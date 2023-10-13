@@ -48,6 +48,10 @@ main .button {
     border-radius: 4px;
 }
 
+main .click-here-button {
+    width: 100%;
+}
+
 main .button:hover {
     background-color: lightgray;
     color: #353943ff;

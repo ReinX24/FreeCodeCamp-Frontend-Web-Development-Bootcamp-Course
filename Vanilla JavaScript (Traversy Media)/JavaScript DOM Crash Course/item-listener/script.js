@@ -88,14 +88,148 @@
 // console.log(titles);
 
 // Gets all odd numbered elements, index 0 is counted as 1
-let odd = document.querySelectorAll('li:nth-child(odd)');
+// let odd = document.querySelectorAll('li:nth-child(odd)');
 
-for (let i = 0; i < odd.length; i++) {
-    odd[i].style.backgroundColor = '#f4f4f4';
-}
+// for (let i = 0; i < odd.length; i++) {
+// odd[i].style.backgroundColor = '#f4f4f4';
+// }
 
-let even = document.querySelectorAll('li:nth-child(even)');
+// let even = document.querySelectorAll('li:nth-child(even)');
 
-for (let i = 0; i < even.length; i++) {
-    even[i].style.backgroundColor = '#ccc';
+// for (let i = 0; i < even.length; i++) {
+// even[i].style.backgroundColor = '#ccc';
+// }
+
+// TRAVERSING THE DOM //
+// let itemList = document.querySelector('.items');
+// parentNode
+// console.log(itemList.parentNode) // gets the parentNode of the element
+// itemList.parentElement.style.backgroundColor = '#f4f4f4'; // changes background color of parentNode 
+// console.log(itemList.parentNode.parentNode)
+// itemList.parentNode.parentNode.style.backgroundColor = '#f4f4f4';
+
+// parentElement, does the same as parentNode
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement);
+// itemList.parentElement.parentElement.style.backgroundColor = '#f4f4f4';
+
+// childNodes, not recommended because it also selects linebreaks
+// console.log(itemList.childNodes)
+
+// children, recommended since it only selects elements
+// console.log(itemList.children)
+// console.log(itemList.children[1]) // selects second element
+// itemList.children[1].style.backgroundColor = 'yellow'; 
+
+// FirstChild, not recommended since it selects the text node instead of the HTML node
+// console.log(itemList.firstChild)
+
+// FirstElementChild
+// console.log(itemList.firstElementChild)
+// itemList.firstElementChild.textContent = 'Hello 1';
+
+// LastChild, not recommended since it selects a textnode line break
+// console.log(itemList.lastChild)
+
+// lastElementChild, recommended since it selects last HTML element
+// console.log(itemList.lastElementChild)
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+// nextSibling, not recommended since it selects the textnode again
+// console.log(itemList.nextSibling)
+
+// nextElementSibling, selects HTML element
+// console.log(itemList.nextElementSibling)
+
+// previousSibling, not recommended
+// console.log(itemList.previousSibling)
+
+// previousElementSibling, recommended
+// console.log(itemList.previousElementSibling)
+// itemList.previousElementSibling.style.color = 'green';
+
+// createElement
+
+// Create a div
+// let newDiv = document.createElement('div');
+
+// Add class
+// newDiv.className = 'hello';
+
+// Add id
+// newDiv.id = 'hello1';
+
+// Add attr
+// newDiv.setAttribute('title', 'Hello Div')
+
+// Creating text node for our div
+// let newDivText = document.createTextNode('Hello, World!');
+
+// Adding newDivText using appendChild since it will be a child of newDiv
+// newDiv.appendChild(newDivText);
+
+// let mainHeaderContainer = document.querySelector('#main-header .container');
+// let headerTitle = document.querySelector('#main-header #header-title');
+
+// Inserts before an element, insertBefore(<addedElement>, <elementBefore>)
+// mainHeaderContainer.insertBefore(newDiv, headerTitle);
+
+// Setting newDiv styles
+// newDiv.style.fontSize = '2rem';
+// newDiv.style.border = '1px solid #ccc';
+
+// console.log(newDiv)
+
+// EVENTS //
+// let clickButton = document.querySelector('.click-here-button')
+// .addEventListener('click', buttonClick);
+
+// function buttonClick(e) {
+// document.querySelector('#header-title').textContent = 'Changed';
+// document.querySelector('main').style.backgroundColor = '#f4f4f4'
+
+// Prints the attributes of the element that has the eventListener
+// console.log(e);
+
+// Prints the actual element that was clicked
+// console.log(e.target);
+// console.log(e.target.id);
+// console.log(e.target.className);
+// console.log(e.target.classList);
+
+// let output = document.querySelector('#output');
+// output.innerHTML = '<h3>'+ e.target.id +'</h3>';
+
+// console.log(e.type);
+
+// Position within the page
+// console.log(e.clientX);
+// console.log(e.clientY);
+
+// Position of the mouse inside the element
+// console.log(e.offsetX);
+// console.log(e.offsetY);
+
+// Checks if the alt key is held down
+// console.log(e.altKey);
+// console.log(e.ctrlKey);
+// console.log(e.shiftKey);
+
+// }
+
+let button = document.querySelector('.click-here-button');
+let box = document.querySelector('#box');
+
+// button.addEventListener('click', runEvent);
+// button.addEventListener('dblclick', runEvent);
+// button.addEventListener('mousedown', runEvent); // click down
+// button.addEventListener('mouseup', runEvent); // after click
+
+// Event triggered when the mouse enters the div
+// box.addEventListener('mouseenter', runEvent);
+box.addEventListener('mouseleave', runEvent);
+
+function runEvent(e) {
+    console.log('EVENT TYPE: ' + e.type);
 }
