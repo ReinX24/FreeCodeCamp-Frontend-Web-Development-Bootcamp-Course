@@ -218,8 +218,9 @@
 
 // }
 
-let button = document.querySelector('.click-here-button');
-let box = document.querySelector('#box');
+const button = document.querySelector('.click-here-button');
+const box = document.querySelector('#box');
+const output = document.querySelector('#output')
 
 // button.addEventListener('click', runEvent);
 // button.addEventListener('dblclick', runEvent);
@@ -228,8 +229,53 @@ let box = document.querySelector('#box');
 
 // Event triggered when the mouse enters the div
 // box.addEventListener('mouseenter', runEvent);
-box.addEventListener('mouseleave', runEvent);
+// box.addEventListener('mouseleave', runEvent);
 
+// box.addEventListener('mouseover', runEvent); // mouseover triggers when elements inside are hovered over as well
+// box.addEventListener('mouseout', runEvent);
+
+// box.addEventListener('mousemove', runEvent);
+
+const itemInput = document.querySelector('input[type="text"]');
+const form = document.querySelector('form');
+const select = document.querySelector('.select-container');
+
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+// itemInput.addEventListener('focus', runEvent); // when you click the input box and select it
+// itemInput.addEventListener('blur', runEvent); // triggers when you click outside of input box
+
+// itemInput.addEventListener('cut', runEvent); // checks if you cut text
+// itemInput.addEventListener('paste', runEvent); // checks if you copy text
+
+// itemInput.addEventListener('input', runEvent);
+
+// select.addEventListener('change', runEvent);
+// select.addEventListener('input', runEvent); // also triggers when we select an option
+
+form.addEventListener('submit', runEvent);
+
+// e stores the event that was triggered
 function runEvent(e) {
+
+    // Prevents the page from refreshing whenever we click the submit button
+    e.preventDefault();
+
     console.log('EVENT TYPE: ' + e.type);
+
+    // Tracking the mouse position
+    // output.innerHTML = '<h3>MouseX: ' + e.offsetX + '</h3><h3>MouseY: ' + e.offsetY + '</h3>';
+
+    // Background color changes as the mouse pointer is moving
+    // document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${40})`;
+
+    // Prints the characters we are typing when using keydown listener
+    // This also prints the value of when the user changes their option in select
+    // console.log(e.target.value);
+    // output.innerHTML = `${e.target.value}`;
+
+    // document.body.style.display = 'none'; // deletes entire page
+
 }

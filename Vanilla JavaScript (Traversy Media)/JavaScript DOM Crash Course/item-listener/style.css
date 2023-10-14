@@ -39,6 +39,13 @@ main .item-input {
     font-size: 1rem;
 }
 
+main .select-container {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #353943ff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
 main .button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
