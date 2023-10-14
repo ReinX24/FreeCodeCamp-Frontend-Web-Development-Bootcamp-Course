@@ -236,9 +236,9 @@ const output = document.querySelector('#output')
 
 // box.addEventListener('mousemove', runEvent);
 
-const itemInput = document.querySelector('input[type="text"]');
-const form = document.querySelector('form');
-const select = document.querySelector('.select-container');
+// const itemInput = document.querySelector('input[type="text"]');
+// const form = document.querySelector('form');
+// const select = document.querySelector('.select-container');
 
 // itemInput.addEventListener('keydown', runEvent);
 // itemInput.addEventListener('keyup', runEvent);
@@ -255,27 +255,57 @@ const select = document.querySelector('.select-container');
 // select.addEventListener('change', runEvent);
 // select.addEventListener('input', runEvent); // also triggers when we select an option
 
-form.addEventListener('submit', runEvent);
+// form.addEventListener('submit', runEvent);
 
 // e stores the event that was triggered
-function runEvent(e) {
+// function runEvent(e) {
 
-    // Prevents the page from refreshing whenever we click the submit button
+// Prevents the page from refreshing whenever we click the submit button
+// e.preventDefault();
+
+// console.log('EVENT TYPE: ' + e.type);
+
+// Tracking the mouse position
+// output.innerHTML = '<h3>MouseX: ' + e.offsetX + '</h3><h3>MouseY: ' + e.offsetY + '</h3>';
+
+// Background color changes as the mouse pointer is moving
+// document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${40})`;
+
+// Prints the characters we are typing when using keydown listener
+// This also prints the value of when the user changes their option in select
+// console.log(e.target.value);
+// output.innerHTML = `${e.target.value}`;
+
+// document.body.style.display = 'none'; // deletes entire page
+
+// }
+
+const form = document.querySelector('.add-form');
+const itemList = document.querySelector('.items');
+
+// Form submit event
+form.addEventListener('submit', addItem);
+
+// Add item
+function addItem(e) {
     e.preventDefault();
+    // Get input value
+    const newItem = document.querySelector('.item-input').value;
+    // Creating a li and adding it to our list
+    const li = document.createElement('li');
+    // Adding a className
+    li.className = 'list-item';
+    // Add text node with input value from newItem
+    li.appendChild(document.createTextNode(newItem));
 
-    console.log('EVENT TYPE: ' + e.type);
+    // Adding button to our list item
+    const newButton = document.createElement('button');
+    newButton.className = 'btn'
+    newButton.textContent = 'X';
 
-    // Tracking the mouse position
-    // output.innerHTML = '<h3>MouseX: ' + e.offsetX + '</h3><h3>MouseY: ' + e.offsetY + '</h3>';
+    li.appendChild(newButton);
 
-    // Background color changes as the mouse pointer is moving
-    // document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${40})`;
+    itemList.appendChild(li);
 
-    // Prints the characters we are typing when using keydown listener
-    // This also prints the value of when the user changes their option in select
-    // console.log(e.target.value);
-    // output.innerHTML = `${e.target.value}`;
-
-    // document.body.style.display = 'none'; // deletes entire page
 
 }
