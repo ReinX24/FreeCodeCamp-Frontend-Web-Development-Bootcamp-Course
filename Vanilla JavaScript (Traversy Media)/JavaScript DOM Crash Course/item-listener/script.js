@@ -282,12 +282,18 @@ const output = document.querySelector('#output')
 
 const form = document.querySelector('.add-form');
 const itemList = document.querySelector('.items');
+const filter = document.querySelector('#filter');
 
 // Form submit event
 form.addEventListener('submit', addItem);
+// Delete event
+itemList.addEventListener('click', removeItem);
+// Filter event, triggers whenever we let go of a key
+filter.addEventListener('keyup', filterItems);
 
 // Add item
 function addItem(e) {
+    // Prevents default value of form submitting and refreshing the page
     e.preventDefault();
     // Get input value
     const newItem = document.querySelector('.item-input').value;
@@ -298,14 +304,45 @@ function addItem(e) {
     // Add text node with input value from newItem
     li.appendChild(document.createTextNode(newItem));
 
-    // Adding button to our list item
-    const newButton = document.createElement('button');
-    newButton.className = 'btn'
-    newButton.textContent = 'X';
+    // Adding a delete button to our list item
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('btn,', 'delete-btn');
+    deleteButton.textContent = 'X';
 
-    li.appendChild(newButton);
+    // Append button to li
+    li.appendChild(deleteButton);
 
+    // Append li to itemList
     itemList.appendChild(li);
+}
 
+// Remove item
+function removeItem(e) {
+    // Checking if what we're clicking has the class of delete
+    // e is the element that we are clicking on
+    if (e.target.classList.contains('delete-btn')) {
+        if (confirm('Are You Sure?')) {
+            // Deleting the li element, the parent element of the delete-btn
+            const li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+}
 
+// Filter items
+function filterItems(e) {
+    // Convert input text to lowercase
+    const text = e.target.value.toLowerCase();
+    // Get all the li elements in our ul
+    const items = itemList.getElementsByTagName('li');
+    // Convert to an array
+    Array.from(items).forEach((eachItem) => {
+        const itemName = eachItem.firstChild.textContent;
+        // Checking if what we entered in the input is the same with existing elements
+        if (itemName.toLowerCase().indexOf(text) != -1) {
+            eachItem.style.display = 'flex'; // shows the element
+        } else {
+            eachItem.style.display = 'none'; // hides the element
+        }
+    });
 }

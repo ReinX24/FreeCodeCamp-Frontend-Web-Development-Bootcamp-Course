@@ -1,0 +1,129 @@
+:root {
+    --clr-green: #1C9346ff;
+    --clr-light-gray: #ccc;
+    --clr-dark-gray: #353943ff;
+    --clr-white: #fff;
+    --clr-bright-red: #ff3333;
+    --clr-light-red: #ff6666;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+header {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+}
+
+header .container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #input-filter {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--clr-light-gray);
+    width: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+main .container {
+    margin-top: 1rem;
+    border: 1px solid var(--clr-light-gray);
+    border-radius: 4px;
+}
+
+form {
+    margin: 1.5rem;
+}
+
+form .input-text {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--clr-dark-gray);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+form .submit-button {
+    padding: 0.6rem;
+    border-radius: 4px;
+    /* border: 1px solid var(--clr-light-gray); */
+    border: none;
+    background-color: var(--clr-dark-gray);
+    color: var(--clr-white);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form .submit-button:hover {
+    background-color: var(--clr-light-gray);
+    color: var(--clr-dark-gray);
+}
+
+.item-container {
+    margin: 1.5rem;
+}
+
+.todo-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--clr-light-gray);
+    border-radius: 4px;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.delete-button {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--clr-bright-red);
+    color: var(--clr-white);
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+}
+
+.delete-button:hover {
+    background-color: var(--clr-light-red);
+}
+
+footer {
+    margin-top: 2rem;
+    background-color: var(--clr-dark-gray);
+    color: var(--clr-white);
+}
+
+footer .container {
+    
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

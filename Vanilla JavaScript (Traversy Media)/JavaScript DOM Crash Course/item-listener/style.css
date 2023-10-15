@@ -72,8 +72,8 @@ main .items li {
     justify-content: space-between;
 }
 
-main .btn {
-    padding: 0.5rem;
+main .delete-btn {
+    padding: 0.25rem 0.5rem;
     background-color: #ff3333;
     border: 1px solid #ccc;
     color: #fff;
@@ -84,4 +84,16 @@ main .btn {
 
 main .btn:hover {
     background-color: #ff6666;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header #filter {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 400px;
 }
