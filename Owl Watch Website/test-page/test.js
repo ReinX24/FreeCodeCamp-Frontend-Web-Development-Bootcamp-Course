@@ -37,6 +37,7 @@ function generateQuestionCard(questionNumber) {
 
 // Generating 20 questions
 for (let i = 1; i <= 20; i++) {
+    // TODO: create custom questions for each card, each question must be related to mental health
     generateQuestionCard(i);
 }
 
@@ -55,15 +56,71 @@ const submitFormButton = document.querySelector('#submit-button').addEventListen
 
 function evaluateForm() {
     let totalScore = 0;
+    let healthStatus = '';
+    let statusPhotoURL = '';
+
+    const statusLevels = ['Optimal Mental Health', 'Mild Mental Health Concerns', 'Moderate Mental Health Challenges', 'Severe Mental Health Disorders', 'Mental Health Crisis'];
 
     for (let i = 1; i <= 20; i++) {
         totalScore += getQuestionAnswer(i);
     }
 
+
+    if (totalScore <= 20) {
+        healthStatus = statusLevels[0];
+        statusPhotoURL = 'status-photos/levelOne.png';
+    } else if (totalScore > 20 && totalScore <= 40) {
+        healthStatus = statusLevels[1];
+        statusPhotoURL = 'status-photos/levelTwo.png';
+    } else if (totalScore > 40 && totalScore <= 60) {
+        healthStatus = statusLevels[2];
+        statusPhotoURL = 'status-photos/levelThree.png';
+    } else if (totalScore > 60 && totalScore <= 80) {
+        healthStatus = statusLevels[3];
+        statusPhotoURL = 'status-photos/levelFour.png';
+    } else if (totalScore > 80) {
+        healthStatus = statusLevels[4];
+        statusPhotoURL = 'status-photos/levelFive.png';
+    }
+
+    // Clearing the form before adding results
+    const questions = document.querySelector('form');
+    questions.innerHTML = '';
+
+    // Adding a container that will tell us our mental health status
+    const resultsSection = document.createElement('div');
+    resultsSection.className = 'results-section';
+
+    const resultContainer = document.createElement('div');
+    resultContainer.className = 'container';
+
+    resultsSection.appendChild(resultContainer);
+
     const score = document.createElement('p');
     score.classList.add('score');
-    questionForm.appendChild(score);
-    score.innerHTML = `${totalScore}%`;
+    score.innerText = `${healthStatus}`;
+
+    resultContainer.appendChild(score);
+
+    // Adding a photo that represents our current health status
+    const statusPhoto = document.createElement('img');
+    statusPhoto.src = statusPhotoURL;
+    statusPhoto.className = 'status-photo';
+
+    resultContainer.appendChild(statusPhoto);
+
+    questions.appendChild(resultsSection);
+
+    // Adding resources container
+    const resourcesSection = document.createElement('div');
+    resourcesSection.className = 'resources-section';
+
+    const resourcesContainer = document.createElement('div');
+    resourcesContainer.className = 'container';
+
+    resourcesSection.appendChild(resourcesContainer);
+
+    questions.appendChild(resourcesSection);
 }
 
 function getQuestionAnswer(questionNumber) {
