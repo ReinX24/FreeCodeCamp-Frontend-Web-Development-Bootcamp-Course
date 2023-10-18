@@ -132,7 +132,6 @@ document.querySelector('#book-table-data').addEventListener('click', (e) => {
     Storage.removeBook(e.target.parentElement.previousElementSibling.textContent);
 })
 
-// TODO: this is not working properly, fix it later
 document.querySelector('#search-input').addEventListener('keyup', () => {
     const searchInput = document.querySelector('#search-input').value.toLowerCase();
     const bookTableData = document.querySelector('#book-table-data');
@@ -140,12 +139,10 @@ document.querySelector('#search-input').addEventListener('keyup', () => {
 
     Array.from(tableBooks).forEach((eachBook) => {
         const eachBookTitle = eachBook.querySelector('td').textContent.toLowerCase();
-        console.log(searchInput);
-        console.log(eachBookTitle);
         if (eachBookTitle.indexOf(searchInput) != -1) {
-            eachBook.style.display = 'block';
+            eachBook.style.display = '';
         } else {
-            eachBook.style.display = 'hidden';
+            eachBook.style.display = 'none';
         }
     });
 })
