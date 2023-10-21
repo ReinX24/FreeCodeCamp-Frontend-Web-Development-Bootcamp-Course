@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Column that will have 6 divs -->
+            <!-- col-md-6 makes entire div take up 50 percent of its width-->
+            <!-- offset-md-3 creates a margin 25% to the left of the div -->
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center text-white mb-3">Weight Converter</h1>
+                
+                <form>
+                    <div class="form-group">
+                        <input id="lbsInput" type="number" class="form-control form-control-lg mb-3"
+                            placeholder="Enter Pounds...">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card text-white bg-primary mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Grams:</h4>
+                            <p id="gramsOutput" class="card-text"></p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-success mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Kilograms:</h4>
+                            <p id="kgOutput" class="card-text"></p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-danger mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Ounces:</h4>
+                            <p id="ozOutput" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
