@@ -64,6 +64,7 @@ body {
 
 .current {
     color: var(--clr-taupe-gray);
+    border-bottom: 4px solid var(--clr-rebecca-purple);
 }
 
 .container {

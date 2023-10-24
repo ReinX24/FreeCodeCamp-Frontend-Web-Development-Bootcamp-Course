@@ -1,3 +1,5 @@
+const questionsCount = 20;
+
 function generateQuestionCard(questionNumber) {
     const questionForm = document.querySelector('form');
 
@@ -36,7 +38,7 @@ function generateQuestionCard(questionNumber) {
 }
 
 // Generating 20 questions
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= questionsCount; i++) {
     // TODO: create custom questions for each card, each question must be related to mental health
     generateQuestionCard(i);
 }
@@ -53,34 +55,44 @@ questionForm.appendChild(submitButton);
 // Adding functions to our button
 const submitFormButton = document.querySelector('#submit-button').addEventListener('click', evaluateForm);
 
-
 function evaluateForm() {
     let totalScore = 0;
     let healthStatus = '';
     let statusPhotoURL = '';
+    let healthStatusMessage = '';
 
     const statusLevels = ['Optimal Mental Health', 'Mild Mental Health Concerns', 'Moderate Mental Health Challenges', 'Severe Mental Health Disorders', 'Mental Health Crisis'];
+    const statusMessages = ['A state of psychological well-being characterized by emotional balance, resilience, and the ability to cope with life\'s challenges effectively.',
+        'Minor and manageable emotional or psychological issues that may cause occasional distress but do not significantly impair daily functioning.',
+        'Intermediate-level psychological difficulties that may impact daily life, requiring some level of intervention or support for effective management.',
+        'Serious and often chronic mental health conditions that substantially disrupt a person\'s thoughts, emotions, and behaviors, typically necessitating comprehensive treatment and professional care.',
+        'A critical and acute state of emotional or psychological distress that may pose an immediate risk to a person\'s well - being, often requiring urgent intervention and support.'];
 
     for (let i = 1; i <= 20; i++) {
         totalScore += getQuestionAnswer(i);
     }
 
 
-    if (totalScore <= 20) {
+    if (totalScore <= questionsCount) {
         healthStatus = statusLevels[0];
         statusPhotoURL = 'status-photos/levelOne.png';
+        healthStatusMessage = statusMessages[0];
     } else if (totalScore > 20 && totalScore <= 40) {
         healthStatus = statusLevels[1];
         statusPhotoURL = 'status-photos/levelTwo.png';
+        healthStatusMessage = statusMessages[1];
     } else if (totalScore > 40 && totalScore <= 60) {
         healthStatus = statusLevels[2];
         statusPhotoURL = 'status-photos/levelThree.png';
+        healthStatusMessage = statusMessages[2];
     } else if (totalScore > 60 && totalScore <= 80) {
         healthStatus = statusLevels[3];
         statusPhotoURL = 'status-photos/levelFour.png';
+        healthStatusMessage = statusMessages[3];
     } else if (totalScore > 80) {
         healthStatus = statusLevels[4];
         statusPhotoURL = 'status-photos/levelFive.png';
+        healthStatusMessage = statusMessages[4];
     }
 
     // Clearing the form before adding results
@@ -94,13 +106,13 @@ function evaluateForm() {
     const resultContainer = document.createElement('div');
     resultContainer.className = 'container';
 
-    resultsSection.appendChild(resultContainer);
-
     const score = document.createElement('p');
     score.classList.add('score');
     score.innerText = `${healthStatus}`;
 
     resultContainer.appendChild(score);
+
+    resultsSection.appendChild(resultContainer);
 
     // Adding a photo that represents our current health status
     const statusPhoto = document.createElement('img');
@@ -117,6 +129,10 @@ function evaluateForm() {
 
     const resourcesContainer = document.createElement('div');
     resourcesContainer.className = 'container';
+
+    const resoucesTitle = document.createElement('p');
+    resourcesContainer.textContent = `${healthStatusMessage}`;
+    resourcesContainer.appendChild(resoucesTitle);
 
     resourcesSection.appendChild(resourcesContainer);
 
