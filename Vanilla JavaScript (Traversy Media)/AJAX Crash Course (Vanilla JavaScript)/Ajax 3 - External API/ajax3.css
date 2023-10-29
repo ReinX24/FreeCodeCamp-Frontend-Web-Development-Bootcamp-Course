@@ -1,0 +1,11 @@
+.user {
+    display: flex;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.user ul {
+    list-style: none;
+}
