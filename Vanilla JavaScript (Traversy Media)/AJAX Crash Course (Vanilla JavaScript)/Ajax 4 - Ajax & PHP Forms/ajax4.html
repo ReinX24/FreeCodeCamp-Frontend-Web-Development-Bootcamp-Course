@@ -10,6 +10,40 @@
 <body>
     <h1>AJAX 4 - AJAX & PHP Forms</h1>
     <button id="button">Get Name</button>
+
+    <hr>
+    <!-- This sends the echo statements to a new webpage -->
+    <!-- This processes the submitted form to the php file directly -->
+    <h1>GET FORM</h1>
+    <form method="GET" action="process.php">
+        <input type="text" name="name" id="name">
+        <input type="submit" value="submit">
+    </form>
+
+    <hr>
+    <!-- This prints the echo statements in the console -->
+    <h1>AJAX GET FORM</h1>
+    <form id="getForm">
+        <input type="text" name="name" id="name-input">
+        <input type="submit" value="submit">
+    </form>
+
+    <hr>
+    <!-- Sends to php page -->
+    <h1>POST FORM</h1>
+    <form method="POST" action="process.php">
+        <input type="text" name="name" id="name">
+        <input type="submit" value="submit">
+    </form>
+
+    <hr>
+    <!-- This prints the echo statements in the console -->
+    <h1>AJAX POST FORM</h1>
+    <form id="postForm">
+        <input type="text" name="name" id="post-name">
+        <input type="submit" value="submit" id="post-name-button">
+    </form>
+
     <script src="ajax4.js"></script>
 </body>
 
