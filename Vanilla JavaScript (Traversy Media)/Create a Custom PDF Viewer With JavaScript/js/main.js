@@ -5,7 +5,7 @@ let pdfDoc = null,
     pageIsRendering = false,
     pageNumIsPending = null;
 
-const scale = 1.5,
+const pageScale = 1.5,
     canvas = document.querySelector('#pdf-render'),
     ctx = canvas.getContext('2d');
 
@@ -16,7 +16,7 @@ const renderPage = (pageNum) => {
     // Get the page
     pdfDoc.getPage(pageNum).then(currentPage => {
         // Set scale
-        const viewPort = currentPage.getViewport({ scale })
+        const viewPort = currentPage.getViewport({ scale: pageScale })
         canvas.height = viewPort.height;
         canvas.width = viewPort.width;
 
@@ -61,6 +61,15 @@ const showPrevPage = () => {
     queueRenderPage(pageNum);
 }
 
+// Show Next Page
+const showNextPage = () => {
+    if (pageNum >= pdfDoc.numPages) {
+        return;
+    }
+    pageNum++;
+    queueRenderPage(pageNum);
+}
+
 // Get document
 pdfjsLib.getDocument(url).promise.then(loadedPdf => {
     pdfDoc = loadedPdf;
@@ -68,4 +77,18 @@ pdfjsLib.getDocument(url).promise.then(loadedPdf => {
     document.querySelector('#page-count').textContent = pdfDoc.numPages;
 
     renderPage(pageNum);
-});
+}).catch(err => {
+    // Display error
+    const div = document.createElement('div');
+    div.className = 'error';
+    div.appendChild(document.createTextNode(err.message));
+    document.querySelector('body').insertBefore(div, canvas);
+
+    // Remove the top bar
+    document.querySelector('.top-bar').style.display = 'none';
+})
+
+
+// Button events
+document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+document.querySelector("#next-page").addEventListener('click', showNextPage);
