@@ -15,8 +15,25 @@ const searchStates = async (searchText) => {
 
     if (searchText == 0) {
         matches = [];
+        matchList.innerHTML = '';
     }
-    console.log(matches)
+
+    outputHtml(matches);
+}
+
+const outputHtml = (matches) => {
+    // Checks if there are matches in the first place
+    if (matches.length > 0) {
+        const html = matches.map((eachMatch) => `
+            <div class = "card card-body mb-1">
+            <h4>${eachMatch.name} (${eachMatch.abbr}) <span class = "text-primary">${eachMatch.capital}</span></h4>
+            <small>Lat: ${eachMatch.lat} / Long: ${eachMatch.long}</small>
+        </div>
+        `).join('');
+
+        matchList.innerHTML = html;
+    }
+
 }
 
 search.addEventListener('input', () => searchStates(search.value));
