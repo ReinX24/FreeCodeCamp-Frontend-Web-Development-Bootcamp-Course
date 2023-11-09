@@ -146,6 +146,7 @@ form {
     border-radius: 8px;
     background: linear-gradient(to right, var(--clr-navy-blue), var(--clr-rebecca-purple));
     min-width: 25%;
+    max-width: 600px;
 }
 
 .question-numbers {
@@ -163,10 +164,7 @@ form {
     background: linear-gradient(var(--clr-russian-violet), var(--clr-navy-blue));
     min-width: 25%;
     transition: ease 0.08s all 0.12s;
-}
-
-.question-card {
-    max-width: 500px;
+    max-width: 600px;
     line-height: 2rem;
 }
 
@@ -185,6 +183,23 @@ form {
     margin-top: 0.5rem;
     display: flex;
     justify-content: space-around;
+}
+
+.guide-list {
+    
+}
+
+.resources-list {
+    text-align: left;
+}
+
+.resources-list a {
+    text-decoration: none;
+    color: var(--clr-antiflash-white);
+}
+
+.resources-list a:hover {
+    color: var(--clr-rebecca-purple);
 }
 
 .status-photo {

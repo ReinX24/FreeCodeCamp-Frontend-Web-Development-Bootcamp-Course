@@ -160,7 +160,7 @@ function evaluateForm() {
     resourcesSection.className = 'resources-section';
 
     const resourcesContainer = document.createElement('div');
-    resourcesContainer.className = 'container';
+    resourcesContainer.className = 'container ';
 
     const resoucesTitle = document.createElement('p');
     resourcesContainer.textContent = `${healthStatusMessage}`;
@@ -169,6 +169,31 @@ function evaluateForm() {
     resourcesSection.appendChild(resourcesContainer);
 
     questions.appendChild(resourcesSection);
+
+    // Adding general instructions for when someone is strugging
+    const guidesList = document.createElement('div');
+    guidesList.classList = 'container';
+    guidesList.innerHTML = `
+        <h4>Here are some ways that you could improve your mental health</h4>
+        <ul class="guide-list">
+            <li><a href="#"></li>
+        </ul>
+    `;
+
+    // Adding resources cards
+    const professionalsList = document.createElement('div');
+    professionalsList.classList = 'container';
+    professionalsList.innerHTML = `
+        <h4>Here are some places where you could find mental health professionals within Dagupan City</h4>
+        <ul class="resources-list">
+            <li><a href="#">Philippine Mental Health Association</a></li>
+            <li><a href="#">Psychiatry & Mental Health Clinic</a></li>
+            <li><a href="#">Wundt Psychological Institute</a></li>
+            <li><a href="#">The Medical City Clinic @ SM Dagupan</a></li>
+        </ul>
+    `;
+
+    resourcesSection.appendChild(professionalsList);
 }
 
 function getQuestionAnswer(questionNumber) {
