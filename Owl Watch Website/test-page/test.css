@@ -148,6 +148,11 @@ form {
     min-width: 25%;
 }
 
+.question-numbers {
+    display: flex;
+    justify-content: space-around;
+}
+
 .question-card,
 .results-section .container,
 .resources-section .container {
@@ -160,6 +165,11 @@ form {
     transition: ease 0.08s all 0.12s;
 }
 
+.question-card {
+    max-width: 500px;
+    line-height: 2rem;
+}
+
 .results-section .container {
     display: flex;
     flex-direction: column;
@@ -168,14 +178,13 @@ form {
 }
 
 .question-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 .question-choices {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-around;
 }
 
 .status-photo {

@@ -22,9 +22,11 @@ function outputHTML(stateMatches) {
     let resultHTML = '';
     stateMatches.forEach((eachState) => {
         resultHTML += `
-        <div>
-        <h4>${eachState.name} ${eachState.abbr}</h4>
-        <p>${eachState.lat} ${eachState.long}</p>
+        <div class="card border-light mb-4">
+            <div class="card-body">
+                <h4 class="card-title">${eachState.name} <span class="text-primary">${eachState.abbr}</span></h4>
+                <p class="card-text">Lat: ${eachState.lat} / Long: ${eachState.long}</p>
+            </div>
         </div>
         `;
     })

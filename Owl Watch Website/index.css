@@ -152,15 +152,14 @@ header {
 }
 
 .objectives {
-    color: var(--clr-antiflash-white);
-    background: linear-gradient(var(--clr-russian-violet), var(--clr-rebecca-purple));
+    color: var(--clr-black);
+    background: linear-gradient(var(--clr-white), var(--clr-antiflash-white));
     text-align: center;
 }
 
 .objectives .container {
     padding: 2rem 0;
 }
-
 
 .objectives .boxes {
     display: flex;
@@ -180,6 +179,10 @@ header {
 
 .objectives .boxes .box img {
     margin: 0 auto;
+}
+
+.logo-image {
+    width: 300px;
 }
 
 @media (max-width: 768px) {
