@@ -158,7 +158,7 @@ form {
 .results-section .container,
 .resources-section .container {
     margin: 1rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: 1px solid var(--clr-antiflash-white);
     border-radius: 8px;
     background: linear-gradient(var(--clr-russian-violet), var(--clr-navy-blue));
@@ -175,6 +175,10 @@ form {
     align-items: center;
 }
 
+.results-section .status-container {
+    min-width: 25%;
+}
+
 .question-card:hover {
     transform: scale(1.03);
 }
@@ -186,7 +190,20 @@ form {
 }
 
 .guide-list {
-    
+    list-style-type: none;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.guide-photo {
+    max-width: 128px;
+    margin: 0 auto;
 }
 
 .resources-list {
