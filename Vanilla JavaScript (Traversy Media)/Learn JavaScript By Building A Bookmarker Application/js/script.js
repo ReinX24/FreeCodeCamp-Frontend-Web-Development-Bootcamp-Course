@@ -39,23 +39,47 @@ function saveBookmark(e) {
         // Update localStorage bookmarks object
         localStorage.setItem('bookmarks', JSON.stringify(bookMarks));
     }
+
+    fetchBookMarks(); // fetches bookmarks and updates webpage
+}
+
+// Delete bookmark
+function deleteBookmark(url) {
+    // Get bookmarks from localStorage
+    let storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    // Looping through our bookmarks 
+    storedBookmarks.forEach((eachBookMark, i) => {
+        if (eachBookMark.url == url) {
+            // Remove from array
+            storedBookmarks.splice(i, 1);
+        }
+    })
+    console.log(storedBookmarks)
+
+    localStorage.setItem('bookmarks', JSON.stringify(storedBookmarks));
+
+    fetchBookMarks();
 }
 
 // Fetch bookmarks
 function fetchBookMarks() {
     // Get bookMarks
-    let bookMarks = JSON.parse(localStorage.getItem('bookmarks'));
+    const bookMarks = JSON.parse(localStorage.getItem('bookmarks'));
 
     // Get div where we will store our bookmarks
     const bookMarksResults = document.querySelector('#bookmarksResults');
 
     // Build our output
-    // TODO: resume at https://youtu.be/DIVfDZZeGxM?si=c187bBQG7BenJRE1&t=1627
-    let resultHTML = '';
+    bookMarksResults.innerHTML = '';
 
     bookMarks.forEach((eachBookMark) => {
-        resultHTML += `
-            <div class>
+        bookMarksResults.innerHTML += `
+            <div class="well">
+                <h3>${eachBookMark.name}
+                    <a class="btn btn-default" target="_blank" href="${eachBookMark.url}">Visit</a>
+                    <a onclick="deleteBookmark('${eachBookMark.url}')" class="btn btn-danger" href="#">Delete</a>
+                </h3>
             </div>
         `
     })
@@ -63,3 +87,4 @@ function fetchBookMarks() {
 
 // Loads saved bookmarks in localStorage when the webpage loads
 document.addEventListener('DOMContentLoaded', fetchBookMarks);
+
