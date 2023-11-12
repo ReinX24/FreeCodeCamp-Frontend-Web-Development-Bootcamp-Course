@@ -21,13 +21,19 @@
         <hr class="color-primary">
 
         <div class="jumbotron">
-            <h2>Bookmark Your Favorite Sites</h2>
+            <h2 class="text-center">Bookmark Your Favorite Sites</h2>
 
-            <!-- TODO: add a warning message when the name or URL is invalid -->
-            <!-- <div class="alert alert-warning">
-                <h4 class="alert-heading">Warning!</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, vitae.</p>
-            </div> -->
+            <div id="site-name-alert" class="alert alert-warning hidden">
+                <h4 class="alert-heading text-center">Website Name Empty!</h4>
+            </div>
+
+            <div id="site-url-alert" class="alert alert-warning hidden">
+                <h4 class="alert-heading text-center">Website URL Empty!</h4>
+            </div>
+
+            <div id="invalid-url-alert" class="alert alert-warning hidden">
+                <h4 class="alert-heading text-center">Invalid Website URL!</h4>
+            </div>
 
             <form id="myForm">
                 <div class="form-group">

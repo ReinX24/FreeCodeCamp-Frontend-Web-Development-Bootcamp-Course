@@ -1,6 +1,3 @@
-// Listen for form submit
-document.querySelector('#myForm').addEventListener('submit', saveBookmark);
-
 function saveBookmark(e) {
     // e stands for event
     // Prevents default submit functionality of forms 
@@ -14,6 +11,10 @@ function saveBookmark(e) {
     const newBookMark = {
         name: siteName,
         url: siteURL
+    }
+
+    if (!validateForm(siteName, siteURL)) {
+        return false; // terminates function if the form returns false
     }
 
     // Local storage test
@@ -40,7 +41,12 @@ function saveBookmark(e) {
         localStorage.setItem('bookmarks', JSON.stringify(bookMarks));
     }
 
+    // Removes the entered site name and url after saving newBookMark
+    document.querySelector('#myForm').reset();
+
     fetchBookMarks(); // fetches bookmarks and updates webpage
+
+
 }
 
 // Delete bookmark
@@ -55,16 +61,17 @@ function deleteBookmark(url) {
             storedBookmarks.splice(i, 1);
         }
     })
-    console.log(storedBookmarks)
 
+    // Reset back to localStorage with updated bookmarks
     localStorage.setItem('bookmarks', JSON.stringify(storedBookmarks));
 
+    // Updates the webpage with updated bookmarks in localStorage
     fetchBookMarks();
 }
 
 // Fetch bookmarks
 function fetchBookMarks() {
-    // Get bookMarks
+    // Get bookmarks in localStorage
     const bookMarks = JSON.parse(localStorage.getItem('bookmarks'));
 
     // Get div where we will store our bookmarks
@@ -85,6 +92,48 @@ function fetchBookMarks() {
     })
 }
 
+// Checks if the entered site name, url, and the url is a valid url
+function validateForm(siteName, siteURL) {
+    // Checking if the siteName and siteURL is empty or not
+    if (!siteName) {
+        document.querySelector('#site-name-alert').classList.remove('hidden');
+
+        setTimeout(() => {
+            document.querySelector('#site-name-alert').classList.add('hidden');
+        }, 3000)
+
+        return false; // terminates the functions
+    } else if (!siteURL) {
+        document.querySelector('#site-url-alert').classList.remove('hidden');
+
+        setTimeout(() => {
+            document.querySelector('#site-url-alert').classList.add('hidden');
+        }, 3000)
+
+        return false;
+    }
+
+    // Validating the entered siteURL
+    const regexExpression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    const regexURL = new RegExp(regexExpression);
+
+    if (!siteURL.match(regexURL)) {
+        document.querySelector('#invalid-url-alert').classList.remove('hidden');
+
+        setTimeout(() => {
+            document.querySelector('#invalid-url-alert').classList.add('hidden');
+        }, 3000)
+
+        return false;
+    }
+
+    // Returns true of none of the if statements above are triggered
+    return true;
+}
+
 // Loads saved bookmarks in localStorage when the webpage loads
 document.addEventListener('DOMContentLoaded', fetchBookMarks);
+
+// Listen for form submit
+document.querySelector('#myForm').addEventListener('submit', saveBookmark);
 
