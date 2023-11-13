@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Bookmarker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="md-col-6 mt-4 display-4">
+
+            <div class="card bg-secondary">
+                <div class="card-header ">
+                    <h2 class="m-4">Bookmarker Application</h2>
+                </div>
+
+                <div class="card-body">
+                    <form id="main-form">
+                        <div class="form-group m-4">
+                            <label>Wesbite Name</label>
+                            <input type="text" id="name-input" class="form-control" placeholder="Enter website name">
+                        </div>
+                        <div class="form-group m-4">
+                            <label>Website URL</label>
+                            <input type="text" id="url-input" class="form-control" placeholder="Enter website URL">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <input type="submit" id="submit-website-btn" class="btn btn-primary m-4 w-100" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="results-container">
+                <!-- Where our stores bookmarks will be placed -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
