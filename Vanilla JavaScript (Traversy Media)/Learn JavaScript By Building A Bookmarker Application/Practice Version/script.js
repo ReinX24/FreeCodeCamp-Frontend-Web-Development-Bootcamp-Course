@@ -9,9 +9,34 @@ function addBookmark(e) {
         url: siteURL
     }
 
-    // TODO: check if the sitenName is empty or not
-    // TODO: check if the siteURL is empty or not
-    // TODO: add regex check to see if URL is valid
+    if (!siteName) {
+        document.querySelector('#no-site-name-alert').classList.remove('d-none');
+
+        setTimeout(() => {
+            document.querySelector('#no-site-name-alert').classList.add('d-none');
+        }, 3000)
+
+        return false;
+    }
+    if (!siteURL) {
+        document.querySelector('#no-site-url-alert').classList.remove('d-none');
+
+        setTimeout(() => {
+            document.querySelector('#no-site-url-alert').classList.add('d-none');
+        }, 3000)
+        return false;
+    }
+
+    // Checking if the entered siteURL is valid or  not
+    const urlRegex = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/);
+    if (!urlRegex.test(siteURL)) {
+        document.querySelector('#invalid-site-url-alert').classList.remove('d-none');
+
+        setTimeout(() => {
+            document.querySelector('#invalid-site-url-alert').classList.add('d-none');
+        }, 3000)
+        return false;
+    }
 
     let storedBookmarks;
 
@@ -26,7 +51,8 @@ function addBookmark(e) {
         localStorage.setItem('bookmarks', JSON.stringify(storedBookmarks));
     }
 
-    // TODO: clear inputs after we save a bookmark
+    document.querySelector('#name-input').value = '';
+    document.querySelector('#url-input').value = '';
 
     // Refreshes the page with updated stored bookmarks
     fetchBookmarks();
@@ -53,15 +79,10 @@ function deleteBookmark(deleteName, deleteURL) {
 function fetchBookmarks() {
     const storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
 
-    // If there are no stored bookmarks
-    if (storedBookmarks.length == 0) {
-        return false;
-    }
-
-    let bookmarksContainer;
+    let bookmarksContainer = '';
 
     storedBookmarks.forEach((eachBookmark) => {
-        bookmarksContainer = `
+        bookmarksContainer += `
         <div class="card card-by-primary mt-4 mb-4">
             <div class="card-header">
                 <h4 class="m-2">${eachBookmark.name}</h4>

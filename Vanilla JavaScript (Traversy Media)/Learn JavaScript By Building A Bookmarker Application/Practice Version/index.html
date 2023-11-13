@@ -11,7 +11,7 @@
 <body>
 
     <div class="container">
-        <div class="md-col-6 mt-4 display-4">
+        <div class="md-col-6 mt-4 display-8">
 
             <div class="card bg-secondary">
                 <div class="card-header ">
@@ -28,8 +28,28 @@
                             <label>Website URL</label>
                             <input type="text" id="url-input" class="form-control" placeholder="Enter website URL">
                         </div>
+
+                        <div id="no-site-name-alert" class="alert alert-danger d-none">
+                            <p class="alert-heading mb-0">Enter website name!</p>
+                        </div>
+
+                        <div id="no-site-url-alert" class="alert alert-danger d-none">
+                            <p class="alert-heading mb-0">Enter website URL!</p>
+                        </div>
+
+                        <div id="invalid-site-url-alert" class="alert alert-danger d-none">
+                            <p class="alert-heading mb-0">Enter valid website URL!</p>
+                        </div>
+
+                        <div id="bookmark-added-alert" class="alert alert-success">
+                            <p class="alert-heading mb-0">Successfully added new bookmark</p>
+                        </div>
+
+                        <div id="bookmark-added-alert" class="alert alert-success"></div>
+
                         <div class="d-flex justify-content-center">
-                            <input type="submit" id="submit-website-btn" class="btn btn-primary m-4 w-100" value="Submit">
+                            <input type="submit" id="submit-website-btn" class="btn btn-primary m-4 w-100"
+                                value="Submit">
                         </div>
                     </form>
                 </div>
