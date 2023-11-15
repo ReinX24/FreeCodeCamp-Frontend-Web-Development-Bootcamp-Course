@@ -154,7 +154,7 @@ form {
     justify-content: space-around;
 }
 
-.question-card,
+/* .question-card,
 .results-section .container,
 .resources-section .container {
     margin: 1rem;
@@ -199,7 +199,7 @@ form {
 
 .mt-2 {
     margin-top: 2rem;
-}
+} */
 
 .guide-photo {
     max-width: 128px;
@@ -242,18 +242,22 @@ input[type='radio']:hover {
 
 #question-table th,
 #question-table td {
-    padding: 0.5rem;
+    padding: 1rem;
     border: 1px solid var(--clr-antiflash-white);
 }
 
-#question-table input[type='number'] {
+#question-table .intensity-select,
+#question-table .frequency-select {
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: var(--clr-black);
     width: 100%;
 }
 
 /* End of #question-table CSS */
 
 #submit-button {
-    margin-bottom: 1rem;
+    margin: 1rem 0rem;
     padding: 0.75rem 4rem;
     border: 1px solid var(--clr-antiflash-white);
     color: var(--clr-antiflash-white);
@@ -268,6 +272,11 @@ input[type='radio']:hover {
 
 @media (max-width: 768px) {
 
+    html,
+    body {
+        font-size: 0.95rem;
+    }
+
     .nav {
         flex-direction: column;
     }
@@ -278,7 +287,12 @@ input[type='radio']:hover {
 
     #question-table th,
     #question-table td {
-        padding: 0.15rem;
+        padding: 0.25rem;
+    }
+
+    #question-table .intensity-select,
+    #question-table .frequency-select {
+        padding: 0;
     }
 
 

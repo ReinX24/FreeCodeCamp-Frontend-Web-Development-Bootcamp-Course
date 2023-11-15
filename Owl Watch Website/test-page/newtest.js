@@ -22,12 +22,44 @@ function generateTable() {
     const tableBody = document.querySelector('#table-body');
     let tableBodyContent = '';
 
+    /* 
+        <td><input type="number" id="int-${i + 1}" class="intensity-value" value="0" min="0" max="10"></td>
+        <td><input type="number" id="freq-${i + 1}" class="freq-value" value="0" min="0" max="10"></td>
+    */
+
     for (let i = 0; i < testSymptoms.length; i++) {
         tableBodyContent += `  
         <tr>
-            <td>${testSymptoms[i]}</td>
-            <td><input type="number" id="int-${i + 1}" class="intensity-value" value="0" min="0" max="10"></td>
-            <td><input type="number" id="freq-${i + 1}" class="freq-value" value="0" min="0" max="10"></td>
+            <td>${testSymptoms[i]}</td>            
+            <td>
+                <select id="intensity-select-${i + 1}" class="intensity-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            <td>
+                <select id="frequency-select-${i + 1}" class="frequency-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </td>
         </tr>
         `
     }
@@ -37,12 +69,13 @@ function generateTable() {
 
 function evaluateForm(e) {
     e.preventDefault();
-    
+
     let intensityValues = 0;
     let frequencyValues = 0;
+
     for (let i = 1; i <= testSymptoms.length; i++) {
-        const eachFreq = document.querySelector(`#int-${i}`).value;
-        const eachIntensity = document.querySelector(`#freq-${i}`).value;
+        const eachFreq = document.querySelector(`#intensity-select-${i}`).value;
+        const eachIntensity = document.querySelector(`#frequency-select-${i}`).value;
 
         if (eachFreq > 10) {
             // Show an error message on screen
@@ -58,9 +91,11 @@ function evaluateForm(e) {
         frequencyValues += Number(eachIntensity);
     }
 
+    // TODO: after adding the values, place them within a range 
+
     console.log(intensityValues)
     console.log(frequencyValues)
 }
 
-document.querySelector('#submit-form').addEventListener('click', evaluateForm);
+document.querySelector('#submit-button').addEventListener('click', evaluateForm);
 window.onload = generateTable;
