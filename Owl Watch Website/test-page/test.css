@@ -232,6 +232,26 @@ input[type='radio']:hover {
     opacity: 0.5;
 }
 
+/* CSS for #question-table */
+
+#question-table {
+    border-collapse: collapse;
+    text-align: left;
+    max-width: 600px;
+}
+
+#question-table th,
+#question-table td {
+    padding: 0.5rem;
+    border: 1px solid var(--clr-antiflash-white);
+}
+
+#question-table input[type='number'] {
+    width: 100%;
+}
+
+/* End of #question-table CSS */
+
 #submit-button {
     margin-bottom: 1rem;
     padding: 0.75rem 4rem;
@@ -251,6 +271,16 @@ input[type='radio']:hover {
     .nav {
         flex-direction: column;
     }
+
+    #question-table {
+        max-width: 300px;
+    }
+
+    #question-table th,
+    #question-table td {
+        padding: 0.15rem;
+    }
+
 
 }
 
