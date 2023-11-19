@@ -57,6 +57,13 @@ function addBookmark(e) {
     // Refreshes the page with updated stored bookmarks
     fetchBookmarks();
 
+    // Show message that tells the user they have successfully added a bookmark
+    document.querySelector('#bookmark-added-alert').classList.remove('d-none');
+
+    setTimeout(() => {
+        document.querySelector('#bookmark-added-alert').classList.add('d-none');
+    }, 3000)
+
 }
 
 // Deletes a bookmark
@@ -73,6 +80,13 @@ function deleteBookmark(deleteName, deleteURL) {
 
     // Refresh shown bookmarks on the webpage
     fetchBookmarks();
+
+    // Show message that tells the user they have removed a boookmark
+    document.querySelector('#bookmark-removed-alert').classList.remove('d-none');
+
+    setTimeout(() => {
+        document.querySelector('#bookmark-removed-alert').classList.add('d-none');
+    }, 3000)
 }
 
 // Loads the stored bookmarks to our webpage
