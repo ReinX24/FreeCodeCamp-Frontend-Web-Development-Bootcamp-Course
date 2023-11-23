@@ -139,7 +139,9 @@ form {
     background-image: url(../images/privacyBackgroundPhoto.jpg);
 }
 
-.title-card {
+.title-card,
+.scale-card,
+.question-card {
     margin: 1rem;
     padding: 1rem;
     border: 1px solid var(--clr-antiflash-white);
@@ -149,9 +151,10 @@ form {
     max-width: 600px;
 }
 
+.scale-card,
 .question-numbers {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 /* .question-card,
@@ -234,14 +237,18 @@ input[type='radio']:hover {
 
 /* CSS for #question-table */
 
-#question-table {
+#question-table,
+#scale-table {
     border-collapse: collapse;
     text-align: left;
     max-width: 600px;
+    margin-top: 1.5rem;
 }
 
 #question-table th,
-#question-table td {
+#question-table td,
+#scale-table th,
+#scale-table td {
     padding: 1rem;
     border: 1px solid var(--clr-antiflash-white);
 }
@@ -286,7 +293,9 @@ input[type='radio']:hover {
     }
 
     #question-table th,
-    #question-table td {
+    #question-table td,
+    #scale-table th,
+    #scale-table td {
         padding: 0.25rem;
     }
 
@@ -295,6 +304,11 @@ input[type='radio']:hover {
         padding: 0;
     }
 
+    .title-card,
+    .scale-card,
+    .question-card {
+        padding: 0.5rem;
+    }
 
 }
 

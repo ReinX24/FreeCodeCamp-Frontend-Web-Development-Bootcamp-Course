@@ -91,10 +91,36 @@ function evaluateForm(e) {
         frequencyValues += Number(eachIntensity);
     }
 
-    // TODO: after adding the values, place them within a range 
+    // TODO: after adding the values, place them within a range
+    const intensityAverage = intensityValues / testSymptoms.length
+    const frequencyAverage = frequencyValues / testSymptoms.length
 
-    console.log(intensityValues)
-    console.log(frequencyValues)
+    if (intensityAverage == 0.0) {
+        console.log('None')
+    } else if (intensityAverage > 0.0 && intensityAverage < 4.0) {
+        console.log('Mild')
+    } else if (intensityAverage >= 4.0 && intensityAverage < 7.0) {
+        console.log('Moderate')
+    } else if (intensityAverage >= 7.0 && intensityAverage < 10.0) {
+        console.log('Severe')
+    } else if (intensityAverage == 10.0) {
+        console.log('Extreme distress')
+    }
+
+    if (frequencyAverage == 0.0) {
+        console.log('None')
+    } else if (frequencyAverage > 0.0 && frequencyAverage < 4.0) {
+        console.log('Occasionally')
+    } else if (frequencyAverage >= 4.0 && frequencyAverage < 7.0) {
+        console.log('Often')
+    } else if (frequencyAverage >= 7.0 && frequencyAverage < 10.0) {
+        console.log('Usually')
+    } else if (frequencyAverage == 10.0) {
+        console.log('All the time')
+    }
+
+    console.log(`Intensity Values: ${intensityValues / testSymptoms.length}`)
+    console.log(`Frequency Values: ${frequencyValues / testSymptoms.length}`)
 }
 
 document.querySelector('#submit-button').addEventListener('click', evaluateForm);
