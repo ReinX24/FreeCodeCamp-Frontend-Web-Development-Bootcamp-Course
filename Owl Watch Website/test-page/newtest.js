@@ -18,6 +18,15 @@ const testSymptoms = [
     '16. Anticipating or Fearing Something Bad Might Happen',
     '17. Trouble Functioning at Home, Work, or Socially Due to Anxiety <i>(Rate the most troublesome symptom)</i>'
 ]
+
+const intensityCategoryPhotos = {
+    'none': 'intensity-photos/1_none.png',
+    'mild': 'intensity-photos/2_mild.png',
+    'moderate': 'intensity-photos/3_moderate.png',
+    'severe': 'intensity-photos/4_severe.png',
+    'extreme': 'intensity-photos/5_extreme_distress.png',
+}
+
 function generateTable() {
     const tableBody = document.querySelector('#table-body');
     let tableBodyContent = '';
@@ -91,36 +100,103 @@ function evaluateForm(e) {
         frequencyValues += Number(eachIntensity);
     }
 
-    // TODO: after adding the values, place them within a range
+    // DONE: after adding the values, place them within a range
     const intensityAverage = intensityValues / testSymptoms.length
     const frequencyAverage = frequencyValues / testSymptoms.length
 
+    let intensityCategory = ''
+    let frequencyCategory = ''
+
+    let intensityPhoto = ''
+    let frequencyPhoto = ''
+
     if (intensityAverage == 0.0) {
-        console.log('None')
+        intensityCategory = 'None'
+        intensityPhoto = intensityCategoryPhotos.none
     } else if (intensityAverage > 0.0 && intensityAverage < 4.0) {
-        console.log('Mild')
+        intensityCategory = 'Mild'
+        intensityPhoto = intensityCategoryPhotos.mild
     } else if (intensityAverage >= 4.0 && intensityAverage < 7.0) {
-        console.log('Moderate')
+        intensityCategory = 'Moderate'
+        intensityPhoto = intensityCategoryPhotos.moderate
     } else if (intensityAverage >= 7.0 && intensityAverage < 10.0) {
-        console.log('Severe')
+        intensityCategory = 'Severe'
+        intensityPhoto = intensityCategoryPhotos.severe
     } else if (intensityAverage == 10.0) {
-        console.log('Extreme distress')
+        intensityCategory = 'Extreme distress'
+        intensityPhoto = intensityCategoryPhotos.extreme
     }
 
+    // TODO: change frequency to have its own photos
     if (frequencyAverage == 0.0) {
-        console.log('None')
+        frequencyCategory = 'None'
+        frequencyPhoto = intensityCategoryPhotos.none
     } else if (frequencyAverage > 0.0 && frequencyAverage < 4.0) {
-        console.log('Occasionally')
+        frequencyCategory = 'Occasionally'
+        frequencyPhoto = intensityCategoryPhotos.mild
     } else if (frequencyAverage >= 4.0 && frequencyAverage < 7.0) {
-        console.log('Often')
+        frequencyCategory = 'Often'
+        frequencyPhoto = intensityCategoryPhotos.moderate
     } else if (frequencyAverage >= 7.0 && frequencyAverage < 10.0) {
-        console.log('Usually')
+        frequencyCategory = 'Usually'
+        frequencyPhoto = intensityCategoryPhotos.severe
     } else if (frequencyAverage == 10.0) {
-        console.log('All the time')
+        frequencyCategory = 'All the time'
+        frequencyPhoto = intensityCategoryPhotos.extreme
     }
 
-    console.log(`Intensity Values: ${intensityValues / testSymptoms.length}`)
-    console.log(`Frequency Values: ${frequencyValues / testSymptoms.length}`)
+    // console.log(`Intensity Values: ${intensityValues / testSymptoms.length}`)
+    // console.log(`Frequency Values: ${frequencyValues / testSymptoms.length}`)
+
+    // Removing unnecessary elements after evaluating form
+    document.querySelector('.test-title').innerHTML = ''
+    document.querySelector('.scale-card').remove()
+    document.querySelector('.question-card').remove()
+    document.querySelector('#submit-button').remove()
+
+    generateResults(intensityCategory, frequencyCategory, intensityPhoto, frequencyPhoto)
+
+}
+
+function generateResults(intensityCategory, frequencyCategory, intensityPhoto, frequencyPhoto) {
+
+    // Make the user go to the start of the webpage
+    window.scrollTo(0, 0)
+
+    document.querySelector('.test-title').innerHTML = 'Anxiety Symptoms Results'
+
+    const intensityResultsContainer = document.createElement('div')
+    intensityResultsContainer.classList.add('results-card')
+    intensityResultsContainer.id = 'intensity-result'
+
+    document.querySelector('form').appendChild(intensityResultsContainer)
+
+    const frequencyResultsContainer = document.createElement('div')
+    frequencyResultsContainer.classList.add('results-card')
+    frequencyResultsContainer.id = 'frequency-result'
+
+    document.querySelector('form').appendChild(intensityResultsContainer)
+    document.querySelector('form').appendChild(frequencyResultsContainer)
+
+    document.querySelector('#intensity-result').innerHTML = `
+        <h2>Anxiety Intensity</h2>
+        <h2>${intensityCategory}</h2>
+        <img src="${intensityPhoto}"></img>
+        `
+
+    document.querySelector('#frequency-result').innerHTML = `
+        <h2>Anxiety Frequency</h2>
+        <h2>${frequencyCategory}</h2>    
+        <img src="${frequencyPhoto}"></img>
+    `
+
+    const retakeButton = document.createElement('input')
+    retakeButton.type = 'button'
+    retakeButton.id = 'retake-button'
+    retakeButton.value = 'Retake Questionnaire'
+
+    document.querySelector('form').appendChild(retakeButton)
+
 }
 
 document.querySelector('#submit-button').addEventListener('click', evaluateForm);

@@ -141,7 +141,8 @@ form {
 
 .title-card,
 .scale-card,
-.question-card {
+.question-card,
+.results-card {
     margin: 1rem;
     padding: 1rem;
     border: 1px solid var(--clr-antiflash-white);
@@ -263,7 +264,8 @@ input[type='radio']:hover {
 
 /* End of #question-table CSS */
 
-#submit-button {
+#submit-button,
+#retake-button {
     margin: 1rem 0rem;
     padding: 0.75rem 4rem;
     border: 1px solid var(--clr-antiflash-white);
@@ -273,7 +275,8 @@ input[type='radio']:hover {
     transition: ease 0.08s all 0.12s;
 }
 
-#submit-button:hover {
+#submit-button:hover,
+#retake-button:hover {
     transform: scale(1.1);
 }
 
@@ -306,7 +309,8 @@ input[type='radio']:hover {
 
     .title-card,
     .scale-card,
-    .question-card {
+    .question-card,
+    .results-card {
         padding: 0.5rem;
     }
 
