@@ -148,7 +148,7 @@ form {
     border: 1px solid var(--clr-antiflash-white);
     border-radius: 8px;
     background: linear-gradient(to right, var(--clr-navy-blue), var(--clr-rebecca-purple));
-    min-width: 25%;
+    min-width: 600px;
     max-width: 600px;
 }
 
@@ -156,6 +156,10 @@ form {
 .question-numbers {
     display: flex;
     flex-direction: column;
+}
+
+.guide-card p {
+    margin: 2rem 0rem;
 }
 
 /* .question-card,
@@ -205,13 +209,14 @@ form {
     margin-top: 2rem;
 } */
 
-.guide-photo {
+img {
     max-width: 128px;
     margin: 0 auto;
 }
 
 .resources-list {
     text-align: left;
+    list-style-type: square;
 }
 
 .resources-list a {
@@ -311,6 +316,8 @@ input[type='radio']:hover {
     .scale-card,
     .question-card,
     .results-card {
+        min-width: 25%;
+        max-width: 600px;
         padding: 0.5rem;
     }
 

@@ -24,7 +24,15 @@ const intensityCategoryPhotos = {
     'mild': 'intensity-photos/2_mild.png',
     'moderate': 'intensity-photos/3_moderate.png',
     'severe': 'intensity-photos/4_severe.png',
-    'extreme': 'intensity-photos/5_extreme_distress.png',
+    'extremeDistress': 'intensity-photos/5_extreme_distress.png',
+}
+
+const frequencyCategoryPhotos = {
+    'none': 'frequency-photos/1_none.png',
+    'occasionally': 'frequency-photos/2_occasionally.png',
+    'often': 'frequency-photos/3_often.png',
+    'usually': 'frequency-photos/4_usually.png',
+    'allTheTime': 'frequency-photos/5_all_the_time.png',
 }
 
 function generateTable() {
@@ -110,6 +118,7 @@ function evaluateForm(e) {
     let intensityPhoto = ''
     let frequencyPhoto = ''
 
+    // TODO: Test if photos for intensity and frequency are working properly
     if (intensityAverage == 0.0) {
         intensityCategory = 'None'
         intensityPhoto = intensityCategoryPhotos.none
@@ -124,25 +133,25 @@ function evaluateForm(e) {
         intensityPhoto = intensityCategoryPhotos.severe
     } else if (intensityAverage == 10.0) {
         intensityCategory = 'Extreme distress'
-        intensityPhoto = intensityCategoryPhotos.extreme
+        intensityPhoto = intensityCategoryPhotos.extremeDistress
     }
 
-    // TODO: change frequency to have its own photos
+    // DONE: change frequency to have its own photos
     if (frequencyAverage == 0.0) {
         frequencyCategory = 'None'
-        frequencyPhoto = intensityCategoryPhotos.none
+        frequencyPhoto = frequencyCategoryPhotos.none
     } else if (frequencyAverage > 0.0 && frequencyAverage < 4.0) {
         frequencyCategory = 'Occasionally'
-        frequencyPhoto = intensityCategoryPhotos.mild
+        frequencyPhoto = frequencyCategoryPhotos.occasionally
     } else if (frequencyAverage >= 4.0 && frequencyAverage < 7.0) {
         frequencyCategory = 'Often'
-        frequencyPhoto = intensityCategoryPhotos.moderate
+        frequencyPhoto = frequencyCategoryPhotos.often
     } else if (frequencyAverage >= 7.0 && frequencyAverage < 10.0) {
         frequencyCategory = 'Usually'
-        frequencyPhoto = intensityCategoryPhotos.severe
+        frequencyPhoto = frequencyCategoryPhotos.usually
     } else if (frequencyAverage == 10.0) {
         frequencyCategory = 'All the time'
-        frequencyPhoto = intensityCategoryPhotos.extreme
+        frequencyPhoto = frequencyCategoryPhotos.allTheTime
     }
 
     // console.log(`Intensity Values: ${intensityValues / testSymptoms.length}`)
@@ -179,16 +188,57 @@ function generateResults(intensityCategory, frequencyCategory, intensityPhoto, f
     document.querySelector('form').appendChild(frequencyResultsContainer)
 
     document.querySelector('#intensity-result').innerHTML = `
-        <h2>Anxiety Intensity</h2>
-        <h2>${intensityCategory}</h2>
+        <h2>Anxiety Intensity: ${intensityCategory}</h2>
         <img src="${intensityPhoto}"></img>
         `
 
     document.querySelector('#frequency-result').innerHTML = `
-        <h2>Anxiety Frequency</h2>
-        <h2>${frequencyCategory}</h2>    
+        <h2>Anxiety Frequency: ${frequencyCategory}</h2>
         <img src="${frequencyPhoto}"></img>
     `
+
+    const guidesList = document.createElement('div')
+    guidesList.classList.add('results-card')
+    guidesList.classList.add('guide-card')
+    guidesList.innerHTML = `
+        <h2>Here are some ways that you could improve your mental health</h2>
+        <h2 class="mt-2">Prioritizing self care</h2>
+        <img src="../images/self-care.png" class="guide-photo">
+        <p class="justify-text mt-2">Establish a daily routine that includes adequate sleep, a balanced diet, regular exercise, and relaxation techniques like meditation or deep breathing. Taking care of your physical health can have a significant impact on your mental well-being.</p>
+    
+        <h2 class="mt-2">Seek social support</h2>
+        <img src="../images/social-support.png" class="guide-photo">
+        <p class="justify-text mt-2">Maintain and nurture your social connections. Spend time with friends and family, and don't hesitate to reach out when you need support or someone to talk to. Social relationships can provide emotional support and a sense of belonging.</p>
+         
+        <h2 class="mt-2">Manage stress</h2>
+        <img src="../images/manage-stress.png" class="guide-photo">
+        <p class="justify-text mt-2">Develop effective stress management techniques, such as mindfulness, yoga, or progressive muscle relaxation. Identifying the sources of stress in your life and finding healthy ways to cope with them can help reduce anxiety and improve your mental health.</p>
+          
+        <h2 class="mt-2">Set realistic goals</h2>
+        <img src="../images/realistic-goals.png" class="guide-photo">
+        <p class="justify-text mt-2">Break down your long-term goals into smaller, achievable steps. This can help you maintain a sense of purpose, motivation, and accomplishment, which are important for mental well-being. Setting realistic expectations for yourself is key to avoiding unnecessary stress and disappointment.</p>
+           
+        <h2 class="mt-2">Seek professional help</h2>
+        <img src="../images/professional-help.png" class="guide-photo">
+        <p class="justify-text mt-2">If you're struggling with persistent mental health issues, such as depression, anxiety, or other conditions, consider seeking help from a mental health professional. Therapy, counseling, or medication can be effective in treating a wide range of mental health issues. Don't hesitate to reach out to a mental health expert if needed.</p>
+          
+    `;
+
+    document.querySelector('form').appendChild(guidesList)
+
+    const professionalsList = document.createElement('div');
+    professionalsList.classList.add('results-card')
+    professionalsList.innerHTML = `
+        <h4>Here are some places where you could find mental health professionals within Dagupan City</h4>
+        <ul class="resources-list">
+            <li><a href="#">Philippine Mental Health Association</a></li>
+            <li><a href="#">Psychiatry & Mental Health Clinic</a></li>
+            <li><a href="#">Wundt Psychological Institute</a></li>
+            <li><a href="#">The Medical City Clinic @ SM Dagupan</a></li>
+        </ul>
+    `;
+
+    document.querySelector('form').appendChild(professionalsList)
 
     const retakeButton = document.createElement('input')
     retakeButton.type = 'button'
