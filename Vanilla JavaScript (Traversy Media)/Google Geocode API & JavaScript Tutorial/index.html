@@ -4,13 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>My Geocode App</title>
 </head>
 
 <body>
 
-    
+    <!-- ! PROJECT ABANDONED SINCE CREDIT CARD IS NEEDED TO CALL THE API -->
 
+    <script>
+
+        // Call 
+        // Call Geocode
+        // geocode()
+
+        function geocode() {
+            const location = '22 Main st Boston MA'
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params: {
+                    address: location,
+                    key: 'AIzaSyAJriOJIrtP8qsYi9I-kSb8T9Sv6vW14nA'
+                }
+            })
+                .then(function (response) {
+                    console.log(response)
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
+        }
+
+
+
+    </script>
 </body>
 
 </html>

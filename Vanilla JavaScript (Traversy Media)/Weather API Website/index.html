@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather API Lookup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="container display-6">
+        <h1 class="text-center display-4 mt-4">Weather Lookup</h1>
+        <form id="user-form">
+            <div class="form-group">
+                <label for="Search" class="mt-4">Search Location</label>
+                <input type="text" id="location-input" class="form-control" placeholder="Enter location here">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" id="submit-button" value="Submit"
+                    class="btn btn-primary btn-lg mt-4">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="result-container" class="container display-6 mt-4">
+
+    </div>
+
+    <script>
+
+        function getLocationWeather(e) {
+            e.preventDefault()
+
+            const location = locationInput.value
+            axios.get('https://weatherapi-com.p.rapidapi.com/current.json', {
+                method: 'GET',
+                url: 'https://weatherapi-com.p.rapidapi.com/current.json',
+                params: { q: location },
+                headers: {
+                    'X-RapidAPI-Key': 'b206343f24msh070aef739f177eep14858bjsn2b7b2fe92606',
+                    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                }
+            }).then(function (response) {
+
+                console.log(response)
+
+                // TODO: make this be inside a card and show day or night icon
+                document.querySelector('#result-container').innerHTML = `
+                    <p>Name: ${response.data.location.name}</p>
+                    <p>Region: ${response.data.location.region}</p>
+                    <p>Country: ${response.data.location.country}</p>
+                    <p>Temperature(c): ${response.data.current.temp_c}</p>
+                    <p>Temperature(f): ${response.data.current.temp_f}</p>
+                    <p>Local time: ${response.data.location.localtime}</p>
+                    <div class="d-flex align-items-center">
+                        <p>Weather: ${response.data.current.condition.text}
+                            <img src="${response.data.current.condition.icon}">
+                        </p>
+                    </div>
+                `
+
+            }).catch(function (error) {
+                console.log(error)
+            })
+
+        }
+
+
+        const locationInput = document.querySelector('#location-input')
+        const submitButton = document.querySelector('#submit-button')
+        document.querySelector('#user-form').addEventListener('submit', getLocationWeather)
+    </script>
+</body>
+
+</html>
