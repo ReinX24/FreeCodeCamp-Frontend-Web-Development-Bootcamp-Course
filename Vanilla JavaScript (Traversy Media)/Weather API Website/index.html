@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather API Lookup</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 
     <div class="container display-6">
         <h1 class="text-center display-4 mt-4">Weather Lookup</h1>
@@ -24,55 +24,85 @@
                     class="btn btn-primary btn-lg mt-4">Search</button>
             </div>
         </form>
+
+        <div id="alert-empty" class="display-6 alert alert-warning mt-4 d-none">
+            <p class="alert-heading m-0 text-center">Enter a valid location!</p>
+        </div>
+
+        <div id="alert-location" class="display-6 alert alert-danger mt-4 d-none">
+            <p class="alert-heading m-0 text-center">Location not found!</p>
+        </div>
+
+        <div id="result-container" class="container display-6 mt-4"></div>
+
     </div>
 
-    <div id="result-container" class="container display-6 mt-4">
-
-    </div>
 
     <script>
+
+        function alertEmptySearch() {
+            document.querySelector("#result-container").innerHTML = ''
+            document.querySelector('#alert-empty').classList.remove('d-none')
+            setTimeout(() => {
+                document.querySelector('#alert-empty').classList.add('d-none')
+            }, 3000)
+        }
+
+        function alertLocationNotFound() {
+            document.querySelector("#result-container").innerHTML = ''
+            document.querySelector("#alert-location").classList.remove('d-none')
+            setTimeout(() => {
+                document.querySelector("#alert-location").classList.add('d-none')
+            }, 3000)
+        }
 
         function getLocationWeather(e) {
             e.preventDefault()
 
             const location = locationInput.value
-            axios.get('https://weatherapi-com.p.rapidapi.com/current.json', {
-                method: 'GET',
-                url: 'https://weatherapi-com.p.rapidapi.com/current.json',
-                params: { q: location },
-                headers: {
-                    'X-RapidAPI-Key': 'b206343f24msh070aef739f177eep14858bjsn2b7b2fe92606',
-                    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-                }
-            }).then(function (response) {
 
-                console.log(response)
+            if (locationInput.value == '') {
+                alertEmptySearch()
+            } else {
 
-                // TODO: make this be inside a card and show day or night icon
-                document.querySelector('#result-container').innerHTML = `
-                    <p>Name: ${response.data.location.name}</p>
-                    <p>Region: ${response.data.location.region}</p>
-                    <p>Country: ${response.data.location.country}</p>
-                    <p>Temperature(c): ${response.data.current.temp_c}</p>
-                    <p>Temperature(f): ${response.data.current.temp_f}</p>
-                    <p>Local time: ${response.data.location.localtime}</p>
-                    <div class="d-flex align-items-center">
-                        <p>Weather: ${response.data.current.condition.text}
+                axios.get('https://weatherapi-com.p.rapidapi.com/current.json', {
+                    method: 'GET',
+                    url: 'https://weatherapi-com.p.rapidapi.com/current.json',
+                    params: { q: location },
+                    headers: {
+                        'X-RapidAPI-Key': 'b206343f24msh070aef739f177eep14858bjsn2b7b2fe92606',
+                        'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                    }
+                }).then(function (response) {
+                    // console.log(response)
+                    document.querySelector('#result-container').innerHTML = `
+                    <div class="card bg-secondary">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h1 class="m-0">${response.data.location.name}</h1>
                             <img src="${response.data.current.condition.icon}">
-                        </p>
+                        </div>
+                        <div class="card-body">
+                            <!-- <p class="card-text">Region: ${response.data.location.region}</p> -->
+                            <p class="card-text">Country: ${response.data.location.country}</p>
+                            <p class="card-text">Temperature: ${response.data.current.temp_c}&degC / ${response.data.current.temp_f}&degF</p>
+                            <p class="card-text">Local time: ${response.data.location.localtime}</p>
+                            <p class="card-text">Lat / Long: ${response.data.location.lat} / ${response.data.location.lon}</p>
+                        </div>
                     </div>
                 `
+                }).catch(function (error) {
+                    alertLocationNotFound()
+                    // console.log(error)
+                })
 
-            }).catch(function (error) {
-                console.log(error)
-            })
+            }
 
         }
-
 
         const locationInput = document.querySelector('#location-input')
         const submitButton = document.querySelector('#submit-button')
         document.querySelector('#user-form').addEventListener('submit', getLocationWeather)
+
     </script>
 </body>
 
