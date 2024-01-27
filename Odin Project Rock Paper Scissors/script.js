@@ -23,7 +23,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(playerSelection) {
-    if (roundNumber <= maxRounds) {
+
+    // Shows the cards
+    document.querySelector("#choice-card").classList.remove("d-none")
+    document.querySelector("#score-card").classList.remove("d-none")
+
+    if (roundNumber < maxRounds) {
 
         const computerSelection = getComputerChoice()
 
@@ -62,6 +67,10 @@ function game(playerSelection) {
         document.querySelector("#round-counter").innerHTML = `Round: ${roundNumber}`
 
         if (roundNumber == maxRounds) {
+
+            // Show game over jumbotron
+            document.querySelector("#game-over-container").classList.remove("d-none")
+
             document.querySelector("#game-over").innerHTML = "Game Over!"
             if (playerScore > computerScore) {
                 document.querySelector("#game-winner").innerHTML = "Player Wins!"
@@ -82,3 +91,15 @@ userChoices.forEach((userChoice) => {
         game(event.target.id) // returns the id of the HTML component.
     })
 })
+
+// Reset the game if the user chooses to reset.
+document.querySelector("#reset-btn").addEventListener("click", resetGame)
+
+function resetGame() {
+    playerScore = 0
+    computerScore = 0
+    roundNumber = 0
+    document.querySelector("#choice-card").classList.add("d-none")
+    document.querySelector("#score-card").classList.add("d-none")
+    document.querySelector("#game-over-container").classList.add("d-none")
+}
