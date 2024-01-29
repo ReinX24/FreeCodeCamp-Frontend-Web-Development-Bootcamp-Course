@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const uList = document.querySelector('ul')
+        const inputItem = document.querySelector('#item')
+        const addBtn = document.querySelector('button')
+
+        addBtn.addEventListener('click', () => {
+            // Getting input value
+            const newItem = inputItem.value
+            inputItem.value = ''
+
+            // Adding input value
+            const listItem = document.createElement('li')
+            const spanItem = document.createElement('span')
+            const deleteBtn = document.createElement('button')
+
+            spanItem.textContent = newItem
+
+            deleteBtn.classList.add('delete-btn')
+            deleteBtn.textContent = 'Delete'
+
+            listItem.appendChild(spanItem)
+            listItem.appendChild(deleteBtn)
+
+            // Appending list item to list
+            uList.appendChild(listItem)
+
+            deleteBtn.addEventListener('click', () => {
+                uList.removeChild(listItem)
+            })
+
+            // const deleteButtons = document.querySelectorAll('.delete-btn')
+            // deleteButtons.forEach((eachBtn) => {
+            // Adding event listener for delete button
+            // eachBtn.addEventListener('click', (e) => {
+            // Removing button from our DOM
+            // e.target.parentElement.remove()
+            // })
+            // })
+        })
+
+        inputItem.focus()
+    </script>
+</body>
+
+</html>

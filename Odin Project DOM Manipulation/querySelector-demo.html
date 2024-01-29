@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector() Demo</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="img/logo.png" alt="Logo" id="logo">
+        </div>
+
+        <nav class="primary-nav">
+            <ul>
+                <li class="menu-item current"><a href="#home">Home</a></li>
+                <li class="menu-item"><a href="#services">Services</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
+                <li class="menu-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to the JS Dev Agency</h1>
+
+        <div class="container">
+            <section class="section-a">
+                <h2>UI/UX</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis numquam fugit veniam dolore reprehenderit! Reiciendis laboriosam nemo ad ducimus eius quibusdam obcaecati, quaerat soluta odit a qui ratione officiis ab aperiam ipsum veniam voluptate itaque commodi. Deserunt facilis earum ipsam, sapiente quo magni ea, dolor atque corporis exercitationem, recusandae voluptate!</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-b">
+                <h2>PWA Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis numquam fugit veniam dolore reprehenderit! Reiciendis laboriosam nemo ad ducimus eius quibusdam obcaecati, quaerat soluta odit a qui ratione officiis ab aperiam ipsum veniam voluptate itaque commodi. Deserunt facilis earum ipsam, sapiente quo magni ea, dolor atque corporis exercitationem, recusandae voluptate!</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-c">
+                <h2>Mobile App Dev</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis numquam fugit veniam dolore reprehenderit! Reiciendis laboriosam nemo ad ducimus eius quibusdam obcaecati, quaerat soluta odit a qui ratione officiis ab aperiam ipsum veniam voluptate itaque commodi. Deserunt facilis earum ipsam, sapiente quo magni ea, dolor atque corporis exercitationem, recusandae voluptate!</p>
+                <button>Read More</button>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Combinators
+        // 1. descendant combinator
+        // Selecting first h2 element in first section element.
+        // const textContent = document.querySelector('section h2')
+        // console.log(textContent)
+
+        // 2. child combinator
+        const listItems = document.querySelectorAll('div.container > section')
+        console.log(listItems)
+
+        // Grouping selectors, selects multiple elements.
+        // const elements = document.querySelectorAll('div, h2')
+        // console.log(elements)
+
+        // Get the element with an id selector.
+        // const logo = document.querySelector("#logo")
+        // console.log(logo)
+
+        // Get the first element with the .menu-item class.
+        // const note = document.querySelector('.menu-item')
+        // console.log(note)
+
+        // Get all elements with the .menu-item class.
+        // const notes = document.querySelectorAll('.menu-item')
+        // console.log(notes)
+
+        // Get first h1 in the DOM.
+        // const firstHeading = document.querySelector('h1')
+        // console.log(firstHeading)
+
+        // Get all h2 elements in DOM.
+        // const heading2 = document.querySelectorAll('h2')
+        // console.log(heading2)
+    </script>
+</body>
+
+</html>
