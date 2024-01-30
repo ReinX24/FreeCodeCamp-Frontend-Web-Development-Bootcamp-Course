@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Events</title>
+</head>
+
+<body>
+    <input type="button" value="Save" onclick="showAlert()">
+    <input type="button" value="Event Type" onclick="alert(event.type)">
+    <input type="button" value="Value" onclick="alert(this.value)">
+    <input type="button" value="Value Property" onclick="alert(value)">
+
+    <script>
+        function showAlert() {
+            alert('Clicked')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events / JS Event Demo</title>
+</head>
+
+<body>
+    <button id="btn">Click Me!</button>
+
+    <a href="https://www.javascripttutorial.net/" id="js-tutorial">JS Tutorial</a>
+
+    <script>
+        // stopPropagation(), stops the flow of the event immediately.
+        document.querySelector('#btn').addEventListener('click', (event) => {
+            console.log('The button was clicked!')
+            event.stopPropagation() // stops event
+        })
+
+        // This does not run because it has been stopeed by stopPropagation().
+        document.body.addEventListener('click', () => { 
+            console.log('The body was clicked')
+        })
+
+        // preventDefault()
+        const link = document.querySelector('#js-tutorial')
+
+        link.addEventListener('click', function (event) {
+            event.preventDefault()
+            console.log('JS Tutorial link clicked!')
+        })
+
+        // Using event listeners
+        const btn = document.querySelector('#btn')
+
+        btn.addEventListener('click', function (event) {
+            // alert('It was clicked!')
+            console.log(event.type)
+        })
+    </script>
+</body>
+
+</html>

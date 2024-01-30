@@ -1,5 +1,7 @@
-const elements = document.getElementsByName('language')
-console.log(elements)
+console.log("Test")
+
+// const elements = document.getElementsByName('language')
+// console.log(elements)
 
 // const p = document.getElementById('message')
 // console.log(p)

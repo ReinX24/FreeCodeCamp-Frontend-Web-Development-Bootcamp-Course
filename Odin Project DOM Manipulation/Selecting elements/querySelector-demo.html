@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>querySelector() Demo</title>
+    <style>
+        p::first-line {
+            color:red;
+        }
+    </style>
 </head>
 
 <body>
+    <p id="test"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime 
+        dignissimos consequuntur at, dolor dolorum sunt aliquam temporibus 
+        sapiente voluptatum quos, nisi itaque reiciendis quis recusandae, assumenda repudiandae laborum cum 
+        quibusdam?</p>
     <header>
         <div id="logo">
             <img src="img/logo.png" alt="Logo" id="logo">
@@ -46,6 +55,15 @@
     </main>
 
     <script>
+        // Pseudo
+        // 1. Pseudo-classes
+        // const secondSection = document.querySelectorAll('section:nth-child(2)')
+        // console.log(secondSection)
+
+        // 2. Pseudo-elements (only works for CSS)
+        // let firstP = document.querySelector('p::first-line')
+        // console.log(firstP)
+
         // Combinators
         // 1. descendant combinator
         // Selecting first h2 element in first section element.
@@ -53,8 +71,18 @@
         // console.log(textContent)
 
         // 2. child combinator
-        const listItems = document.querySelectorAll('div.container > section')
-        console.log(listItems)
+        // const listItems = document.querySelectorAll('div.container > section')
+        // console.log(listItems)
+
+        // 3. general sibling combinator
+        // selecting the next sibling after the first element.
+        // const sections = document.querySelectorAll('div#logo ~ nav')
+        // console.log(sections)
+
+        // 4. adjacent sibling combinator
+        // selects all div elements that directly follow after an h1.
+        // const sections = document.querySelectorAll('h1 + div')
+        // console.log(sections)
 
         // Grouping selectors, selects multiple elements.
         // const elements = document.querySelectorAll('div, h2')
