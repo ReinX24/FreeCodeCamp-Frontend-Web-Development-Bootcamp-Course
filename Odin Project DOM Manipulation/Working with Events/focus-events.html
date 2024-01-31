@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Focus Events</title>
+</head>
+
+<body>
+    <p>Move focus to the password field to see the effect:</p>
+
+    <form id="form">
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password">
+    </form>
+
+    <script>
+        const password = document.querySelector('input[type="password"]')
+
+        // Background changes to yellow when focused.
+        password.addEventListener('focus', (e) => {
+            e.target.style.backgroundColor = 'yellow'
+        })
+
+        // Removes background color.
+        password.addEventListener('blur', (e) => {
+            e.target.style.backgroundColor = ''
+        })
+    </script>
+</body>
+
+</html>

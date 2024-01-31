@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript dispatchEvent</title>
+</head>
+
+<body>
+    <button class="btn">Test</button>
+
+    <script>
+        const btn = document.querySelector('.btn')
+
+        btn.addEventListener('click', function (event) {
+            alert('Mouse Clicked')
+            console.log(event.isTrusted) // false when the page loads.
+        })
+
+        // Creating an event programmatically
+        // const clickEvent = new Event('click')
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            clientX: 150,
+            clientY: 150,
+        })
+
+        // Calling an event to our button
+        btn.dispatchEvent(clickEvent)
+    </script>
+</body>
+
+</html>

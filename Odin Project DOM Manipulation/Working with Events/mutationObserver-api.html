@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript MutationObserver</title>
+</head>
+
+<body>
+    <ul id="language">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+    </ul>
+
+    <button id="btnStart">Start Observing</button>
+    <button id="btnStop">Stop Observing</button>
+    <button id="btnAdd">Add</button>
+    <button id="btnRemove">Remove the Last Child</button>
+
+    <script>
+        // selecting the list
+        const list = document.querySelector('#language')
+
+        // selecting buttons
+        const btnAdd = document.querySelector('#btnAdd')
+        const btnRemove = document.querySelector('#btnRemove')
+        const btnStart = document.querySelector('#btnStart')
+        const btnStop = document.querySelector('#btnStop')
+
+        btnStop.disabled = true
+
+        // function that will be used as a callback for the MutationObserver
+        function log(mutations) {
+            for (let mutation of mutations) {
+                if (mutation.type === 'childList') {
+                    console.log(mutation)
+                }
+            }
+        }
+
+        // creating a new MutationObserver object.
+        const observer = new MutationObserver(log)
+
+        // adding eventListener
+        btnStart.addEventListener('click', function () {
+            observer.observe(list, {
+                childList: true
+            })
+
+            btnStart.disabled = true
+            btnStart.disabled = false
+        })
+
+        // add a new list item when the add button is clicked
+        let counter = 1
+        btnAdd.addEventListener('click', function () {
+            // create a new item element
+            const newItem = document.createElement('li')
+
+            newItem.textContent = `Item: ${counter++}` // increments counter
+
+            // append it to the child nodes of the list
+            list.appendChild(newItem)
+        })
+
+        // removing the last child of the list when the Remove button is clicked
+        btnRemove.addEventListener('click', function () {
+            list.lastElementChild ?
+                list.removeChild(list.lastElementChild) :
+                console.log('No more child node/s to remove')
+
+        })
+
+        // TODO: finish the rest of the code, resume at Stop Observing function
+    </script>
+</body>
+
+</html>

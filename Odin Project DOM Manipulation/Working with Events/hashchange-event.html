@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript hashchange Event</title>
+</head>
+
+<body>
+
+    <script>
+        window.addEventListener('hashchange', () => {
+            console.log('The URL has changed!')
+            console.log(`The current URL hash is ${location.hash}`)
+        })
+
+        window.onhashchange = () => {
+            // handle hashchange event here
+        }
+    </script>
+</body>
+
+</html>
