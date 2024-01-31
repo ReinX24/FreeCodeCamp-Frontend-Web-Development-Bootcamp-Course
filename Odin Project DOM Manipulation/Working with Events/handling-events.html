@@ -8,15 +8,42 @@
 </head>
 
 <body>
-    <input type="button" value="Save" onclick="showAlert()">
-    <input type="button" value="Event Type" onclick="alert(event.type)">
-    <input type="button" value="Value" onclick="alert(this.value)">
-    <input type="button" value="Value Property" onclick="alert(value)">
+    <!-- <input type="button" value="Save" onclick="showAlert()"> -->
+    <!-- <input type="button" value="Event Type" onclick="alert(event.type)"> -->
+    <!-- <input type="button" value="Value" onclick="alert(this.value)"> -->
+    <!-- <input type="button" value="Value Property" onclick="alert(value)"> -->
+
+    <button id="btn">Click me!</button>
 
     <script>
+        const btn = document.querySelector('#btn')
+
+        // DOM Level 2 event handlers
+        // Adding multiple event listeners
+        btn.addEventListener('click', function (event) {
+            alert(event.type) // click
+        })
+
         function showAlert() {
-            alert('Clicked')
+            alert('Clicked!')
         }
+
+        btn.addEventListener('click', showAlert)
+
+        // Removing event listeners
+        btn.removeEventListener('click', showAlert)
+
+        // DOM level 0 event handlers
+        // btn.onclick = function () {
+        //     alert(this.id)
+        // }
+
+        // Removing event handler
+        // btn.onclick = null
+
+        // function showAlert() {
+        //     alert('Clicked')
+        // }
     </script>
 </body>
 

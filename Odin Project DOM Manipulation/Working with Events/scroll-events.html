@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scroll Events</title>
+    <style>
+        #scrollDemo {
+            height: 200px;
+            width: 200px;
+            overflow: auto;
+            background-color: #f0db4f;
+        }
+
+        #scrollDemo p {
+            /* show the scrollbar */
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scrollDemo">
+        <p>JS Scroll Event Demo</p>
+    </div>
+
+    <div id="control">
+        <button id="btnScrollLeft">ScrollLeft</button>
+        <button id="btnScrollTop">ScrollTop</button>
+    </div>
+
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, quia iusto minima illo eum voluptatum expedita voluptas sunt nemo commodi perspiciatis maiores numquam minus non est optio natus quibusdam deleniti necessitatibus recusandae ullam. Eum, totam optio perferendis, eos ratione laboriosam distinctio sit doloribus in neque autem, ipsam assumenda harum labore! Id rerum, iste at culpa dolores veritatis repellat! Unde quo distinctio culpa atque totam inventore, delectus rerum quisquam quia quos veniam autem reiciendis consequuntur ducimus iure natus sed odit praesentium maxime perferendis cupiditate nesciunt! Sit vero quia voluptatibus similique corporis quidem eos voluptatum non ratione, modi, delectus eveniet consequuntur odio?</h1>
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, quia iusto minima illo eum voluptatum expedita voluptas sunt nemo commodi perspiciatis maiores numquam minus non est optio natus quibusdam deleniti necessitatibus recusandae ullam. Eum, totam optio perferendis, eos ratione laboriosam distinctio sit doloribus in neque autem, ipsam assumenda harum labore! Id rerum, iste at culpa dolores veritatis repellat! Unde quo distinctio culpa atque totam inventore, delectus rerum quisquam quia quos veniam autem reiciendis consequuntur ducimus iure natus sed odit praesentium maxime perferendis cupiditate nesciunt! Sit vero quia voluptatibus similique corporis quidem eos voluptatum non ratione, modi, delectus eveniet consequuntur odio?</h1>
+
+    <script>
+        // Passive events
+        // Without the passive option, the code in the event handler will 
+        // always be invoked before the UI thread carries out the scrolling.
+        document.addEventListener('scroll', (event) => {
+            console.log('Passive scrolling...')
+        }, { passive: true })
+
+        // Event throttling
+        let scrolling = false
+
+        window.onscroll = () => {
+            // scrolling = true
+        }
+
+        setInterval(() => {
+            if (scrolling) {
+                scrolling = false
+                // place the scroll handling logic here
+                console.log('Scrolling...')
+            }
+        }, 1000)
+
+        // scrollDemo
+        const control = document.querySelector('#control')
+
+        control.addEventListener('click', (e) => {
+            // get the scrollDemo
+            const div = document.querySelector('#scrollDemo')
+            // get the target
+            const target = e.target
+            // handle each button's click
+            switch (target.id) {
+                case 'btnScrollLeft':
+                    div.scrollLeft += 20
+                    break
+
+                case 'btnScrollTop':
+                    div.scrollTop += 20
+                    break
+            }
+        })
+
+        // window.addEventListener('scroll', (event) => {
+        //     console.log('Scrolling...')
+        // })
+
+        // window.onscroll = function (event) {
+        //     console.log('Scrolling..')
+        // }
+
+        // document.body.onscroll = null
+        // console.log(window.onscroll) // null
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript beforeunload Event</title>
+</head>
+
+<body>
+    <!-- When this link is clicked, a confirmation dialog will appear. -->
+    <a href="https://www.javascripttutorial.net/">JavaScript Tutorial</a>
+
+    <script>
+        window.addEventListener('beforeunload', (event) => {
+            // shows confimation dialog before leaving the page.
+            event.preventDefault()
+            // Google Chrome requires returnValue to be set.
+            event.returnValue = ''
+        })
+    </script>
+</body>
+
+</html>

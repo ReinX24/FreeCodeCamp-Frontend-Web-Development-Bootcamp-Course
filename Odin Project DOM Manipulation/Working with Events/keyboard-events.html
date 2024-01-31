@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript keyboard events</title>
+</head>
+
+<body>
+    <input type="text" id="message">
+
+    <script>
+        const msg = document.querySelector('#message')
+
+        msg.addEventListener('keydown', (event) => {
+            // handle keydown
+            console.log(`key=${event.key}, code=${event.code}`)
+        })
+
+        msg.addEventListener('keypress', (event) => {
+            // handle keypress
+            console.log('keypress')
+        })
+
+        msg.addEventListener('keyup', (event) => {
+            // handle keyup
+            console.log('keyup')
+        })
+    </script>
+</body>
+
+</html>

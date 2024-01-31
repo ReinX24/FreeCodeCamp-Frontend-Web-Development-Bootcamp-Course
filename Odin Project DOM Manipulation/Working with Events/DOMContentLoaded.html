@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOMContentLoaded Event</title>
+</head>
+
+<body>
+    <button id="btn">Click Me!</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('#btn')
+            btn.addEventListener('click', () => {
+                console.log('clicked!')
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Page Load Events</title>
+</head>
+
+<body>
+
+    <script>
+        addEventListener('DOMContentLoaded', (event) => {
+            // handle DOMContentLoaded event
+            console.log('The DOM is fully loaded.')
+        })
+
+        addEventListener('load', (event) => {
+            // handle load event
+            console.log('The page is fully loaded.')
+        })
+
+        addEventListener('beforeunload', (event) => {
+            // handle beforeunload event
+            // show the confirmation dialog
+            event.preventDefault()
+            event.returnValue = ''
+        })
+
+        addEventListener('unload', (event) => {
+            // handle unload event
+        })
+    </script>
+</body>
+
+</html>

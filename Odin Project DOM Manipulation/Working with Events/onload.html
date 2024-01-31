@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript onload</title>
+</head>
+
+<body>
+
+    <!-- <img id="logo" src="logo.png" onload="console.log('Logo loaded')"> -->
+    <script>
+        window.addEventListener('load', checkJSLoaded)
+
+        function checkJSLoaded() {
+            // create the script element
+            const script = document.createElement('script')
+
+            // assign an onload event handler
+            script.addEventListener('load', () => {
+                console.log('app.js file has been loaded')
+            })
+
+            // load the script file
+            script.src = 'app.js'
+            document.body.appendChild(script)
+        }
+
+        // Adding an image to our webpage dynamically
+        // const logo = document.createElement('img')
+
+        // assign onload event handler
+        // logo.addEventListener('load', (event) => {
+        //     console.log('The logo has been loaded')
+        // })
+
+        // add logo to the document
+        // document.body.appendChild(logo)
+        // logo.src = 'logo.png'
+
+        // const logo = document.querySelector('#logo')
+
+        // logo.addEventListener('load', (event) => {
+        //     console.log('Logo has been loaded!')
+        // })
+
+        // Using addEventListener
+        // window.addEventListener('load', (event) => {
+        //     console.log('The page has fully loaded')
+        // })
+
+        // Using onload
+        // window.onload = (event) => {
+        //     console.log('The page has fully loaded')
+        // }
+    </script>
+</body>
+
+</html>
