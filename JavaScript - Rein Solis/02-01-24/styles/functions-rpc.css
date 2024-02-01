@@ -1,0 +1,33 @@
+body {
+    font-family: "JetBrains Mono", monospace;
+}
+
+.border-debug {
+    border: 1px solid red;
+}
+
+.choice {
+    padding: 1rem;
+    margin: 0 1rem;
+    border: 2px solid black;
+    max-width: 6rem;
+    border-radius: 1rem;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+}
+
+/* #reset-btn {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}
+
+#reset-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+} */

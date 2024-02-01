@@ -1,0 +1,8 @@
+# Selecting body of HTML using console
+document.body.innerHTML = '<h1>Hello, World!</h1>'
+
+# Selecting the title of the webpage
+document.title = 'Custom Title'
+
+# Adding an onclick event to an HTML element
+<button id="blue" onclick="alert('Blue!')">Blue</button>

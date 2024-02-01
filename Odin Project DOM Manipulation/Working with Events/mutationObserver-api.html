@@ -28,8 +28,9 @@
         const btnAdd = document.querySelector('#btnAdd')
         const btnRemove = document.querySelector('#btnRemove')
         const btnStart = document.querySelector('#btnStart')
-        const btnStop = document.querySelector('#btnStop')
 
+        // disable the stop button
+        const btnStop = document.querySelector('#btnStop')
         btnStop.disabled = true
 
         // function that will be used as a callback for the MutationObserver
@@ -47,11 +48,16 @@
         // adding eventListener
         btnStart.addEventListener('click', function () {
             observer.observe(list, {
-                childList: true
+                childList: true,
+                attributes: true,
+                attributeFilter: ['class', 'style'],
+                subtree: false,
+                characterData: false,
+                attributeOldValue: false,
             })
 
             btnStart.disabled = true
-            btnStart.disabled = false
+            btnStop.disabled = false
         })
 
         // add a new list item when the add button is clicked
@@ -74,7 +80,14 @@
 
         })
 
-        // TODO: finish the rest of the code, resume at Stop Observing function
+        // stop observing the DOM 
+        btnStop.addEventListener('click', function () {
+            observer.disconnect()
+            // set button states
+            btnStart.disabled = false
+            btnStop.disabled = true
+        })
+
     </script>
 </body>
 
