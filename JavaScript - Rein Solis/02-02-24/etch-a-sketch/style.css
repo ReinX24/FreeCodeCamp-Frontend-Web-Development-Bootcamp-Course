@@ -1,19 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
-    /* height: 1000px;
-    width: 1000px; */
+    justify-content: center;
+    /* border: 1px solid black; */
 }
 
 .square {
     border: 1px solid black;
-    flex: 1 1 20%;
     vertical-align: top;
-    /* height: 250px;
-    width: 250px; */
 }
-
-/* .square:hover {
-    background-color: blue;
-} */
