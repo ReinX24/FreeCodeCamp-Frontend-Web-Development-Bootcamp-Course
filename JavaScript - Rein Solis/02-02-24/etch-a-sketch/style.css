@@ -1,5 +1,17 @@
 * {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#title {
+    text-align: center;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .grid-container {
@@ -11,10 +23,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .square {
     border: 1px solid black;
     vertical-align: top;
+}
+
+.button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: beige;
 }

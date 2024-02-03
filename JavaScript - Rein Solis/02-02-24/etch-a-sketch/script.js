@@ -2,17 +2,18 @@ const DEFAULT_GRID_SIZE = 4
 const DEFAULT_SCREEN_TOTAL = 960
 let darkCounter = 0
 
-let redColorValue = 255
-let greenColorValue = 255
-let blueColorValue = 255
+// Default color values
+let redColorValue = 128
+let greenColorValue = 128
+let blueColorValue = 128
+
+// Decrease value for etch-a-sketch mode
 const DECREASE_VALUE = 255 * .10
 
-// TODO: remove unneeded code
-// TODO: add a reset grid color button
+
 // TODO: style buttons
 function createSquares(gridSides) {
 
-    const body = document.querySelector('body')
     const container = document.querySelector('#container')
 
     // Clearing the contents of our container
@@ -32,9 +33,11 @@ function createSquares(gridSides) {
         square.style.flexShrink = '1'
         square.style.flexBasis = `${(DEFAULT_SCREEN_TOTAL / gridSides) / 10}%`
 
-        // square.addEventListener('mouseover', () => {
-        //     square.style.backgroundColor = `rgba(${redColorValue}, ${greenColorValue}, ${blueColorValue})`
-        // })
+        // Reset event liseteners to default background square color
+        square.removeEventListener('mouseover', etchColorSquares)
+        square.removeEventListener('mouseover', generateRandomBackgroundColor)
+
+        square.addEventListener('mouseover', generateDefaultBackgroundColor)
 
         // square.addEventListener('mouseleave', () => {
         //     square.style.backgroundColor = ''
@@ -62,60 +65,72 @@ function resetGrid() {
     }
 }
 
+// Set default color for hovering over squares
+function defaultColorSquares() {
+    const squares = document.querySelectorAll('.square')
+    squares.forEach((square) => {
+        square.removeEventListener('mouseover', generateEtchBackgroundColor)
+        square.removeEventListener('mouseover', generateRandomBackgroundColor)
+        square.addEventListener('mouseover', generateDefaultBackgroundColor)
+    })
+}
+
+// Default eventListener for each square
+function generateDefaultBackgroundColor() {
+    // Reset values to default values
+    redColorValue = 128
+    greenColorValue = 128
+    blueColorValue = 128
+    this.style.backgroundColor = `rgb(${redColorValue}, ${greenColorValue}, ${blueColorValue})`
+}
+
 // Function that generates random colors per mouseover
 function randomColorSquares() {
     const squares = document.querySelectorAll('.square')
     squares.forEach((square) => {
-
         square.removeEventListener('mouseover', generateDefaultBackgroundColor)
+        square.removeEventListener('mouseover', generateEtchBackgroundColor)
         square.addEventListener('mouseover', generateRandomBackgroundColor)
-
-        // square.addEventListener('mouseleave', () => {
-        //     square.style.backgroundColor = ''
-        // })
     })
 }
 
 function generateRandomBackgroundColor() {
-    // square.replaceWith(square.cloneNode(true)) // clones the element, removes event listeners
-
+    // Generates a random rgb value per mouseover each square
     redColorValue = randomIntFromInterval(0, 255)
     greenColorValue = randomIntFromInterval(0, 255)
     blueColorValue = randomIntFromInterval(0, 255)
-
-    // Generates a random rgb value per mouseover each square
-    // console.log(`${redColorValue} ${greenColorValue} ${blueColorValue}`)
     this.style.backgroundColor = `rgb(${redColorValue}, ${greenColorValue}, ${blueColorValue})`
 }
 
 // Function that sets default color per mouseover
-function defaultColorSquares() {
+function etchColorSquares() {
     const squares = document.querySelectorAll('.square')
     // Reset values to white
     redColorValue = 255
     greenColorValue = 255
     blueColorValue = 255
-    console.log('TEST')
 
     squares.forEach((square) => {
-
+        square.removeEventListener('mouseover', generateDefaultBackgroundColor)
         square.removeEventListener('mouseover', generateRandomBackgroundColor)
-        square.addEventListener('mouseover', generateDefaultBackgroundColor)
-
-        // square.addEventListener('mouseleave', () => {
-        // console.log('OUT!')
-        // square.style.backgroundColor = ''
-        // })
+        square.addEventListener('mouseover', generateEtchBackgroundColor)
     })
 }
 
 // Sets default background color and makes it darker each interaction
-function generateDefaultBackgroundColor() {
-    // console.log(`${redColorValue} ${greenColorValue} ${blueColorValue}`)
+function generateEtchBackgroundColor() {
     this.style.backgroundColor = `rgb(${redColorValue}, ${greenColorValue}, ${blueColorValue})`
     redColorValue -= DECREASE_VALUE
     greenColorValue -= DECREASE_VALUE
     blueColorValue -= DECREASE_VALUE
+}
+
+// Reset background color of our squares
+function resetBackgroundColors() {
+    const squares = document.querySelectorAll('.square')
+    squares.forEach((square) => {
+        square.style.backgroundColor = ''
+    })
 }
 
 // Function that generates a random number between two numbers
@@ -132,8 +147,14 @@ generateGridBtn.addEventListener('click', askGridSize)
 const resetGridBtn = document.querySelector('#reset-grid-btn')
 resetGridBtn.addEventListener('click', resetGrid)
 
+const defaultColorsBtn = document.querySelector('#default-colors-btn')
+defaultColorsBtn.addEventListener('click', defaultColorSquares)
+
 const randomColorsBtn = document.querySelector('#random-colors-btn')
 randomColorsBtn.addEventListener('click', randomColorSquares)
 
-const defaultColorsBtn = document.querySelector('#default-colors-btn')
-defaultColorsBtn.addEventListener('click', defaultColorSquares)
+const etchSketchBtn = document.querySelector('#etch-sketch-btn')
+etchSketchBtn.addEventListener('click', etchColorSquares)
+
+const resetColorsBtn = document.querySelector('#reset-background-btn')
+resetColorsBtn.addEventListener('click', resetBackgroundColors)

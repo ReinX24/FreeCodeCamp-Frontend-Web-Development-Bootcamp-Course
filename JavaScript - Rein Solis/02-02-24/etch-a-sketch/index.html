@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Project Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-    <button type="button" id="generate-grid-btn">Generate Grid</button>
-    <button type="button" id="reset-grid-btn">Reset Grid</button>
-    <button type="button" id="random-colors-btn">Random Colors</button>
-    <button type="button" id="default-colors-btn">Default Colors</button>
+    <h1 id="title">Etch-a-Sketch</h1>
+    <div id="button-container">
+        <button type="button" class="button" id="generate-grid-btn">Generate Grid</button>
+        <button type="button" class="button" id="reset-grid-btn">Reset Grid</button>
+        <button type="button" class="button" id="reset-background-btn">Clear Background Colors</button>
+        <button type="button" class="button" id="default-colors-btn">Default Color</button>
+        <button type="button" class="button" id="random-colors-btn">Random Colors</button>
+        <button type="button" class="button" id="etch-sketch-btn">Etch a Sketch</button>
+    </div>
     <div class="grid-container">
         <div id="container"></div>
     </div>

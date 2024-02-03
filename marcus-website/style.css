@@ -1,0 +1,333 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400,700&display=swap';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #29323c;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+.section-title {
+    font-size: 4rem;
+    text-align: left;
+    font-weight: 300;
+    color: #495867;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.section-title span {
+    color: #ce796b;
+}
+
+.brand h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.brand h1 span {
+    color: #c18c5d;
+}
+
+/* About Section */
+#about .about {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -340px;
+}
+
+#about .col-right h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: #ecc8af;
+}
+
+/* End About Section */
+/* Projects section */
+#projects .projects {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -300px;
+}
+
+#projects .projects-header h1 {
+    text-align: left;
+}
+
+#projects .all-projects {
+    display: flex;
+    align-items: left;
+
+    justify-content: center;
+    flex-direction: column;
+}
+
+#projects .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#projects .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#projects .project-info h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#projects .project-info h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projects .project-info p {
+    color: white;
+}
+
+#projects .project-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* End Projects section */
+/* contact Section */
+#contact .contact {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: -500px;
+}
+
+#contact .contact-items {
+    /* max-width: 400px; */
+    width: 100%;
+}
+
+#contact .contact-item {
+    width: 80%;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    box-shadow: 0px 0px 18px 0 #0000002c;
+    transition: 0.3s ease box-shadow;
+}
+
+#contact .contact-item:hover {
+    box-shadow: 0px 0px 5px 0 #0000002c;
+}
+
+#contact .icon {
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #ecc8af;
+}
+
+#contact .contact-info h2 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: #ecc8af;
+}
+
+/*End contact Section */
+/* Project */
+#projects .project-item {
+    flex-direction: row-reverse;
+    padding: 10px;
+}
+
+#projects .project-item {
+    height: 400px;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+#projects .all-projects .project-info {
+    height: 100%;
+}
+
+#projects .all-projects .project-img {
+    height: 100%;
+}
+
+/* End Project */
+/* About */
+#about .about {
+    flex-direction: row;
+}
+
+#about .col-left {
+    height: 400px;
+}
+
+#about .col-right {
+    text-align: left;
+}
+
+#about .col-right h1 {
+    text-align: left;
+}
+
+/* End About */
+/* contact */
+#contact .contact {
+    flex-direction: column;
+    padding: 100px 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 1200px;
+}
+
+#contact .contact-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+#contact .contact-item {
+    width: 30%;
+    margin: 0;
+    flex-direction: row;
+}
+
+#contact .contact-item .icon {
+    height: 100px;
+    width: 100px;
+}
+
+#contact .contact-item .icon img {
+    object-fit: contain;
+}
+
+#contact .contact-item .contact-info {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* End contact */
+#gallery .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -200px;
+    min-width: 1200px;
+}
+
+#gallery .gallery img {
+    width: 450px;
+    height: 300px;
+    padding: 10px;
+    margin-top: -500px;
+}
+
+
+
+/* Centers the gallery and makes it take up entire width */
+#gallery {
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Makes gallery-images div only take up 50% of the screen width */
+#gallery-images {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+/* Each image contains 50% of the container width */
+#gallery-images > * {
+    border: 1px solid red;
+    height: 400px;
+}
+
+@media only screen and (min-width: 1200px) {
+
+    #services .service-bottom .service-item {
+        flex-basis: 22%;
+        margin: 1.5%;
+    }
+}
