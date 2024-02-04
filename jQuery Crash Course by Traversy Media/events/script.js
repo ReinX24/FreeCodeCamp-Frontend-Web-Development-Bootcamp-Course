@@ -64,9 +64,48 @@ $(document).ready(function () {
     // })
 
     // Selecting and printing event
-    $('#btn-1').click(function (e) {
-        // console.log(e)
-        // alert(e.currentTarget.id) // prints the element's id
-        alert(e.currentTarget.innerHTML) // prints the element's id
+    // $('#btn-1').click(function (e) {
+    // console.log(e)
+    // alert(e.currentTarget.id) // prints the element's id
+    // alert(e.currentTarget.innerHTML)
+    // alert(e.currentTarget.outerHTML)
+    // alert(e.currentTarget.className)
+    // })
+
+    // Print the position of the currently pointed at element
+    // $(document).on('mousemove', function (e) {
+    //     $('#coords').html(`Cords: ${e.clientY} ${e.clientX}`)
+    // })
+
+    // Executes whenever an input is focused / clicked on by a user
+    // $('input').focus(function () {
+    // alert('Focus')
+    //     $(this).css('background', 'pink') // modifies background of focused input
+    // })
+
+    // Blur event, when we click outside of the element
+    // $('input').blur(function () {
+    //     $(this).css('background', 'white')
+    // })
+
+    // Keyup and keydown events
+    // $('input').keyup(function (e) {
+    // console.log('keyup')
+    //     console.log(e.currentTarget.value) // prints the value in input element
+    // })
+
+    // $('select#gender').change(function (e) {
+    // alert('Changed')
+    //     alert(e.target.value)
+    // })
+
+    $('#form').submit(function (e) {
+        e.preventDefault() // prevents form from submitting and reloading page
+        // console.log('Submitted')
+        const name = $('#name').val()
+        const email = $('#email').val()
+        const gender = $('#gender').val()
+        console.log(`${name} ${email} ${gender}`)
     })
+
 })
