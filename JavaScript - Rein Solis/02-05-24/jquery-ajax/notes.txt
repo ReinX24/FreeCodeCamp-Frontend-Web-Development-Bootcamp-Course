@@ -1,0 +1,13 @@
+[Creatin a Database in xampp]
+- Install xampp
+- Run apache and mysql
+- Click admin
+- Create a new table
+- When creating a new table, remember to autoincrement the id and that it check
+null
+
+[Run a php file using XAMPP]
+- Go to xampp
+- Explorer
+- htdocs
+- Paste folder of website files into htdocs (localhost/{yourfoldername})

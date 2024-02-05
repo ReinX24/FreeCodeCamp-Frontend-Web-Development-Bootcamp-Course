@@ -1,0 +1,23 @@
+.red-border {
+    border: 1px solid red;
+}
+
+@media (max-width: 768px) {
+    #task-container {
+        flex-direction: column;
+        align-items: center !important;
+    }
+
+    #task-input-container {
+        width: 100% !important;
+    }
+
+    #date-input-container {
+        margin-top: 0.5rem;
+        width: 100% !important;
+    }
+
+    #add-task-btn {
+        margin-top: 1rem;
+    }
+}
