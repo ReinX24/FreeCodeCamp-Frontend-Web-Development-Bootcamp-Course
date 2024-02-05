@@ -11,7 +11,7 @@
 
             $db->query("insert into products (product_name, price, photo, description, created_at, updated_at) values ('".$_POST['product_name']."', '".$_POST['product_price']."', '', '".$_POST['description']."', '".$today."', '".$today."')");
 
-            db->close();
+            $db->close();
 
             break;
 
