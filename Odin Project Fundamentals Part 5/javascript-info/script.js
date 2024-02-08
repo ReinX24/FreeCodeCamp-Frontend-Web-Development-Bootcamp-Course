@@ -1,3 +1,44 @@
+// Multiply numeric property values by 2
+function multiplyNumeric(menu) {
+    for (const prop in menu) {
+        if (typeof menu[prop] == "number") {
+            menu[prop] *= 2;
+        }
+    }
+}
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu",
+}
+console.log(menu);
+multiplyNumeric(menu); // modifies the object properties in place
+console.log(menu);
+
+// Sum object properties
+// const salaries = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130,
+// }
+// let sum = 0;
+// for (const prop in salaries) {
+//     sum += salaries[prop]
+// }
+// console.log(sum)
+
+// Check for emptiness
+// function isEmpty(schedule) {
+//     for (let prop in schedule) {
+//         return false; // return false if there is a property
+//     }
+//     return true;
+// }
+// let schedule = {}
+// console.log(isEmpty(schedule))
+// schedule["8:30"] = "get up";
+// console.log(isEmpty(schedule))
+
 // Hello, object
 // const user = {
 //     name: "John",
