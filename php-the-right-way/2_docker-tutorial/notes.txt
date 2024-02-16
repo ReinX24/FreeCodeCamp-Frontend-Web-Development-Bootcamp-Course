@@ -1,0 +1,4 @@
+[Docker Notes]
+sudo docker-compose up // creates docker containers
+sudo docker-compose up -d // run docker containers
+sudo docker-compose ps // show running docker containers
