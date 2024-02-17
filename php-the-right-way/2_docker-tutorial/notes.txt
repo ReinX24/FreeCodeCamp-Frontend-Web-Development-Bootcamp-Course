@@ -1,4 +1,9 @@
 [Docker Notes]
-sudo docker-compose up // creates docker containers
-sudo docker-compose up -d // run docker containers
-sudo docker-compose ps // show running docker containers
+1. cd into docker directory
+2. make sure that all files are in the directory
+3. commands for the containers:
+    sudo docker-compose up // creates docker containers
+    sudo docker-compose up -d // run docker containers
+    sudo docker-compose ps // show running docker containers
+    sudo docker-compose start // starts containers
+    sudo docker-compose stop // stops containers
