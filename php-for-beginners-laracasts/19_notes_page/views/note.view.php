@@ -7,13 +7,10 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
-        <?php foreach ($notes as $note) : ?>
-            <li>
-                <a href="/note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
-                    <?= $note['body'] ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
+        <p class="mb-6">
+            <a href="/notes" class="text-blue-500 underline">go back...</a>
+        </p>
+        <p><?= $note['body'] ?></p>
     </div>
 </main>
 
