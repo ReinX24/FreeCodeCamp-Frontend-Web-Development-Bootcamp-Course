@@ -1,5 +1,7 @@
 <?php
 
+    include("config/db_connect.php");
+
     // For storing errors 
     $errors = ["email" => "", "title" => "", "ingredients" => ""];
 
@@ -45,10 +47,28 @@
 
         // Checks if any of the key value pairs are not empty
         if (array_filter($errors)) {
+            // If there are any errors
             // echo "errors in the form";
         } else {
+            // If there are no errors and the form is valid
             // echo "form is valid";
-            header("Location: index.php");
+
+            $email = mysqli_real_escape_string($conn, $_POST["email"]);
+            $title = mysqli_real_escape_string($conn, $_POST["title"]);
+            $ingredients = mysqli_real_escape_string($conn, $_POST["ingredients"]);
+
+            // Create sql
+            $sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title','$email','$ingredients')";
+
+            // Save to db and check
+            if(mysqli_query($conn, $sql)) {
+                // Success
+                header("Location: index.php"); // redirects to index.php
+            } else {
+                // Error
+                echo "Query error: " . mysqli_error($conn);
+            }
+
         }
 
     } // End of POST check

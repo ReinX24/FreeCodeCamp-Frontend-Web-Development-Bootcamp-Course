@@ -1,13 +1,7 @@
 <?php
 
     // MySQLi or PDO
-    // Connect to database
-    $conn = mysqli_connect("localhost", "rein", "test1234", "ninja_pizza");
-
-    // Check the connection
-    if (!$conn) {
-        echo "Connection error: " . mysqli_connect_error();
-    }
+    include("config/db_connect.php");
 
     // Writing query for all pizzas
     $sql = "SELECT title, ingredients, id FROM pizzas ORDER BY created_at";
@@ -44,6 +38,7 @@
             <?php foreach ($pizzas as $pizza): ?>
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
+                        <img src="img/pizza.svg" class="pizza">
                         <div class="card-content center">
                             <h6><?= htmlspecialchars($pizza["title"]); ?></h6>
                             <div>
@@ -55,7 +50,7 @@
                             </div>
                         </div>
                         <div class="card-action right-align">
-                            <a href="#" class="brand-text">More Info</a>
+                            <a href="details.php?id=<?= $pizza["id"]; ?>" class="brand-text">More Info</a>
                         </div>
                     </div>
                 </div>
