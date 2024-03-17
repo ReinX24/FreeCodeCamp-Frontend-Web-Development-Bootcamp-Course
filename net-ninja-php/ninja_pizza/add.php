@@ -82,7 +82,7 @@
 
 <section class="container grey-text">
     <h4 class="center">Add a Pizza</h4>
-    <form action="add.php" class="white" method="POST">
+    <form action=<?= $_SERVER["PHP_SELF"]; ?> class="white" method="POST">
         <input type="text" name="email" value="<?= htmlspecialchars($email); ?>">
         <label for="email">Your Email:</label>
 
