@@ -4,13 +4,19 @@
 
     // $_SESSION["name"] = "yoshi";
 
-    // QUERY_STRING is the argument after ?= (?=noname)
+    // QUERY_STRING is the argument after ? (?noname)
     if ($_SERVER["QUERY_STRING"] == "noname") {
-        // unset($_SESSION["name"]); // destroys a variable
-        session_unset(); // destroys all variables in a session
+        unset($_SESSION["name"]); // destroys a variable
+        // session_unset(); // destroys all variables in a session
     }
 
-    $name = $_SESSION["name"];
+    $name = $_SESSION["name"] ?? "Guest"; 
+    // Sets name to "Guest" if "name" does not exist using the null coalescing 
+    // operator. Use this if we want to check the first value of the argument
+    // exists or not.
+
+    // Get cookie
+    $gender = $_COOKIE["gender"] ?? "Unknown";
     
 ?>
 
@@ -49,6 +55,7 @@
             <a href="index.php" class="brand-logo brand-text">Ninja Pizza</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
                 <li class="grey-text">Hello <?= htmlspecialchars($name); ?></li>
+                <li class="grey-text">(<?= htmlspecialchars($gender); ?>)</li>
                 <li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
             </ul>
         </div>

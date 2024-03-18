@@ -2,6 +2,10 @@
 
     // Sessions
     if (isset($_POST["submit"])) {
+
+        // Cookie for gender
+        setcookie("gender", $_POST["gender"], time() + 86400);
+        // Third parameter is the time when the cookie will expire
         
         session_start();
 
@@ -36,6 +40,11 @@
 
     <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
         <input type="text" name="name">
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
         <input type="submit" name="submit" value="Submit">
     </form>
 
