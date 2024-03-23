@@ -8,8 +8,8 @@
 </head>
 <body>
     <nav>
-        <div class="container d-flex justify-content-between pt-4 pb-4 border-bottom bg-light">
-            <h2>Rein Pizzas</h2>
-            <button class="btn btn-primary"><a href="<?= $_SERVER['PHP_SELF']; ?>" class="text-white text-decoration-none">Add a Pizza</a></button>
+        <div class="d-flex justify-content-between pt-3 pb-3 px-3 border-bottom bg-light">
+            <h2><a href="index.php" class="text-decoration-none">Rein Pizzas</a></h2>
+            <button class="btn btn-primary"><a href="add.php" class="text-white text-decoration-none">Add a Pizza</a></button>
         </div>
     </nav>
