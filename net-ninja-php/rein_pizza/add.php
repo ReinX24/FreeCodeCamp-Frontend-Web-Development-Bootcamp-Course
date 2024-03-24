@@ -65,7 +65,7 @@
 
 <?php require('templates/header.php'); ?>
 
-<div class="container col-4 mt-4">
+<div class="container col-8 mt-4">
     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
         <label for="email" class="form-label">Email:</label>
         <input type="email" name="email" class="form-control mb-3" value="<?= htmlspecialchars($email); ?>">

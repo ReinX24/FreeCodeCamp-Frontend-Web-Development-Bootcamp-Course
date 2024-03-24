@@ -31,8 +31,8 @@
 
 <?php require("templates/header.php"); ?>
 
-<div class="container">
-    <div class="card text-center mt-4">
+<div class="container d-flex flex-column gap-4 col-8 mt-4 mb-4">
+    <div class="card text-center shadow-lg border border-1">
         <div class="card-body">
             <h1 class="card-title"><?= htmlspecialchars($pizza['title']); ?></h1>
             <p class="card-text">
@@ -42,7 +42,7 @@
             </p>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
                 <input type="hidden" name="id_to_delete" value="<?= $pizza['id']; ?>">
-                <input type="submit" name="delete" value="Delete" class="btn btn-danger">
+                <input type="submit" name="delete" value="Delete" class="btn btn-danger border border-dark border-1">
             </form>
         </div>
     </div>

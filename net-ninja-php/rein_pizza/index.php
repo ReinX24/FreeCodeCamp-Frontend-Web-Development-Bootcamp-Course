@@ -15,14 +15,20 @@
 
 <?php require('templates/header.php'); ?>
 
-<div class="container d-flex flex-column gap-4 col-6">
+<div class="container d-flex flex-column gap-4 col-8 mt-4 mb-4">
     <?php foreach ($pizzas as $pizza): ?>
-        <div class="card text-center mt-4">
-           <div class="card-body">
-                <img src="img/pizza.png" class="mb-2">
-                <h2 class="card-title"><?= htmlspecialchars($pizza['title']); ?></h2>
-                <p class="card-text"><?= htmlspecialchars($pizza['ingredients']); ?></p>
-                <a href="details.php?id=<?= $pizza['id']; ?>" class="btn btn-primary">More Info</a>
+        <div class="card text-center shadow-lg border border-1">
+            <div class="card-header bg-primary text-white">
+                <h2><?= htmlspecialchars($pizza['title']); ?></h2>
+            </div>
+            <div class="card-body">
+                <img src="img/pizza.png" class="mb-2" style="max-width: 64px;">
+                <ul class="list-group my-3 col-8 mx-auto">
+                    <?php foreach(explode(",", $pizza["ingredients"]) as $ingredient): ?>
+                        <li class="list-group-item"><?= htmlspecialchars($ingredient); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <a href="details.php?id=<?= $pizza['id']; ?>" class="btn btn-info border border-dark border-1">More Info</a>
             </div>
         </div>
     <?php endforeach; ?>
