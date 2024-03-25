@@ -3,10 +3,14 @@
 class User
 {
     // Properties methods
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
 }
 
-$userOne = new User();
-$userTwo = new User();
+$userOne = new User("Rein");
+$userTwo = new User("Reinnne");
 
 echo "this class is " . get_class($userTwo);
 
