@@ -3,16 +3,61 @@
 class User
 {
     // Properties methods
-    public function __construct($name)
+    private $username;
+    private $email;
+
+    public function __construct($username, $email)
     {
-        $this->name = $name;
+        $this->username = $username;
+        $this->email = $email;
+    }
+
+    public function addFriend()
+    {
+        return "{$this->email} added a new friend";
+    }
+
+    // Getters
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    // Setters
+    public function setEmail($email)
+    {
+        if (strpos($email, "@") > -1) {
+            $this->email = $email;
+        }
     }
 }
 
-$userOne = new User("Rein");
-$userTwo = new User("Reinnne");
+$userOne = new User('mario', 'mario@thenetninja.co.uk');
+$userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
-echo "this class is " . get_class($userTwo);
+$userOne->setEmail('yoshi@thenetninja.co.uk');
+
+echo $userOne->getEmail() . "<br>";
+echo $userTwo->getEmail() . "<br>";
+
+// $userOne->email = 3;
+
+// echo $userOne->username . "<br>";
+// echo $userOne->email . "<br>";
+// echo $userOne->addFriend() . "<br>";
+
+// $userTwo->username = 'yoshi';
+// $userTwo->email = 'yoshi@thenetninja.co.uk';
+
+// echo $userTwo->username . "<br>";
+// echo $userTwo->email . "<br>";
+// echo $userTwo->addFriend() . "<br>";
+
+
+// print_r(get_class_vars("User")); // returns all the properties in the User class
+// print_r(get_class_methods("User")); // returns methods of the class
+
+// echo "this class is " . get_class($userTwo);
 
 ?>
 
